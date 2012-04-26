@@ -1,6 +1,7 @@
 # shortcut to this dotfiles path
 export DOTFILES=$HOME/.dotfiles
 
+# for brew
 export PATH="$PATH:/usr/local/sbin"
 
 # Load all the helper files
