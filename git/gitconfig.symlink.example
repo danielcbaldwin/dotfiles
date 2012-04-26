@@ -1,0 +1,17 @@
+[user]
+	name = Daniel Baldwin
+	email = you@example.com
+[alias]
+	st = status
+[push]
+	default = current
+[color]
+	diff = auto
+  status = auto
+  branch = auto
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+  editor = vim
+[github]
+  user = danielcbaldwin

@@ -1,0 +1,12 @@
+# shortcut to this dotfiles path
+export DOTFILES=$HOME/.dotfiles
+
+export PATH="$PATH:/usr/local/sbin"
+
+# Load all the helper files
+for file in $DOTFILES/bash/*.sh
+do
+  [ -r "$file" ] && source "$file"
+done
+unset file
+

@@ -1,0 +1,10 @@
+alias mc='cd ~/Sites/mc'
+alias blog='cd ~/Dropbox/Blog'
+
+alias ~='cd ~'
+alias -- -='cd -'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
