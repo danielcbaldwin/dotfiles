@@ -4,7 +4,10 @@ export DOTFILES=$HOME/.dotfiles
 # for brew
 export PATH="$PATH:/usr/local/sbin"
 
-# Load all the helper files
+# add dotfiles bin
+export PATH="$PATH:$DOTFILES/bin"
+
+# load all the helper files
 for file in $DOTFILES/bash/*.sh
 do
   [ -r "$file" ] && source "$file"
