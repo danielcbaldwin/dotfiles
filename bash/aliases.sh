@@ -1,5 +1,6 @@
 alias mc='cd ~/Sites/mc'
 alias blog='cd ~/Dropbox/Blog'
+alias dotfiles='cd ~/.dotfiles'
 
 alias ~='cd ~'
 alias -- -='cd -'
