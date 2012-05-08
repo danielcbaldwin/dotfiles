@@ -1,0 +1,9 @@
+windows:
+  - name: "MC Dev"
+    root: "~/Sites/mc"
+    splits:
+      - cmd: "vim"
+      - cmd: "tail -f log/development.log"
+        width: 25
+      - cmd: "pwd"
+        height: 25

@@ -1,0 +1,7 @@
+windows:
+  - name: "MC Live Logs"
+    root: "~"
+    splits:
+      - cmd: "ssh 1.www 'tail -f /var/www/masteryconnect/log/production.log'"
+      - cmd: "ssh 2.www 'tail -f /var/www/masteryconnect/log/production.log'"
+        width: 50
