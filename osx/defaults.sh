@@ -63,3 +63,6 @@ defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Fi
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Set default terminal to zsh, chsh -s /bin/bash to reverse
+chsh -s /bin/zsh

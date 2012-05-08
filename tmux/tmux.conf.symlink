@@ -1,2 +1,21 @@
+set-option -g prefix C-a
+unbind-key C-b
+
 set -g default-terminal "screen-256color"
-set -g mode-mouse on
+
+setw -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+bind | split-window -h
+
+bind tab select-pane -t :.+
+
+bind m break-pane
+
+bind -r K resize-pane -U 2
+bind -r J resize-pane -D 2
+bind -r H resize-pane -L 2
+bind -r L resize-pane -R 2
