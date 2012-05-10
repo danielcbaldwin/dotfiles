@@ -19,3 +19,7 @@ bind -r K resize-pane -U 2
 bind -r J resize-pane -D 2
 bind -r H resize-pane -L 2
 bind -r L resize-pane -R 2
+
+set-option -g mouse-select-pane on
+set-option -g mouse-select-window on
+set-window-option -g mode-mouse on
