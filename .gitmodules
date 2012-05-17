@@ -13,9 +13,6 @@
 [submodule "vim/vim.symlink/bundle/powerline"]
 	path = vim/vim.symlink/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/vim.symlink/bundle/rails"]
-	path = vim/vim.symlink/bundle/rails
-	url = https://github.com/tpope/vim-rails.git
 [submodule "vim/vim.symlink/bundle/yankring"]
 	path = vim/vim.symlink/bundle/yankring
 	url = https://github.com/chrismetcalf/vim-yankring
@@ -25,9 +22,6 @@
 [submodule "zsh/oh-my-zsh.symlink"]
 	path = zsh/oh-my-zsh.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "vim/vim.symlink/bundle/vim-endwise"]
-	path = vim/vim.symlink/bundle/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
 [submodule "vim/vim.symlink/bundle/vim-surround"]
 	path = vim/vim.symlink/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
