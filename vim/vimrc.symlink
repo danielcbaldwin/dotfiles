@@ -1,7 +1,3 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
 " Use tpope's pathogen plugin to manage all other plugins
@@ -14,25 +10,12 @@ set nocompatible
 syntax enable
 colorscheme wombat256
 
-" Enhance command-line completion
-set wildmenu
-" Highlight current line
-set cursorline
-" Allow cursor keys in insert mode
-set esckeys
-" Don’t reset cursor to start of line when moving around.
-set nostartofline
-" Show the cursor position
-set ruler
-" Show the filename in the window titlebar
-set title
 " Enable clipboard integration
 set clipboard=unnamed
 
 set history=1000            " Store a ton of history
 
 set number
-set backspace=2             " fixing backspace because vim is dumb
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
@@ -56,15 +39,11 @@ set sidescroll=1
 " ================ Indentation ======================
 
 set autoindent
-set smartindent
-set smarttab
+set backspace=2
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-
-filetype plugin on
-filetype indent on
 
 set wrap
 
@@ -82,30 +61,17 @@ vnoremap > >gv
 " http://vimbits.com/bits/52
 noremap <space> :set hlsearch! hlsearch?<CR>
 
-" Leader {{{
-  let mapleader = ","
-" }}}
-
-" Time out on key codes but not mappings.
-" Basically this makes terminal Vim work sanely.
-set notimeout
-set ttimeout
-set ttimeoutlen=10
+" Leader
+let mapleader = ","
 
 " Make Vim able to edit crontab files again.
 set backupskip=/tmp/*,/private/tmp/*"
 
-" Better Completion
-set completeopt=longest,menuone,preview
-
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" }}}
-
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" Highlight TODO
+match Todo /<+.\++>/
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
@@ -121,6 +87,10 @@ nmap T O<ESC>j
 
 " Make Y behave like other capitals
 map Y y$
+
+" HTML Tidy, http://tidy.sourceforge.net/
+" select xml text to format and hit ,x
+vmap ,x :!tidy -q -i -xml<CR>
 
 " Load in additional settings
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
