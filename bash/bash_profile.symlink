@@ -1,12 +1,6 @@
 # shortcut to this dotfiles path
 export DOTFILES=$HOME/.dotfiles
 
-# for brew
-export PATH="$PATH:/usr/local/sbin"
-
-# add dotfiles bin
-export PATH="$PATH:$DOTFILES/bin"
-
 # load all the helper files
 for file in $DOTFILES/bash/*.sh
 do
@@ -14,3 +8,10 @@ do
 done
 unset file
 
+unset MAILCHECK
+
+# for brew
+export PATH="/usr/local/bin:$PATH"
+
+# add dotfiles bin
+export PATH="$PATH:$DOTFILES/bin"

@@ -11,7 +11,7 @@ syntax enable
 colorscheme wombat256
 
 " Enable clipboard integration
-set clipboard=unnamed
+"set clipboard=unnamed
 
 set history=1000            " Store a ton of history
 
