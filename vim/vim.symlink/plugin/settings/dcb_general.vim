@@ -7,15 +7,14 @@ nmap <silent><leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " Relative Line Number Toggle
-"function! NumberToggle()
-"  if(&relativenumber == 1)
-"    set number
-"  else
-"    set relativenumber
-"  endif
-"endfunc
-"map <C-n> :call NumberToggle()<CR>
-"map <leader>r :call NumberToggle()<CR>
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nmap <leader>r :call NumberToggle()<CR>
 
 " More sane colors of matching brackets and parens
 highlight MatchParen cterm=bold ctermbg=bg ctermfg=Red

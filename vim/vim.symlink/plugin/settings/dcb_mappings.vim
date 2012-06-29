@@ -7,6 +7,3 @@ imap <right> <nop>
 " Because it is easier, i guess
 imap jj <Esc>
 imap <up><up> <Esc>
-
-" number toggle
-nnoremap <leader>r :NumbersToggle<CR>
