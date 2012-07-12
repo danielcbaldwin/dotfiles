@@ -1,11 +1,15 @@
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
 " Use tpope's pathogen plugin to manage all other plugins
-
   runtime bundle/pathogen/autoload/pathogen.vim
   call pathogen#infect()
   call pathogen#helptags()
 " =======================================================
+
+set nocompatible
+set modelines=0
+"set mouse-=a
+set mouse=a
 
 syntax enable
 colorscheme wombat256
@@ -91,6 +95,9 @@ map Y y$
 " HTML Tidy, http://tidy.sourceforge.net/
 " select xml text to format and hit ,x
 vmap ,x :!tidy -q -i -xml<CR>
+
+" Save after loosing focus
+au FocusLost * :wa
 
 " Load in additional settings
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
