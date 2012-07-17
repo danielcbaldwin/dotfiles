@@ -22,6 +22,3 @@
 [submodule "vim/vim.symlink/bundle/solarized"]
 	path = vim/vim.symlink/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/vim.symlink/bundle/rails"]
-	path = vim/vim.symlink/bundle/rails
-	url = git://github.com/tpope/vim-rails.git
