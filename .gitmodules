@@ -22,3 +22,15 @@
 [submodule "vim/vim.symlink/bundle/solarized"]
 	path = vim/vim.symlink/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/vim.symlink/bundle/ruby-matchit"]
+	path = vim/vim.symlink/bundle/ruby-matchit
+	url = git://github.com/vim-scripts/ruby-matchit.git
+[submodule "vim/vim.symlink/bundle/commentary"]
+	path = vim/vim.symlink/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/vim.symlink/bundle/surround"]
+	path = vim/vim.symlink/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim.symlink/bundle/endwise"]
+	path = vim/vim.symlink/bundle/endwise
+	url = git://github.com/tpope/vim-endwise.git

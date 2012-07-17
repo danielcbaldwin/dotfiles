@@ -6,8 +6,9 @@
   call pathogen#helptags()
 " =======================================================
 
+filetype plugin indent on
+
 set nocompatible
-set modelines=0
 "set mouse-=a
 set mouse=a
 
@@ -97,9 +98,9 @@ map Y y$
 vmap ,x :!tidy -q -i -xml<CR>
 
 " Save after loosing focus
-au FocusLost * :wa
+"au FocusLost * :wa
 
 " Load in additional settings
-for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
+for f in split(glob('~/.vim/settings/*.vim'), '\n')
   exe 'source' f
 endfor

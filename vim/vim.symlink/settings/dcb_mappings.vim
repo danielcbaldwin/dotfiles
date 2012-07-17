@@ -7,3 +7,6 @@ imap <right> <nop>
 " Because it is easier, i guess
 imap jj <Esc>
 imap <up><up> <Esc>
+
+" Spelling
+nmap <leader>s :setlocal spell! spelllang=en_us<CR>

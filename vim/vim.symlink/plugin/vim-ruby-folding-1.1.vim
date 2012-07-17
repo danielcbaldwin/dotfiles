@@ -61,6 +61,7 @@ endfunction
 "Vimtip put to good use by Ralph Amissah zxy@irc.freenode.net
 "Modified by Mauricio Fernandez <mfp@acm.org>
 function! Foldsearch(search)
+  set noic " added to set case sensitive search 
 	setlocal fdm=manual
 	let origlineno = line(".")
 	normal zE
@@ -105,6 +106,7 @@ function! Foldsearch(search)
 		execute ":". line1 . "," . line2 . "fold"
 	endif
 	execute "normal " . origlineno . "G"
+  set ic " added to set case insensitive search back
 endfunction
 
 "{{{~folds Fold Patterns
