@@ -40,3 +40,6 @@
 [submodule "vim/vim.symlink/bundle/molokai-theme"]
 	path = vim/vim.symlink/bundle/molokai-theme
 	url = git://github.com/vim-scripts/molokai.git
+[submodule "vim/vim.symlink/bundle/color-sampler"]
+	path = vim/vim.symlink/bundle/color-sampler
+	url = git@github.com:danielcbaldwin/Color-Sampler-Pack.git
