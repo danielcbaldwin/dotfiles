@@ -1,7 +1,7 @@
 "set mouse-=a
 set mouse=a
 
-colorscheme wombat256
+colorscheme Tomorrow-Night
 
 " Enable clipboard integration
 "set clipboard=unnamed
@@ -58,4 +58,4 @@ set matchpairs+=<:>
 set vb t_vb= " Turn off the bell, this could be more annoying, but I'm not sure how
 
 " More sane colors of matching brackets and parens
-highlight MatchParen cterm=bold ctermbg=bg ctermfg=Red
+" highlight MatchParen cterm=bold ctermbg=bg ctermfg=Red
