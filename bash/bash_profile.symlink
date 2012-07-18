@@ -15,3 +15,6 @@ export PATH="/usr/local/bin:$PATH"
 
 # add dotfiles bin
 export PATH="$PATH:$DOTFILES/bin"
+
+# add python scripts bin
+export PATH="$PATH:~/.bin"

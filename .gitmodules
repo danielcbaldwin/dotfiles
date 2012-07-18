@@ -34,3 +34,12 @@
 [submodule "vim/vim.symlink/bundle/endwise"]
 	path = vim/vim.symlink/bundle/endwise
 	url = git://github.com/tpope/vim-endwise.git
+[submodule "vim/vim.symlink/bundle/tomorrow-theme"]
+	path = vim/vim.symlink/bundle/tomorrow-theme
+	url = git://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule "vim/vim.symlink/bundle/molokai-theme"]
+	path = vim/vim.symlink/bundle/molokai-theme
+	url = git://github.com/vim-scripts/molokai.git
+[submodule "vim/vim.symlink/bundle/color-sampler"]
+	path = vim/vim.symlink/bundle/color-sampler
+	url = git://github.com/vim-scripts/Color-Sampler-Pack.git
