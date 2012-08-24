@@ -1,10 +1,15 @@
 "set mouse-=a
-set mouse=a
+if has('mouse')
+  set mouse=a
+endif
 
+set t_Co=256
 colorscheme Tomorrow-Night
 
 " Enable clipboard integration
 "set clipboard=unnamed
+
+set nostartofline
 
 set history=1000            " Store a ton of history
 

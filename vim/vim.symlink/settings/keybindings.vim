@@ -23,7 +23,7 @@ nmap t o<ESC>k
 nmap T O<ESC>j
 
 " Make Y behave like other capitals
-map Y y$
+nmap Y y$
 
 " HTML Tidy, http://tidy.sourceforge.net/
 " select xml text to format and hit ,x
@@ -34,10 +34,18 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+nmap <up> k
+nmap <down> j
+nmap <left> h
+nmap <right> l
+vmap <up> k
+vmap <down> j
+vmap <left> h
+vmap <right> l
 
 " Because it is easier, i guess
-imap jj <Esc>
-imap <up><up> <Esc>
+" imap jj <Esc>
+" imap <up><up> <Esc>
 
 " Spelling
 nmap <leader>s :setlocal spell! spelllang=en_us<CR>

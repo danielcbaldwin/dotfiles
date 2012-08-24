@@ -1,6 +1,14 @@
 # shortcut to this dotfiles path
 export DOTFILES=$HOME/.dotfiles
 
+# for brew
+export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
+
+# bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
 # load all the helper files
 for file in $DOTFILES/bash/*.sh
 do
@@ -10,11 +18,11 @@ unset file
 
 unset MAILCHECK
 
-# for brew
-export PATH="/usr/local/bin:$PATH"
-
 # add dotfiles bin
 export PATH="$PATH:$DOTFILES/bin"
 
 # add python scripts bin
 export PATH="$PATH:~/.bin"
+
+# z
+. `brew --prefix`/etc/profile.d/z.sh

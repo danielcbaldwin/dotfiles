@@ -44,6 +44,10 @@ function __parse_git_dirty {
 }
 
 function __parse_git_branch {
+  if [ -f $(brew --prefix 'git')'/share/git-core/contrib/completion/git-prompt.sh' ]
+  then
+    source $(brew --prefix 'git')'/share/git-core/contrib/completion/git-prompt.sh'
+  fi
   echo $(__git_ps1 "%s")
 }
 

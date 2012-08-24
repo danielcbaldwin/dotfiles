@@ -11,8 +11,8 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 alias ls='ls -G'
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -lh'
+alias la='ls -lah'
 alias ldu='du -cks * | sort -rn | head -15' # Lists the size of all the folders
 
 # Enable aliases to be sudo’ed

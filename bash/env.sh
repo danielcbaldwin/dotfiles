@@ -9,5 +9,5 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
 # Make the MySQL Ruby Gem build properly
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+#export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
