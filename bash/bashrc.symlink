@@ -119,3 +119,7 @@ source "$DOTFILES/bash/rvm.sh"
 
 # add dotfiles bin
 export PATH="$PATH:$DOTFILES/bin"
+
+# z
+. $DOTFILES/bash/z/z.sh
+
