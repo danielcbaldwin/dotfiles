@@ -1,6 +1,6 @@
 "set mouse-=a
 if has('mouse')
-  set mouse=a
+"  set mouse=a
 endif
 
 set t_Co=256
