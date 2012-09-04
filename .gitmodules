@@ -55,3 +55,9 @@
 [submodule "vim/vim.symlink/bundle/ctrlp"]
 	path = vim/vim.symlink/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/vim.symlink/bundle/gist-vim"]
+	path = vim/vim.symlink/bundle/gist-vim
+	url = git://github.com/mattn/gist-vim.git
+[submodule "bash/z"]
+	path = bash/z
+	url = https://github.com/rupa/z
