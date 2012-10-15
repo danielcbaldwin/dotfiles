@@ -37,17 +37,16 @@ Bundle 'majutsushi/tagbar'
 
 " ==================== Color ======================
 Bundle 'chriskempson/vim-tomorrow-theme'
-
 Bundle 'vim-scripts/molokai'
-
 Bundle 'danielcbaldwin/Color-Sampler-Pack'
-
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
 " =================================================
 
 " ===================== UI ========================
 Bundle 'Lokaltog/vim-powerline'
   let g:Powerline_cache_enabled = 1
+Bundle 'Rykka/colorv.vim'
 " =================================================
 
 " ================== Commands =====================
@@ -77,4 +76,19 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-endwise'
 
 Bundle 'vim-scripts/ruby-matchit'
+
+" Javascript
+Bundle 'pangloss/vim-javascript'
+Bundle 'leshill/vim-json'
+Bundle 'itspriddle/vim-jquery'
+" Other Languages
+Bundle 'msanders/cocoa.vim'
+Bundle 'mutewinter/taskpaper.vim'
+Bundle 'mutewinter/nginx.vim'
+Bundle 'timcharper/textile.vim'
+Bundle 'mutewinter/vim-css3-syntax'
+Bundle 'acustodioo/vim-tmux'
+Bundle 'hallison/vim-markdown'
+Bundle 'xhtml.vim--Grny'
+Bundle 'groenewege/vim-less'
 " =================================================
