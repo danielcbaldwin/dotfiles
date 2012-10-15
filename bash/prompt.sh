@@ -45,9 +45,9 @@ function __parse_git_dirty {
 
 function __parse_git_branch {
   if [[ `uname` == 'Darwin' ]]; then
-    if [ -f $(brew --prefix 'git')'/share/git-core/contrib/completion/git-prompt.sh' ]
+    if [ -f $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh' ]
     then
-      source $(brew --prefix 'git')'/share/git-core/contrib/completion/git-prompt.sh'
+      source $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh'
     fi
   fi
   echo $(__git_ps1 "%s")
