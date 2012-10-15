@@ -6,7 +6,6 @@ set nocompatible
     runtime bundle/pathogen/autoload/pathogen.vim
     call pathogen#infect()
     call pathogen#helptags()
-  set nocompatible
   syntax on
   filetype plugin indent on
 " =======================================================
