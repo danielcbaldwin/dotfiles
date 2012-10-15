@@ -67,3 +67,8 @@ nmap <leader>r :call NumberToggle()<CR>
 
 " Tagbar key binding
 nnoremap <leader>l :TagbarToggle<CR>
+
+" NerdTree key binding
+noremap <leader>n :NERDTreeToggle<CR>
+inoremap <leader>n <esc>:NERDTreeToggle<CR>
+
