@@ -1,11 +1,8 @@
 set nocompatible
-" =============== Pathogen Initialization ===============
+" ================ Vundle Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
   filetype off
-    runtime bundle/pathogen/autoload/pathogen.vim
-    call pathogen#infect()
-    call pathogen#helptags()
+  source ~/.vim/vundle.vim
   syntax on
   filetype plugin indent on
 " =======================================================

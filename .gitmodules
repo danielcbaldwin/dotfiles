@@ -1,63 +1,9 @@
-[submodule "vim/vim.symlink/bundle/nerdtree"]
-	path = vim/vim.symlink/bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/vim.symlink/bundle/minibufexpl"]
-	path = vim/vim.symlink/bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
-[submodule "vim/vim.symlink/bundle/command-t"]
-	path = vim/vim.symlink/bundle/command-t
-	url = git://git.wincent.com/command-t.git
-[submodule "vim/vim.symlink/bundle/fugitive"]
-	path = vim/vim.symlink/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/vim.symlink/bundle/powerline"]
-	path = vim/vim.symlink/bundle/powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/vim.symlink/bundle/pathogen"]
-	path = vim/vim.symlink/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
 [submodule "zsh/oh-my-zsh.symlink"]
 	path = zsh/oh-my-zsh.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "vim/vim.symlink/bundle/solarized"]
-	path = vim/vim.symlink/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/vim.symlink/bundle/ruby-matchit"]
-	path = vim/vim.symlink/bundle/ruby-matchit
-	url = git://github.com/vim-scripts/ruby-matchit.git
-[submodule "vim/vim.symlink/bundle/commentary"]
-	path = vim/vim.symlink/bundle/commentary
-	url = git://github.com/tpope/vim-commentary.git
-[submodule "vim/vim.symlink/bundle/surround"]
-	path = vim/vim.symlink/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/vim.symlink/bundle/endwise"]
-	path = vim/vim.symlink/bundle/endwise
-	url = git://github.com/tpope/vim-endwise.git
-[submodule "vim/vim.symlink/bundle/tomorrow-theme"]
-	path = vim/vim.symlink/bundle/tomorrow-theme
-	url = git://github.com/chriskempson/vim-tomorrow-theme.git
-[submodule "vim/vim.symlink/bundle/molokai-theme"]
-	path = vim/vim.symlink/bundle/molokai-theme
-	url = git://github.com/vim-scripts/molokai.git
-[submodule "vim/vim.symlink/bundle/color-sampler"]
-	path = vim/vim.symlink/bundle/color-sampler
-	url = git@github.com:danielcbaldwin/Color-Sampler-Pack.git
-[submodule "vim/vim.symlink/bundle/vim-ruby"]
-	path = vim/vim.symlink/bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/vim.symlink/bundle/tagbar"]
-	path = vim/vim.symlink/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
-[submodule "vim/vim.symlink/bundle/supertab"]
-	path = vim/vim.symlink/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
-[submodule "vim/vim.symlink/bundle/ctrlp"]
-	path = vim/vim.symlink/bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/vim.symlink/bundle/gist-vim"]
-	path = vim/vim.symlink/bundle/gist-vim
-	url = git://github.com/mattn/gist-vim.git
 [submodule "bash/z"]
 	path = bash/z
 	url = https://github.com/rupa/z
+[submodule "vim/vim.symlink/bundle/vundle"]
+	path = vim/vim.symlink/bundle/vundle
+	url = git://github.com/gmarik/vundle.git

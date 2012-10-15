@@ -1,5 +1,6 @@
 vim/vim.symlink/tmp/undo/*
 vim/vim.symlink/tmp/swap/*
 vim/vim.symlink/tmp/backup/*
+vim/vim.symlink/bundle/*
 .netrwhist
 git/gitconfig.symlink
