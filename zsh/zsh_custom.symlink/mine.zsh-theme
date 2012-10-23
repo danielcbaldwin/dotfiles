@@ -8,7 +8,7 @@ function __my_rvm_ruby_version {
   [ "$full" != "" ] && echo "$full"
 }
 
-PROMPT='%{$fg[green]%}[%D{%I:%M:%S}]%{$reset_color%} [ %{[38;5;130m%}%~%{$reset_color%}$(git_prompt_info) %{$fg[yellow]%}($(__my_rvm_ruby_version))%{$reset_color%} ] %{$fg[blue]%}$%{$reset_color%} '
+PROMPT='%{$fg[green]%}[%D{%I:%M:%S}]%{$reset_color%} [ %{[38;5;172m%}%~%{$reset_color%}$(git_prompt_info) %{$fg[yellow]%}($(__my_rvm_ruby_version))%{$reset_color%} ] %{$fg[blue]%}$%{$reset_color%} '
 #RPROMPT='[%*]'
 
 # git theming
