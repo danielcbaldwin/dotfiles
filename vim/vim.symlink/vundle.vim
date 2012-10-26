@@ -60,6 +60,7 @@ Bundle 'tpope/vim-commentary'
   autocmd FileType javascript set commentstring=\/\/\ %s
 
 Bundle 'mattn/gist-vim'
+Bundle 'krisajenkins/vim-pipe'
 " =================================================
 
 " ================== Helpers ======================
@@ -91,4 +92,8 @@ Bundle 'acustodioo/vim-tmux'
 Bundle 'hallison/vim-markdown'
 Bundle 'xhtml.vim--Grny'
 Bundle 'groenewege/vim-less'
+" =================================================
+"
+" =================== Others ======================
+Bundle 'davidoc/taskpaper.vim'
 " =================================================
