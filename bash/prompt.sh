@@ -40,7 +40,8 @@ fi
 
 # setup the prompt with git branch
 function __parse_git_dirty {
- [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " *"
+ # [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " *"
+ [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
 }
 
 function __parse_git_branch {
