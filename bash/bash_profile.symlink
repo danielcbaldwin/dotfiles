@@ -24,5 +24,8 @@ export PATH="$PATH:$DOTFILES/bin"
 # add python scripts bin
 export PATH="$PATH:~/.bin"
 
+# add MySQL bin
+export PATH="$PATH:/usr/local/mysql/bin"
+
 # z
 . `brew --prefix`/etc/profile.d/z.sh
