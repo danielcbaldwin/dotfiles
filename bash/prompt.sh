@@ -38,21 +38,46 @@ else
     OFF="\033[m"
 fi
 
-# setup the prompt with git branch
-function __parse_git_dirty {
- # [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " *"
- [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
+
+# get the name of the branch we are on
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "$BASH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$BASH_THEME_GIT_PROMPT_SUFFIX"
 }
 
-function __parse_git_branch {
-  if [[ `uname` == 'Darwin' ]]; then
-    if [ -f $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh' ]
-    then
-      source $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh'
-    fi
-  fi
-  echo $(__git_ps1 "%s")
+
+# Checks if working tree is dirty
+parse_git_dirty() {
+  local SUBMODULE_SYNTAX="--ignore-submodules=dirty"
+  if [[ -n $(git status -s ${SUBMODULE_SYNTAX}  2> /dev/null) ]]; then
+    echo "$BASH_THEME_GIT_PROMPT_DIRTY"
+  else
+    echo "$BASH_THEME_GIT_PROMPT_CLEAN"
+  fi  
 }
+
+# Checks if there are commits ahead from remote
+function git_prompt_ahead() {
+  if $(echo "$(git log origin/$(current_branch)..HEAD 2> /dev/null)" | grep '^commit' &> /dev/null); then
+    echo "$BASH_THEME_GIT_PROMPT_AHEAD"
+  fi  
+}
+
+# setup the prompt with git branch
+# function __parse_git_dirty {
+#  # [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " *"
+#  [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
+# }
+
+# function __parse_git_branch {
+#   if [[ `uname` == 'Darwin' ]]; then
+#     if [ -f $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh' ]
+#     then
+#       source $(brew --prefix 'git')'/etc/bash_completion.d/git-prompt.sh'
+#     fi
+#   fi
+#   echo $(__git_ps1 "%s")
+# }
 
 function __my_rvm_ruby_version {
   local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
@@ -61,11 +86,15 @@ function __my_rvm_ruby_version {
   local full="$version$gemset"
   [ "$full" != "" ] && echo "$full"
 }
-PREAMBLE="\[${GREEN}\][\T]\[${OFF}\]"
-DIRINFO="\[${ORANGE}\]\w\[${OFF}\]"
-GITINFO="\[${GREEN}\]\$([[ -n \$(__parse_git_branch) ]] && echo \"(\")\$(__parse_git_branch)\[${MAGENTA}\]\$([[ -n \$(__parse_git_branch) ]] && echo \"\$(__parse_git_dirty)\")\[${OFF}\]\[${GREEN}\]\$([[ -n \$(__parse_git_branch) ]] && echo \")\")\[${OFF}\]"
-RVMINFO="\[${YELLOW}\](\$(__my_rvm_ruby_version))\[${OFF}\]"
-POSTSCRIPT="\[${BLUE}\]$ \[${OFF}\]"
-PS1="${PREAMBLE} [ ${DIRINFO}${GITINFO} ${RVMINFO} ] ${POSTSCRIPT}"
-export PS1="${PS1}"
-#export PROMPT_COMMAND='PS1=$PS1; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+
+# git theming
+BASH_THEME_GIT_PROMPT_PREFIX="${GREEN}("
+BASH_THEME_GIT_PROMPT_SUFFIX="${GREEN})${OFF}"
+BASH_THEME_GIT_PROMPT_CLEAN=""
+BASH_THEME_GIT_PROMPT_DIRTY="${MAGENTA} *${OFF}"
+
+BASH_TIME_INFO="\[${GREEN}\][\T]\[${OFF}\]"
+BASH_DIR_INFO="\[${ORANGE}\]\w\[${OFF}\]"
+BASH_RVM_INFO="\[${YELLOW}\](\$(__my_rvm_ruby_version))\[${OFF}\]"
+BASH_POSTSCRIPT="\[${BLUE}\]$ \[${OFF}\]"
+export PS1="${BASH_TIME_INFO} [ ${BASH_DIR_INFO}\$(git_prompt_info) ${BASH_RVM_INFO} ] ${BASH_POSTSCRIPT}"
