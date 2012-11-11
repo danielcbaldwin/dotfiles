@@ -2,7 +2,7 @@
 	path = zsh/oh-my-zsh.symlink
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "bash/z"]
-	path = bash/z
+	path = bash/bin/z
 	url = https://github.com/rupa/z
 [submodule "vim/vim.symlink/bundle/vundle"]
 	path = vim/vim.symlink/bundle/vundle
