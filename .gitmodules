@@ -4,3 +4,6 @@
 [submodule "vim/vim.symlink/bundle/vundle"]
 	path = vim/vim.symlink/bundle/vundle
 	url = git://github.com/gmarik/vundle.git
+[submodule "bash/bin/z"]
+	path = bash/bin/z
+	url = https://github.com/rupa/z
