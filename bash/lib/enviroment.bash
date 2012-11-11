@@ -1,8 +1,6 @@
-export EDITOR='vim'
+#!/usr/bin/env bash
 
-# Colors
-declare -x CLICOLOR=1
-declare -x LSCOLORS=gxfxcxdxbxegedabagacad
+export EDITOR='vim'
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"

@@ -1,25 +1,10 @@
 # shortcut to this dotfiles path
 export DOTFILES=$HOME/.dotfiles
 
-# for brew
-export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
-
-# bash completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
-
-# load all the helper files
-for file in $DOTFILES/bash/*.sh
-do
-  [ -r "$file" ] && source "$file"
-done
-unset file
-
 unset MAILCHECK
 
-# add dotfiles bin
-export PATH="$PATH:$DOTFILES/bin"
+# for brew
+export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 
 # add python scripts bin
 export PATH="$PATH:~/.bin"
@@ -27,5 +12,6 @@ export PATH="$PATH:~/.bin"
 # add MySQL bin
 export PATH="$PATH:/usr/local/mysql/bin"
 
-# z
-. `brew --prefix`/etc/profile.d/z.sh
+export BASH_THEME="daniel"
+
+source $DOTFILES/bash/setup.sh
