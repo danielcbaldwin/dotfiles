@@ -181,11 +181,8 @@ function echo_color {
   echo "$(__color_parse make_echo $@)"
 }
 
-echo $TERM
-
 if [[ "$(tput colors 2> /dev/null)" = "256" ]];
 then
-  echo "256 colors"
   black="$(tput setaf 0)"
   red="$(tput setaf 1)"
   green="$(tput setaf 2)"
@@ -211,7 +208,6 @@ then
   normal="$(tput sgr0)"
   reset_color="$(tput sgr0)"
 else
-  echo "not 256 colors"
   black="$(color reset black)"
   red="$(color reset red)"
   green="$(color reset green)"
