@@ -181,33 +181,30 @@ function echo_color {
   echo "$(__color_parse make_echo $@)"
 }
 
-if [[ "$(tput colors 2> /dev/null)" = "256" ]];
-then
-  black="$(tput setaf 0)"
-  red="$(tput setaf 1)"
-  green="$(tput setaf 2)"
-  yellow="$(tput setaf 3)"
-  blue="$(tput setaf 4)"
-  purple="$(tput setaf 5)"
-  cyan="$(tput setaf 6)"
-  white="$(tput setaf 256)"
-  orange="$(tput setaf 172)"
+# if [[ "$(tput colors 2> /dev/null)" = "256" ]];
+# then
+#   black="$(tput setaf 0)"
+#   red="$(tput setaf 1)"
+#   green="$(tput setaf 2)"
+#   yellow="$(tput setaf 3)"
+#   blue="$(tput setaf 4)"
+#   purple="$(tput setaf 5)"
+#   cyan="$(tput setaf 6)"
+#   white="$(tput setaf 256)"
+#   orange="$(tput setaf 172)"
   
-  bold="$(tput bold)"
+#   bold="$(tput bold)"
 
-  bold_black="$bold$black"
-  bold_red="$bold$red"
-  bold_green="$bold$green"
-  bold_yellow="$bold$yellow"
-  bold_blue="$bold$blue"
-  bold_purple="$bold$purple"
-  bold_cyan="$bold$cyan"
-  bold_white="$bold$white"
-  bold_orange="$bold$orange"
-
-  normal="$(tput sgr0)"
-  reset_color="$(tput sgr0)"
-else
+#   bold_black="$bold$black"
+#   bold_red="$bold$red"
+#   bold_green="$bold$green"
+#   bold_yellow="$bold$yellow"
+#   bold_blue="$bold$blue"
+#   bold_purple="$bold$purple"
+#   bold_cyan="$bold$cyan"
+#   bold_white="$bold$white"
+#   bold_orange="$bold$orange"
+# else
   black="$(color reset black)"
   red="$(color reset red)"
   green="$(color reset green)"
@@ -248,9 +245,10 @@ else
   background_white="$(color white bg bold)"
   background_orange="$(color red bg bright)"
 
-  normal="$(color reset)"
-  reset_color="$(__make_ansi '' 39)"
-fi
+# fi
+
+normal="$(color reset)"
+reset_color="$(__make_ansi '' 39)"
 
 # These colors are meant to be used with `echo -e`
 echo_black="$(echo_color reset black)"
