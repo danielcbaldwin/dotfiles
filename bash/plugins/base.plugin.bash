@@ -150,6 +150,11 @@ command_exists ()
     type "$1" &> /dev/null ;
 }
 
+parse_url_json()
+{
+  curl -s "$@" | python -mjson.tool
+}
+
 # useful for administrators and configs
 buf ()
 {
