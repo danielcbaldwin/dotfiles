@@ -39,6 +39,7 @@ if [[ $PROMPT ]]; then
 fi
 
 if which toilet >/dev/null 2>&1; then
-  tput setaf 1 && toilet -f future Welcome to `uname -n`
+  echo ""
+  tput setaf 1 && toilet -f future `uname -n`
   echo ""
 fi
