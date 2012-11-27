@@ -38,8 +38,8 @@ if [[ $PROMPT ]]; then
     export PS1=$PROMPT
 fi
 
-if which toilet >/dev/null 2>&1; then
-  echo ""
-  tput setaf 1 && toilet -f future `uname -n`
-  echo ""
-fi
+# if which toilet >/dev/null 2>&1; then
+#   echo ""
+#   tput setaf 1 && toilet -f future `uname -n`
+#   echo ""
+# fi
