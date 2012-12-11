@@ -46,7 +46,6 @@ Bundle 'nanotech/jellybeans.vim'
 " ===================== UI ========================
 Bundle 'Lokaltog/vim-powerline'
   let g:Powerline_cache_enabled = 1
-Bundle 'Rykka/colorv.vim'
 " =================================================
 
 " ================== Commands =====================
@@ -58,14 +57,9 @@ Bundle 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
   autocmd FileType javascript set commentstring=\/\/\ %s
-
-Bundle 'mattn/gist-vim'
-Bundle 'krisajenkins/vim-pipe'
 " =================================================
 
 " ================== Helpers ======================
-Bundle 'tpope/vim-endwise'
-
 Bundle 'ervandew/supertab'
 " =================================================
 
@@ -90,8 +84,9 @@ Bundle 'timcharper/textile.vim'
 Bundle 'mutewinter/vim-css3-syntax'
 Bundle 'acustodioo/vim-tmux'
 Bundle 'hallison/vim-markdown'
-Bundle 'xhtml.vim--Grny'
+Bundle 'vim-scripts/xhtml.vim--Grny'
 Bundle 'groenewege/vim-less'
+Bundle 'othree/html5-syntax.vim'
 " =================================================
 "
 " =================== Others ======================
