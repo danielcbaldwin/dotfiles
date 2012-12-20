@@ -26,6 +26,8 @@ Bundle 'scrooloose/nerdtree'
   let g:NERDTreeMouseMode = 2
 
 Bundle 'fholgado/minibufexpl.vim'
+  " let g:miniBufExplMapWindowNavVim = 1
+  " let g:miniBufExplMapWindowNavArrows = 1
 
 Bundle 'kien/ctrlp.vim'
 

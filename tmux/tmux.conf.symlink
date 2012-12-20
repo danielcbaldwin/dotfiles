@@ -3,7 +3,12 @@ unbind-key C-b
 
 set -g default-terminal "screen-256color"
 
+set-window-option -g xterm-keys on
+
+bind-key a send-prefix
+
 setw -g mode-keys vi
+
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -20,12 +25,12 @@ bind -r J resize-pane -D 2
 bind -r H resize-pane -L 2
 bind -r L resize-pane -R 2
 
-set-option -g mouse-select-pane on
-set-option -g mouse-select-window on
-set-window-option -g mode-mouse on
+bind C-h swapp -U
+bind C-j swapp -D
+bind C-k swapp -U
+bind C-l swapp -D
 
-# Enable mouse support (works in iTerm)
-set-window-option -g mode-mouse on
-set-option -g mouse-select-pane on
-set-option -g mouse-resize-pane on
-set-option -g mouse-select-window on
+
+# add maximizing
+# bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
+bind m run "~/.dotfiles/tmux/maximize.sh"
