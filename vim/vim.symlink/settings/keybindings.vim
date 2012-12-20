@@ -29,6 +29,16 @@ nmap Y y$
 " select xml text to format and hit ,x
 vmap ,x :!tidy -q -i -xml<CR>
 
+" Fix for TMUX
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+map <Esc>[B <Down>
+
 " So we can use the arrow keys but still act like regular vim
 imap <up> <nop>
 imap <down> <nop>
