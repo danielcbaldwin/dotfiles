@@ -7,6 +7,3 @@
 [submodule "bash/bin/z"]
 	path = bash/bin/z
 	url = https://github.com/rupa/z
-[submodule "tmux/plugins/powerline"]
-	path = tmux/plugins/powerline
-	url = git://github.com/erikw/tmux-powerline.git
