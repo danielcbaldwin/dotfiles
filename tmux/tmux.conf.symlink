@@ -1,13 +1,22 @@
+# This makes pbcopy/pbpaste work in tmux 
+# set-option -g default-command "reattach-to-user-namespace -l bash" OSX Only?
+
 set-option -g prefix C-a
 unbind-key C-b
+bind-key a send-prefix
 
 set -g default-terminal "screen-256color"
 
 set-window-option -g xterm-keys on
-
-bind-key a send-prefix
-
 setw -g mode-keys vi
+setw -g monitor-activity on
+set -g status-keys vi
+set -g history-limit 10000
+
+setw -g window-status-current-bg red
+
+set-option -g mouse-select-pane on
+set-window-option -g mode-mouse on
 
 bind h select-pane -L
 bind j select-pane -D
@@ -30,6 +39,15 @@ bind C-j swapp -D
 bind C-k swapp -U
 bind C-l swapp -D
 
+# Shift arrow to switch windows
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+# No delay for escape key press
+set -sg escape-time 0
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf
 
 # add maximizing
 # bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
@@ -52,10 +70,9 @@ set-option -g status on
 set-option -g status-interval 2
 set-option -g status-utf8 on
 
-
 set-option -g visual-bell off
-set-option -g visual-content on
-set-option -g visual-activity on
+# set-option -g visual-content on
+# set-option -g visual-activity on
 set-option -g message-attr "bold"
 set-option -g message-bg "default"
 set-option -g pane-active-border-fg colour33
@@ -65,6 +82,3 @@ set-window-option -g clock-mode-style 12
 set-window-option -g allow-rename
 set-window-option -g automatic-rename on
 set-window-option -g window-status-current-format "[#I:#W#F]"
-
-set-option -g mouse-select-pane on
-set-window-option -g mode-mouse on
