@@ -7,6 +7,8 @@ bind-key a send-prefix
 
 set -g default-terminal "screen-256color"
 
+setw -g aggressive-resize on
+
 set-window-option -g xterm-keys on
 setw -g mode-keys vi
 setw -g monitor-activity on
