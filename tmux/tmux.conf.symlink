@@ -17,9 +17,6 @@ set -g history-limit 10000
 
 setw -g window-status-current-bg red
 
-set-option -g mouse-select-pane on
-set-window-option -g mode-mouse on
-
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -67,10 +64,6 @@ set-option -g status-right "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh ri
 set -g status-bg colour235
 set -g status-fg colour255
 set-option -g status-attr default
-
-set-option -g status on
-set-option -g status-interval 2
-set-option -g status-utf8 on
 
 set-option -g visual-bell off
 # set-option -g visual-content on

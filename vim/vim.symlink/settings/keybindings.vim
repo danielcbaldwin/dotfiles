@@ -44,12 +44,12 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-nmap <up> k
-nmap <down> j
+nmap <up> gk
+nmap <down> gj
 nmap <left> h
 nmap <right> l
-vmap <up> k
-vmap <down> j
+vmap <up> gk
+vmap <down> gj
 vmap <left> h
 vmap <right> l
 
