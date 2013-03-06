@@ -37,6 +37,10 @@ Bundle 'majutsushi/tagbar'
   let g:tagbar_autofocus = 1
 " =================================================
 
+" ================== Debugging ====================
+Bundle 'scrooloose/syntastic'
+" =================================================
+
 " ==================== Color ======================
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'vim-scripts/molokai'
@@ -64,6 +68,7 @@ Bundle 'tpope/vim-commentary'
 
 " ================== Helpers ======================
 Bundle 'ervandew/supertab'
+Bundle 'airblade/vim-gitgutter'
 " =================================================
 
 " ============= Language Additions ================
