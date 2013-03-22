@@ -25,7 +25,7 @@ Bundle 'scrooloose/nerdtree'
   let NERDTreeDirArrows = 1
   let g:NERDTreeMouseMode = 2
 
-Bundle 'fholgado/minibufexpl.vim'
+" Bundle 'fholgado/minibufexpl.vim'
   " let g:miniBufExplMapWindowNavVim = 1
   " let g:miniBufExplMapWindowNavArrows = 1
 
@@ -38,14 +38,14 @@ Bundle 'majutsushi/tagbar'
 " =================================================
 
 " ================== Debugging ====================
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 " =================================================
 
 " ==================== Color ======================
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'vim-scripts/molokai'
-Bundle 'danielcbaldwin/Color-Sampler-Pack'
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'danielcbaldwin/Color-Sampler-Pack'
+" Bundle 'altercation/vim-colors-solarized'
 Bundle 'nanotech/jellybeans.vim'
 " =================================================
 
@@ -67,8 +67,8 @@ Bundle 'tpope/vim-commentary'
 " =================================================
 
 " ================== Helpers ======================
-Bundle 'ervandew/supertab'
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'ervandew/supertab'
+" Bundle 'airblade/vim-gitgutter'
 " =================================================
 
 " ============= Language Additions ================
@@ -100,3 +100,5 @@ Bundle 'othree/html5-syntax.vim'
 " =================== Others ======================
 Bundle 'davidoc/taskpaper.vim'
 " =================================================
+
+filetype plugin indent on
