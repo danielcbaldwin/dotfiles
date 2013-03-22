@@ -31,8 +31,5 @@ function reload_plugins() {
 
 _is_function ()
 {
-    _about 'sets $? to true if parameter is the name of a function'
-    _param '1: name of alleged function'
-    _group 'lib'
     [ -n "$(type -a $1 2>/dev/null | grep 'is a function')" ]
 }
