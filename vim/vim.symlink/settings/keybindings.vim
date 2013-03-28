@@ -82,3 +82,5 @@ nnoremap <leader>l :TagbarToggle<CR>
 noremap <leader>n :NERDTreeToggle<CR>
 inoremap <leader>n <esc>:NERDTreeToggle<CR>
 
+" ctrl+p Key Bindings
+map <C-b> :CtrlPBuffer<CR>
