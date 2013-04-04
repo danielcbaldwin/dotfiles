@@ -11,7 +11,7 @@ fi
 export TERM=xterm-256color
 
 # add dotfiles bin
-export PATH="$PATH:$DOTFILES/bin"
+export PATH="$PATH:/usr/local/share/npm/bin:$DOTFILES/bin"
 
 [ -d $HOME/.rvm ] || PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
