@@ -7,11 +7,11 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Toggle search highlights
-" http://vimbits.com/bits/52
-noremap <space> :set hlsearch! hlsearch?<CR>
+" http://www.vimbits.com/bits/21
+noremap <silent><Leader>/ :nohls<CR>
 
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+nnoremap <Leader>v :set invpaste paste?<CR>
+set pastetoggle=<Leader>v
 
 " Disable paste mode when leaving Insert Mode
 " http://www.vimbits.com/bits/170
@@ -27,7 +27,7 @@ nmap Y y$
 
 " HTML Tidy, http://tidy.sourceforge.net/
 " select xml text to format and hit ,x
-vmap ,x :!tidy -q -i -xml<CR>
+vmap <Leader>x :!tidy -q -i -xml<CR>
 
 " Fix for TMUX
 if &term =~ '^screen'
@@ -52,10 +52,6 @@ vmap <up> gk
 vmap <down> gj
 vmap <left> h
 vmap <right> l
-
-" Because it is easier, i guess
-" imap jj <Esc>
-" imap <up><up> <Esc>
 
 " Spelling
 nmap <leader>s :setlocal spell! spelllang=en_us<CR>
