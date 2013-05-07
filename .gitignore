@@ -1,3 +1,4 @@
+.DS_Store
 vim/vim.symlink/tmp/undo/*
 vim/vim.symlink/tmp/swap/*
 vim/vim.symlink/tmp/backup/*
