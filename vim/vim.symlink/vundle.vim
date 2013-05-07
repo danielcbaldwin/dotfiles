@@ -40,7 +40,6 @@ Bundle 'majutsushi/tagbar'
 " ================== Debugging ====================
 " Bundle 'scrooloose/syntastic'
 " =================================================
-
 " ==================== Color ======================
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'vim-scripts/molokai'
@@ -92,7 +91,6 @@ Bundle 'timcharper/textile.vim'
 Bundle 'mutewinter/vim-css3-syntax'
 Bundle 'acustodioo/vim-tmux'
 Bundle 'hallison/vim-markdown'
-Bundle 'vim-scripts/xhtml.vim--Grny'
 Bundle 'groenewege/vim-less'
 Bundle 'othree/html5-syntax.vim'
 " =================================================

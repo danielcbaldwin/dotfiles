@@ -15,8 +15,6 @@ setw -g monitor-activity on
 set -g status-keys vi
 set -g history-limit 10000
 
-setw -g window-status-current-bg red
-
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
@@ -52,28 +50,56 @@ bind r source-file ~/.tmux.conf
 # bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
 bind m run "~/.dotfiles/tmux/maximize.sh"
 
-set-option -g status on
-set-option -g status-interval 2
-set-option -g status-utf8 on
-set-option -g status-justify "centre"
-set-option -g status-left-length 60
-set-option -g status-right-length 90
-set-option -g status-left "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh left)"
-set-option -g status-right "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh right)"
+#  set-option -g status on
+#  set-option -g status-interval 2
+#  set-option -g status-utf8 on
+#  set-option -g status-justify "centre"
+#  set-option -g status-left-length 60
+#  set-option -g status-right-length 90
+#  set-option -g status-left "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh left)"
+#  set-option -g status-right "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh right)"
 
-set -g status-bg colour235
-set -g status-fg colour255
-set-option -g status-attr default
+# set -g status-bg colour235
+# set -g status-fg colour255
+# set-option -g status-attr default
 
-set-option -g visual-bell off
+# set-option -g visual-bell off
 # set-option -g visual-content on
 # set-option -g visual-activity on
-set-option -g message-attr "bold"
-set-option -g message-bg "default"
-set-option -g pane-active-border-fg colour33
-set-option set-titles off
+# set-option -g message-attr "bold"
+# set-option -g message-bg "default"
+# set-option -g pane-active-border-fg colour33
+# set-option set-titles off
 
-set-window-option -g clock-mode-style 12
-set-window-option -g allow-rename
-set-window-option -g automatic-rename on
-set-window-option -g window-status-current-format "[#I:#W#F]"
+# set-window-option -g clock-mode-style 12
+# set-window-option -g allow-rename
+# set-window-option -g automatic-rename on
+# set-window-option -g window-status-current-format "[#I:#W#F]"
+
+# _ Handy options {{{
+
+# Start numbering windows at 1
+set -g base-index 1
+
+set -g history-limit 10000
+
+# }}}
+
+set-option -g   status-utf8 on
+
+set -g status-left-length 32
+set -g status-right-length 150
+
+set -g status-fg white
+set -g status-bg colour234
+set -g window-status-activity-attr bold
+set -g pane-border-fg colour245
+set -g pane-active-border-fg colour39
+set -g message-fg colour16
+set -g message-bg colour221
+set -g message-attr bold
+
+set -g status-left '#[fg=colour235,bg=colour252,bold] ❐ #S #[fg=colour252,bg=colour238,nobold]⮀#[fg=colour245,bg=colour238,bold] #(whoami) #[fg=colour238,bg=colour234,nobold]⮀'
+set -g window-status-format "#[fg=white,bg=colour234] #I #W "
+set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour25,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
+set -g status-right '#[fg=color39] #H'
