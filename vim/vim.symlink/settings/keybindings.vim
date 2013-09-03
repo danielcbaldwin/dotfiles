@@ -6,9 +6,11 @@ let maplocalleader = ";"
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap <leader>ft Vatzf
+
 " Toggle search highlights
 " http://www.vimbits.com/bits/21
-noremap <silent><Leader>/ :nohls<CR>
+noremap <silent><Leader><space> :nohls<CR>
 
 nnoremap <Leader>v :set invpaste paste?<CR>
 set pastetoggle=<Leader>v
@@ -24,10 +26,6 @@ nmap T O<ESC>j
 
 " Make Y behave like other capitals
 nmap Y y$
-
-" HTML Tidy, http://tidy.sourceforge.net/
-" select xml text to format and hit ,x
-vmap <Leader>x :!tidy -q -i -xml<CR>
 
 " Fix for TMUX
 if &term =~ '^screen'
@@ -58,18 +56,9 @@ nmap <leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Set list Chars - for showing characters that are not
 " normally displayed i.e. whitespace, tabs, EOL
-nmap <silent><leader>l :set list!<CR>
+nmap <silent><leader>ll :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
-
-" Relative Line Number Toggle
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-nmap <leader>r :call NumberToggle()<CR>
+set list
 
 " Tagbar key binding
 nnoremap <leader>l :TagbarToggle<CR>
