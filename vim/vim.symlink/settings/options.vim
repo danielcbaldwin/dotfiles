@@ -10,14 +10,14 @@ colorscheme Tomorrow-Night
 "set clipboard=unnamed
 
 set nostartofline
-
-set history=1000            " Store a ton of history
+set hidden
 
 set number
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 set ignorecase             " ignore case when searching
+set smartcase
 
 set autoread                " Update open files when changed externally
 set laststatus=2
@@ -32,7 +32,7 @@ set ttyfast
 
 set scrolloff=3         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
-set sidescroll=1
+set sidescroll=3
 
 " ===================================================
 

@@ -68,6 +68,7 @@ Bundle 'tpope/vim-commentary'
 " ================== Helpers ======================
 " Bundle 'ervandew/supertab'
 " Bundle 'airblade/vim-gitgutter'
+"  Bundle 'rstacruz/sparkup'
 " =================================================
 
 " ============= Language Additions ================
@@ -92,7 +93,8 @@ Bundle 'mutewinter/vim-css3-syntax'
 Bundle 'acustodioo/vim-tmux'
 Bundle 'hallison/vim-markdown'
 Bundle 'groenewege/vim-less'
-Bundle 'othree/html5-syntax.vim'
+" Bundle 'othree/html5-syntax.vim'
+Bundle 'othree/html5.vim'
 " =================================================
 "
 " =================== Others ======================

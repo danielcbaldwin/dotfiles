@@ -6,14 +6,19 @@ let maplocalleader = ";"
 vnoremap < <gv
 vnoremap > >gv
 
+nnoremap ; :
+
 nnoremap <leader>ft Vatzf
+
+" open a split window and change selection to it
+nnoremap <leader>w <C-w>v<C-w>l
 
 " Toggle search highlights
 " http://www.vimbits.com/bits/21
 noremap <silent><Leader><space> :nohls<CR>
 
-nnoremap <Leader>v :set invpaste paste?<CR>
-set pastetoggle=<Leader>v
+nnoremap <Leader>p :set invpaste paste?<CR>
+set pastetoggle=<Leader>p
 
 " Disable paste mode when leaving Insert Mode
 " http://www.vimbits.com/bits/170
@@ -69,3 +74,8 @@ inoremap <leader>n <esc>:NERDTreeToggle<CR>
 
 " ctrl+p Key Bindings
 map <C-b> :CtrlPBuffer<CR>
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
