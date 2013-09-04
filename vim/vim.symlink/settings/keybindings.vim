@@ -6,6 +6,10 @@ let maplocalleader = ";"
 vnoremap < <gv
 vnoremap > >gv
 
+" select all
+map <Leader>a ggVG
+
+" use semicolon as a replacement for colon for easy saves
 nnoremap ; :
 
 nnoremap <leader>ft Vatzf
@@ -75,6 +79,7 @@ inoremap <leader>n <esc>:NERDTreeToggle<CR>
 " ctrl+p Key Bindings
 map <C-b> :CtrlPBuffer<CR>
 
+" Other save options incase, because i always mess up
 :command WQ wq
 :command Wq wq
 :command W w
