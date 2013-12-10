@@ -28,6 +28,10 @@ set pastetoggle=<Leader>p
 " http://www.vimbits.com/bits/170
 au InsertLeave * set nopaste
 
+" http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+" autocmd InsertEnter * :set number
+" autocmd InsertLeave * :set relativenumber
+
 " Insert blank lines without going into insert mode
 " http://www.vimbits.com/bits/176
 nmap t o<ESC>k

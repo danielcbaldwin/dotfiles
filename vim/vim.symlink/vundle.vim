@@ -99,6 +99,7 @@ Bundle 'othree/html5.vim'
 "
 " =================== Others ======================
 Bundle 'davidoc/taskpaper.vim'
+Bundle 'mbbill/VimExplorer'
 " =================================================
 
 filetype plugin indent on

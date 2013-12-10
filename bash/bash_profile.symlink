@@ -19,3 +19,5 @@ source $DOTFILES/bash/setup.sh
 export PATH=/usr/local/bin/Sencha/Cmd/3.0.2.288:$PATH
 
 export SENCHA_CMD_3_0_0="/usr/local/bin/Sencha/Cmd/3.0.2.288"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
