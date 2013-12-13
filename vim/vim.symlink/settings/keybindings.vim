@@ -1,5 +1,4 @@
 let mapleader = ","
-let maplocalleader = ";"
 
 " Reselect visual block after indent/outdent
 " http://www.vimbits.com/bits/20
@@ -7,22 +6,17 @@ vnoremap < <gv
 vnoremap > >gv
 
 " select all
-map <Leader>a ggVG
-
-" use semicolon as a replacement for colon for easy saves
-nnoremap ; :
-
-nnoremap <leader>ft Vatzf
+nnoremap <Leader>a ggVG
 
 " open a split window and change selection to it
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Toggle search highlights
 " http://www.vimbits.com/bits/21
-noremap <silent><Leader><space> :nohls<CR>
+nnoremap <silent><Leader><space> :nohls<CR>
 
-nnoremap <Leader>p :set invpaste paste?<CR>
-set pastetoggle=<Leader>p
+nnoremap <Leader>pp :set invpaste paste?<CR>
+set pastetoggle=<Leader>pp
 
 " Disable paste mode when leaving Insert Mode
 " http://www.vimbits.com/bits/170
@@ -77,11 +71,10 @@ set list
 nnoremap <leader>l :TagbarToggle<CR>
 
 " NerdTree key binding
-noremap <leader>n :NERDTreeToggle<CR>
-inoremap <leader>n <esc>:NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " ctrl+p Key Bindings
-map <C-b> :CtrlPBuffer<CR>
+nmap <C-b> :CtrlPBuffer<CR>
 
 " Other save options incase, because i always mess up
 :command WQ wq
