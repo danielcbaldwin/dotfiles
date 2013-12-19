@@ -60,3 +60,6 @@ set vb t_vb= " Turn off the bell, this could be more annoying, but I'm not sure 
 
 " More sane colors of matching brackets and parens
 " highlight MatchParen cterm=bold ctermbg=bg ctermfg=Red
+
+set list
+set listchars=tab:>.,trail:.,nbsp:.

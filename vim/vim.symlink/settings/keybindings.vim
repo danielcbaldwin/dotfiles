@@ -64,8 +64,6 @@ nmap <leader>s :setlocal spell! spelllang=en_us<CR>
 " Set list Chars - for showing characters that are not
 " normally displayed i.e. whitespace, tabs, EOL
 nmap <silent><leader>ll :set list!<CR>
-set listchars=tab:▸\ ,eol:¬
-set list
 
 " Tagbar key binding
 nnoremap <leader>l :TagbarToggle<CR>
