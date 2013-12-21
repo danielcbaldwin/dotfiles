@@ -49,9 +49,23 @@ Bundle 'nanotech/jellybeans.vim'
 " =================================================
 
 " ===================== UI ========================
-Bundle 'Lokaltog/vim-powerline'
-  let g:Powerline_cache_enabled = 1
-  let g:Powerline_symbols = 'fancy'
+" Bundle 'Lokaltog/vim-powerline'
+"   let g:Powerline_cache_enabled = 1
+"   let g:Powerline_symbols = 'fancy'
+Bundle 'bling/vim-airline'
+let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline#extensions#whitespace#enabled = 0
+
+" vim-powerline symbols
+let g:airline_left_sep          = '⮀'
+let g:airline_left_alt_sep      = '⮁'
+let g:airline_right_sep         = '⮂'
+let g:airline_right_alt_sep     = '⮃'
+let g:airline_branch_prefix     = '⭠'
+let g:airline_readonly_symbol   = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
 " =================================================
 
 " ================== Commands =====================
