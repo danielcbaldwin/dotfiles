@@ -73,6 +73,9 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 
 " ctrl+p Key Bindings
 nmap <C-b> :CtrlPBuffer<CR>
+nnoremap <C-l> :CtrlPFunky<CR>
+" narrow the list down with a word under cursor
+" nnoremap <Leader>L :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 " Other save options incase, because i always mess up
 :command WQ wq

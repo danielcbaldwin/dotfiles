@@ -20,16 +20,18 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-bind | split-window -h
+bind % split-window -h
+bind : split-window -v
+bind < resize-pane -L 1
+bind > resize-pane -R 1
+bind - resize-pane -D 1
+bind + resize-pane -U 1
+
+bind a last-window
 
 bind tab select-pane -t :.+
 
 bind m break-pane
-
-bind -r K resize-pane -U 2
-bind -r J resize-pane -D 2
-bind -r H resize-pane -L 2
-bind -r L resize-pane -R 2
 
 bind C-h swapp -U
 bind C-j swapp -D
@@ -46,35 +48,14 @@ set -sg escape-time 0
 # Reload tmux config
 bind r source-file ~/.tmux.conf
 
+bind w killp
+bind q kill-server
+bind k confirm kill-window
+bind K confirm kill-server
+
 # add maximizing
 # bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
 bind m run "~/.dotfiles/tmux/maximize.sh"
-
-#  set-option -g status on
-#  set-option -g status-interval 2
-#  set-option -g status-utf8 on
-#  set-option -g status-justify "centre"
-#  set-option -g status-left-length 60
-#  set-option -g status-right-length 90
-#  set-option -g status-left "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh left)"
-#  set-option -g status-right "#(~/.dotfiles/tmux/plugins/powerline/powerline.sh right)"
-
-# set -g status-bg colour235
-# set -g status-fg colour255
-# set-option -g status-attr default
-
-# set-option -g visual-bell off
-# set-option -g visual-content on
-# set-option -g visual-activity on
-# set-option -g message-attr "bold"
-# set-option -g message-bg "default"
-# set-option -g pane-active-border-fg colour33
-# set-option set-titles off
-
-# set-window-option -g clock-mode-style 12
-# set-window-option -g allow-rename
-# set-window-option -g automatic-rename on
-# set-window-option -g window-status-current-format "[#I:#W#F]"
 
 # _ Handy options {{{
 
