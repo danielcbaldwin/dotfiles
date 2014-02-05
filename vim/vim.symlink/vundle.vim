@@ -35,6 +35,8 @@ let g:ctrlp_extensions = ['funky']
 Bundle 'tacahiroy/ctrlp-funky'
 
 Bundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
 
 Bundle 'majutsushi/tagbar'
   let g:tagbar_compact = 1

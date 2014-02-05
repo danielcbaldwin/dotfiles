@@ -28,8 +28,8 @@ au InsertLeave * set nopaste
 
 " Insert blank lines without going into insert mode
 " http://www.vimbits.com/bits/176
-nmap t o<ESC>k
-nmap T O<ESC>j
+" nmap t o<ESC>k
+" nmap T O<ESC>j
 
 " Make Y behave like other capitals
 nmap Y y$
@@ -75,7 +75,22 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nmap <C-b> :CtrlPBuffer<CR>
 nnoremap <C-l> :CtrlPFunky<CR>
 " narrow the list down with a word under cursor
-" nnoremap <Leader>L :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <C-l>n :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+" Easymotion
+nmap s <Plug>(easymotion-s)
+nmap S <Plug>(easymotion-s2)
+map f <Plug>(easymotion-f)
+map F <Plug>(easymotion-F)
+nmap <Leader>J <Plug>(easymotion-eol-j)
+nmap <Leader>K <Plug>(easymotion-eol-k)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+nmap t <Plug>(easymotion-t)
+nmap T <Plug>(easymotion-t2)
+omap t <Plug>(easymotion-bd-tl)
 
 " Other save options incase, because i always mess up
 :command WQ wq
