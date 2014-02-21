@@ -1,5 +1,5 @@
 # This makes pbcopy/pbpaste work in tmux 
-# set-option -g default-command "reattach-to-user-namespace -l bash" OSX Only?
+set-option -g default-command "reattach-to-user-namespace -l bash"
 
 set-option -g prefix C-a
 unbind-key C-b
@@ -26,6 +26,11 @@ bind < resize-pane -L 1
 bind > resize-pane -R 1
 bind - resize-pane -D 1
 bind + resize-pane -U 1
+
+unbind +
+bind + new-window -d -n tmux-zoom 'clear && echo TMUX ZOOM && read' \; swap-pane -s tmux-zoom.0 \; select-window -t tmux-zoom
+unbind -
+bind - last-window \; swap-pane -s tmux-zoom.0 \; kill-window -t tmux-zoom
 
 bind a last-window
 

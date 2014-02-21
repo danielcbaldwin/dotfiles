@@ -1,3 +1,12 @@
+let bundles_installed=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let bundles_installed=0
+endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -122,5 +131,9 @@ Bundle 'othree/html5.vim'
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'mbbill/VimExplorer'
 " =================================================
-
+if bundles_installed == 0
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :BundleInstall
+endif
 filetype plugin indent on
