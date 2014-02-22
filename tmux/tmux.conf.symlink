@@ -1,5 +1,6 @@
 # This makes pbcopy/pbpaste work in tmux 
-set-option -g default-command "reattach-to-user-namespace -l bash"
+
+if-shell 'test "$(uname -s)" = "Darwin"' 'set-option -g default-command "reattach-to-user-namespace -l bash"'
 
 set-option -g prefix C-a
 unbind-key C-b
@@ -59,8 +60,7 @@ bind k confirm kill-window
 bind K confirm kill-server
 
 # add maximizing
-# bind m run "if [[ $(tmux list-window) =~ tmux-zoom ]]; then tmux last-window; tmux swap-pane -s tmux-zoom.0; tmux kill-window -t tmux-zoom; else tmux new-window -d -n tmux-zoom; tmux swap-pane -s tmux-zoom.0; tmux select-window -t tmux-zoom;fi"
-bind m run "~/.dotfiles/tmux/maximize.sh"
+bind m run "~/.tmux/maximize.sh"
 
 # _ Handy options {{{
 
