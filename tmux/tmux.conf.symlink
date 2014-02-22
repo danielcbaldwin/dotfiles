@@ -1,11 +1,14 @@
+set -g default-terminal "screen-256color"
+
 # This makes pbcopy/pbpaste work in tmux 
-if-shell 'test "$(uname -s)" = "Darwin"' 'set-option -g default-command "reattach-to-user-namespace -l bash"'
+set-option -g default-command "which reattach-to-user-namespace >/dev/null && reattach-to-user-namespace -l bash || bash"
 
 set-option -g prefix C-a
 unbind-key C-b
 bind-key a send-prefix
 
-set -g default-terminal "screen-256color"
+# Start numbering windows at 1
+set -g base-index 1
 
 setw -g aggressive-resize on
 
@@ -13,7 +16,7 @@ set-window-option -g xterm-keys on
 setw -g mode-keys vi
 setw -g monitor-activity on
 set -g status-keys vi
-set -g history-limit 10000
+set -g history-limit 100000
 
 bind h select-pane -L
 bind j select-pane -D
@@ -27,16 +30,7 @@ bind > resize-pane -R 1
 bind - resize-pane -D 1
 bind + resize-pane -U 1
 
-unbind +
-bind + new-window -d -n tmux-zoom 'clear && echo TMUX ZOOM && read' \; swap-pane -s tmux-zoom.0 \; select-window -t tmux-zoom
-unbind -
-bind - last-window \; swap-pane -s tmux-zoom.0 \; kill-window -t tmux-zoom
-
-bind a last-window
-
 bind tab select-pane -t :.+
-
-bind m break-pane
 
 bind C-h swapp -U
 bind C-j swapp -D
@@ -44,7 +38,7 @@ bind C-k swapp -U
 bind C-l swapp -D
 
 # Shift arrow to switch windows
-bind -n S-Left  previous-window
+bind -n S-Left previous-window
 bind -n S-Right next-window
 
 # No delay for escape key press
@@ -61,16 +55,7 @@ bind K confirm kill-server
 # add maximizing
 bind m run "~/.tmux/maximize.sh"
 
-# _ Handy options {{{
-
-# Start numbering windows at 1
-set -g base-index 1
-
-set -g history-limit 10000
-
-# }}}
-
-set-option -g   status-utf8 on
+set-option -g status-utf8 on
 
 set -g status-left-length 32
 set -g status-right-length 150
