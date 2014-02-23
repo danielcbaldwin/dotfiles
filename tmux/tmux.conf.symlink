@@ -23,8 +23,8 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-bind % split-window -h
-bind " split-window -v
+# bind % split-window -h
+# bind " split-window -v
 bind < resize-pane -L 1
 bind > resize-pane -R 1
 bind - resize-pane -D 1
