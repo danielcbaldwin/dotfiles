@@ -28,3 +28,31 @@ takeover() {
     # attach to the target session
     tmux attach -t "$session"
 }
+
+work() {
+  loc=`pwd`
+  name=${loc##*/}
+
+  if ! tmux has-session -t "$name"; then
+
+    tmux new-session -d -s "$name"
+    tmux send-keys -t "$name" "vim" C-m
+
+    tmux split-window -h -c "$loc" -p 40
+
+    if [ -e "log/development.log" ]; then
+      tmux send-keys -t "$name" "tail -f log/development.log" C-m
+
+      tmux split-window -v -c "$loc"
+    fi
+
+    tmux send-keys -t "$name" "ls -la" C-m
+
+    if [ -d ".git" ]; then
+      tmux send-keys -t "$name" "git status" C-m
+    fi
+
+  fi
+
+  tmux attach -t "$name"
+}

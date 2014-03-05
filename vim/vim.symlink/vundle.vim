@@ -85,6 +85,8 @@ let g:airline_linecolumn_prefix = '⭡'
 " =================================================
 
 " ================== Commands =====================
+Bundle 'mileszs/ack.vim'
+
 Bundle 'tpope/vim-fugitive'
 
 Bundle 'tpope/vim-surround'
