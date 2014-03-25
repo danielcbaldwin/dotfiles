@@ -64,3 +64,5 @@ set vb t_vb= " Turn off the bell, this could be more annoying, but I'm not sure 
 set list
 set listchars=tab:>.,trail:.,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
+set foldmethod=indent       " automatically fold by indent level
+set foldlevelstart=9999

@@ -24,6 +24,10 @@ myip ()
     echo -e "Your public IP is: ${echo_bold_green} $res ${echo_normal}"
 }
 
+headers() {
+  curl -s -D - $1 -o /dev/null
+}
+
 
 pickfrom ()
 {

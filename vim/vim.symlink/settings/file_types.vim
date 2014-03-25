@@ -10,4 +10,4 @@ function! StripTrailingWhite()
   call winrestview(l:winview)
 endfunction
 
-autocmd BufWritePre  *.{rb,php}  call StripTrailingWhite()
+autocmd BufWritePre * call StripTrailingWhite()
