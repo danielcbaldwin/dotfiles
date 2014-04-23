@@ -29,4 +29,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # for tex
 export PATH="/opt/texbin:$PATH"
 
+# for go
+export GOPATH="$HOME/.go"
+
 source $DOTFILES/bash/setup.sh
