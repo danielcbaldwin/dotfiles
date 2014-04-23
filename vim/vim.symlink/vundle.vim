@@ -127,7 +127,8 @@ Bundle 'hallison/vim-markdown'
 Bundle 'groenewege/vim-less'
 " Bundle 'othree/html5-syntax.vim'
 Bundle 'othree/html5.vim'
-Bundle 'fatih/vim-go'
+" Bundle 'fatih/vim-go'
+Bundle 'jnwhiteh/vim-golang'
 " =================================================
 "
 " =================== Others ======================
