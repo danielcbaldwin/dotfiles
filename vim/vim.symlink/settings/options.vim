@@ -22,6 +22,7 @@ set smartcase
 set autoread                " Update open files when changed externally
 set laststatus=2
 
+set termencoding=utf-8
 set encoding=utf-8
 set showmode
 set noshowcmd
