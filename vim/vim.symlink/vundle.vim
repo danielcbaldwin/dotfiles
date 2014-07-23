@@ -118,7 +118,6 @@ Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 " Other Languages
 Bundle 'msanders/cocoa.vim'
-Bundle 'mutewinter/taskpaper.vim'
 Bundle 'mutewinter/nginx.vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'mutewinter/vim-css3-syntax'
