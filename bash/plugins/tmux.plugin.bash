@@ -51,6 +51,15 @@ work() {
       tmux send-keys -t "$name" "tail -f log/development.log" C-m
     fi
 
+    if [ -e "Procfile" ]; then
+      if [ ! -e "log/development.log" ]; then
+        tmux new-window -c "$loc"
+      else
+        tmux split-window -h -c "$loc" -p 40
+      fi
+      tmux send-keys -t "$name" "bundle exec foreman start" C-m
+    fi
+
     tmux new-window -c "$loc"
 
     tmux select-window -t 1
