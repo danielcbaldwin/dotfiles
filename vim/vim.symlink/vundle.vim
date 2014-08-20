@@ -118,7 +118,6 @@ Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 " Other Languages
 Bundle 'msanders/cocoa.vim'
-Bundle 'mutewinter/taskpaper.vim'
 Bundle 'mutewinter/nginx.vim'
 Bundle 'timcharper/textile.vim'
 Bundle 'mutewinter/vim-css3-syntax'
@@ -134,6 +133,7 @@ Bundle 'jnwhiteh/vim-golang'
 " =================== Others ======================
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'mbbill/VimExplorer'
+Bundle 'mrtazz/simplenote.vim'
 " =================================================
 if bundles_installed == 0
   echo "Installing Bundles, please ignore key map error messages"
