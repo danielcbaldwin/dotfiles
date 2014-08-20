@@ -134,6 +134,7 @@ Bundle 'jnwhiteh/vim-golang'
 " =================== Others ======================
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'mbbill/VimExplorer'
+Bundle 'mrtazz/simplenote.vim'
 " =================================================
 if bundles_installed == 0
   echo "Installing Bundles, please ignore key map error messages"
