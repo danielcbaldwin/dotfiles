@@ -78,7 +78,7 @@ nnoremap <C-l> :CtrlPFunky<CR>
 nnoremap <C-k> :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 map <C-m> :CtrlPModified<CR>
 map <C-x> :CtrlPBranch<CR>
-map <C-f> :CtrlPFiletype<CR>
+map <C-y> :CtrlPFiletype<CR>
 map <C-c> :CtrlPCmdPalette<CR>
 
 " Easymotion
