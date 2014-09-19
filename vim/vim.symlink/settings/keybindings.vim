@@ -75,7 +75,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nmap <C-b> :CtrlPBuffer<CR>
 nnoremap <C-l> :CtrlPFunky<CR>
 " narrow the list down with a word under cursor
-nnoremap <C-l>n :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <C-k> :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 map <C-m> :CtrlPModified<CR>
 map <C-a> :CtrlPBranch<CR>
 
