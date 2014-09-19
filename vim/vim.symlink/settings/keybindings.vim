@@ -77,7 +77,9 @@ nnoremap <C-l> :CtrlPFunky<CR>
 " narrow the list down with a word under cursor
 nnoremap <C-k> :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 map <C-m> :CtrlPModified<CR>
-map <C-a> :CtrlPBranch<CR>
+map <C-x> :CtrlPBranch<CR>
+map <C-f> :CtrlPFiletype<CR>
+map <C-c> :CtrlPCmdPalette<CR>
 
 " Easymotion
 nmap s <Plug>(easymotion-s)

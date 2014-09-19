@@ -39,11 +39,13 @@ Bundle 'scrooloose/nerdtree'
   " let g:miniBufExplMapWindowNavArrows = 1
 
 Bundle 'kien/ctrlp.vim'
-let g:ctrlp_extensions = ['funky']
+let g:ctrlp_extensions = ['funky', 'modified', 'filetype', 'cmdpalette']
 
 Bundle 'tacahiroy/ctrlp-funky'
 
 Bundle 'danielcbaldwin/ctrlp-modified.vim'
+Bundle 'endel/ctrlp-filetype.vim'
+Bundle 'fisadev/vim-ctrlp-cmdpalette'
 
 Bundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
