@@ -2,7 +2,7 @@
 
 ## install
 
-- `git clone git://github.com/holman/dotfiles ~/.dotfiles`
+- `git clone --recursive git://github.com/danielcbaldwin/dotfiles ~/.dotfiles`
 - `cd ~/.dotfiles`
 - `rake install`
 
