@@ -57,21 +57,13 @@ Bundle 'majutsushi/tagbar'
   let g:tagbar_autofocus = 1
 " =================================================
 
-" ================== Debugging ====================
-" Bundle 'scrooloose/syntastic'
-" =================================================
 " ==================== Color ======================
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'vim-scripts/molokai'
-" Bundle 'danielcbaldwin/Color-Sampler-Pack'
-" Bundle 'altercation/vim-colors-solarized'
+Bundle 'crusoexia/vim-monokai'
 Bundle 'nanotech/jellybeans.vim'
 " =================================================
 
 " ===================== UI ========================
-" Bundle 'Lokaltog/vim-powerline'
-"   let g:Powerline_cache_enabled = 1
-"   let g:Powerline_symbols = 'fancy'
 Bundle 'bling/vim-airline'
 let g:airline_theme             = 'powerlineish'
 let g:airline_enable_branch     = 1
@@ -89,12 +81,8 @@ let g:airline_linecolumn_prefix = '⭡'
 " =================================================
 
 " ================== Commands =====================
-Bundle 'mileszs/ack.vim'
-
 Bundle 'tpope/vim-fugitive'
-
 Bundle 'tpope/vim-surround'
-
 Bundle 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
@@ -104,33 +92,37 @@ Bundle 'tpope/vim-commentary'
 " ================== Helpers ======================
 " Bundle 'ervandew/supertab'
 " Bundle 'airblade/vim-gitgutter'
-"  Bundle 'rstacruz/sparkup'
+" Bundle 'rstacruz/sparkup'
 " =================================================
 
 " ============= Language Additions ================
+Bundle 'scrooloose/syntastic'
+
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
   let ruby_operators=1
-
 Bundle 'tpope/vim-endwise'
-
 Bundle 'vim-scripts/ruby-matchit'
+
+" CSS
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'groenewege/vim-less'
 
 " Javascript
 Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
+
+" HTML
+Bundle 'othree/html5.vim'
+
 " Other Languages
-Bundle 'msanders/cocoa.vim'
 Bundle 'mutewinter/nginx.vim'
 Bundle 'timcharper/textile.vim'
-Bundle 'hail2u/vim-css3-syntax'
 Bundle 'acustodioo/vim-tmux'
 Bundle 'hallison/vim-markdown'
-Bundle 'groenewege/vim-less'
-" Bundle 'othree/html5-syntax.vim'
-Bundle 'othree/html5.vim'
-" Bundle 'fatih/vim-go'
 Bundle 'jnwhiteh/vim-golang'
 " =================================================
 "
@@ -138,6 +130,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'mbbill/VimExplorer'
 Bundle 'mrtazz/simplenote.vim'
+Bundle 'mattn/gist-vim'
 " =================================================
 if bundles_installed == 0
   echo "Installing Bundles, please ignore key map error messages"

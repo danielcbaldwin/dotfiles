@@ -1,5 +1,8 @@
 let mapleader = ","
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " Reselect visual block after indent/outdent
 " http://www.vimbits.com/bits/20
 vnoremap < <gv
@@ -75,11 +78,22 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nmap <C-b> :CtrlPBuffer<CR>
 nnoremap <C-l> :CtrlPFunky<CR>
 " narrow the list down with a word under cursor
-nnoremap <C-k> :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <Leader>k :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 map <C-m> :CtrlPModified<CR>
 map <C-x> :CtrlPBranch<CR>
 map <C-y> :CtrlPFiletype<CR>
 map <C-c> :CtrlPCmdPalette<CR>
+
+" Move Lines
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Easymotion
 nmap s <Plug>(easymotion-s)
