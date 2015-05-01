@@ -22,3 +22,6 @@ export DOCKER_HOST=tcp://:4242
 
 # for go
 export GOPATH=$HOME/.go
+
+alias d="sudo docker"
+alias dc="sudo docker-compose"
