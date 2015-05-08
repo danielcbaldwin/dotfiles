@@ -84,6 +84,9 @@ dclean() {
 # Make docker-compose shorter
 alias dc="$DOCKERCOMPOSECMD"
 
+# Docker compose ps
+alias dcps="$DOCKERCOMPOSECMD ps"
+
 # Docker compose up
 alias dcu="$DOCKERCOMPOSECMD up"
 
