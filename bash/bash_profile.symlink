@@ -6,12 +6,6 @@ unset MAILCHECK
 # for brew
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 
-# add python scripts bin
-export PATH="$PATH:~/.bin"
-
-# add MySQL bin
-export PATH="$PATH:/usr/local/mysql/bin"
-
 export BASH_THEME="daniel"
 
 source $DOTFILES/bash/setup.sh

@@ -64,6 +64,8 @@ dbu() {
     echo -e "Setting tag: \033[32m$tag\033[39m";
     $DOCKERCMD tag -f $ID $tag;
   done
+
+  unset IMAGENAME
 }
 
 # Clean up images
@@ -74,7 +76,10 @@ dclean() {
   else
     search="<none>"
   fi
+
   $DOCKERCMD rmi -f $($DOCKERCMD images | grep "^$search" | awk '{print $3}');
+
+  unset search
 }
 
 ####################################
