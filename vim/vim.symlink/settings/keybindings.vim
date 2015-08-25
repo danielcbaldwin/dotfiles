@@ -37,15 +37,18 @@ au InsertLeave * set nopaste
 " Make Y behave like other capitals
 nmap Y y$
 
+" Run GoImports
+nmap <C-i> :GoImports<CR>
+
 " Fix for TMUX
-if &term =~ '^screen'
-    " tmux will send xterm-style keys when its xterm-keys option is on
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
-endif
-map <Esc>[B <Down>
+" if &term =~ '^screen'
+"     " tmux will send xterm-style keys when its xterm-keys option is on
+"     execute "set <xUp>=\e[1;*A"
+"     execute "set <xDown>=\e[1;*B"
+"     execute "set <xRight>=\e[1;*C"
+"     execute "set <xLeft>=\e[1;*D"
+" endif
+" map <Esc>[B <Down>
 
 " So we can use the arrow keys but still act like regular vim
 imap <up> <nop>
@@ -78,10 +81,10 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nmap <C-b> :CtrlPBuffer<CR>
 nnoremap <C-l> :CtrlPFunky<CR>
 " narrow the list down with a word under cursor
-nnoremap <Leader>k :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-map <C-m> :CtrlPModified<CR>
-map <C-x> :CtrlPBranch<CR>
-map <C-y> :CtrlPFiletype<CR>
+" nnoremap <Leader>k :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+" map <C-m> :CtrlPModified<CR>
+" map <C-x> :CtrlPBranch<CR>
+" map <C-y> :CtrlPFiletype<CR>
 map <C-c> :CtrlPCmdPalette<CR>
 
 " Move Lines

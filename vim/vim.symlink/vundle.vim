@@ -1,20 +1,20 @@
 let bundles_installed=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
   echo "Installing Vundle.."
   echo ""
   silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  silent !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   let bundles_installed=0
 endif
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " ================= Naviagtion ====================
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
   let NERDTreeShowBookmarks=1
   let NERDTreeSortOrder=[]
 
@@ -34,108 +34,96 @@ Bundle 'scrooloose/nerdtree'
   let NERDTreeDirArrows = 1
   let g:NERDTreeMouseMode = 2
 
-" Bundle 'fholgado/minibufexpl.vim'
-  " let g:miniBufExplMapWindowNavVim = 1
-  " let g:miniBufExplMapWindowNavArrows = 1
+Plugin 'kien/ctrlp.vim'
+  let g:ctrlp_extensions = ['funky', 'cmdpalette']
 
-Bundle 'kien/ctrlp.vim'
-let g:ctrlp_extensions = ['funky', 'modified', 'filetype', 'cmdpalette']
+Plugin 'tacahiroy/ctrlp-funky'
 
-Bundle 'tacahiroy/ctrlp-funky'
+" Plugin 'danielcbaldwin/ctrlp-modified.vim'
+" Plugin 'endel/ctrlp-filetype.vim'
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
-Bundle 'danielcbaldwin/ctrlp-modified.vim'
-Bundle 'endel/ctrlp-filetype.vim'
-Bundle 'fisadev/vim-ctrlp-cmdpalette'
+Plugin 'Lokaltog/vim-easymotion'
+  let g:EasyMotion_smartcase = 1
+  let g:EasyMotion_use_smartsign_us = 1
 
-Bundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_use_smartsign_us = 1
-
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
   let g:tagbar_compact = 1
   let g:tagbar_sort = 0
   let g:tagbar_autofocus = 1
 " =================================================
 
 " ==================== Color ======================
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'crusoexia/vim-monokai'
-Bundle 'nanotech/jellybeans.vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
 " =================================================
 
 " ===================== UI ========================
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline_theme             = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
-
-" vim-powerline symbols
-"let g:airline_left_sep           = '⮀'
-"let g:airline_left_alt_sep       = '⮁'
-"let g:airline_right_sep          = '⮂'
-"let g:airline_right_alt_sep      = '⮃'
-"let g:airline_symbols.branch     = '⭠'
-"let g:airline_symbols.readonly   = '⭤'
-"let g:airline_symbols.linenr     = '⭡'
 " =================================================
 
 " ================== Commands =====================
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
   autocmd FileType ruby set commentstring=#\ %s
   autocmd FileType vim set commentstring=\"\ %s
   autocmd FileType javascript set commentstring=\/\/\ %s
 " =================================================
 
-" ================== Helpers ======================
-" Bundle 'ervandew/supertab'
-" Bundle 'airblade/vim-gitgutter'
-" Bundle 'rstacruz/sparkup'
-" =================================================
-
 " ============= Language Additions ================
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 0
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_go_go_build_args = "-o /dev/null"
+
+" Go
+Plugin 'fatih/vim-go'
+  let g:go_auto_type_info = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
+  let g:go_fmt_fail_silently = 1
 
 " Ruby
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
   let ruby_operators=1
-Bundle 'tpope/vim-endwise'
-Bundle 'vim-scripts/ruby-matchit'
+Plugin 'tpope/vim-endwise'
+Plugin 'vim-scripts/ruby-matchit'
 
 " CSS
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'groenewege/vim-less'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
 
 " Javascript
-Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Bundle 'leshill/vim-json'
-Bundle 'itspriddle/vim-jquery'
+Plugin 'leshill/vim-json'
+Plugin 'itspriddle/vim-jquery'
 
 " HTML
-Bundle 'othree/html5.vim'
+Plugin 'othree/html5.vim'
 
 " Other Languages
-Bundle 'mutewinter/nginx.vim'
-Bundle 'timcharper/textile.vim'
-Bundle 'acustodioo/vim-tmux'
-Bundle 'hallison/vim-markdown'
-Bundle 'jnwhiteh/vim-golang'
+Plugin 'mutewinter/nginx.vim'
+Plugin 'acustodioo/vim-tmux'
 " =================================================
-"
-" =================== Others ======================
-Bundle 'davidoc/taskpaper.vim'
-Bundle 'mbbill/VimExplorer'
-Bundle 'mrtazz/simplenote.vim'
-Bundle 'mattn/gist-vim'
-" =================================================
+call vundle#end()
 if bundles_installed == 0
-  echo "Installing Bundles, please ignore key map error messages"
+  echo "Installing Plugins, please ignore key map error messages"
   echo ""
-  :BundleInstall
+  :PluginInstall
 endif
 filetype plugin indent on
