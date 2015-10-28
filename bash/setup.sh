@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export BASH_THEME=${BASH_THEME:-"daniel"}
+
 # Reload Library
 if [[ $OSTYPE =~ 'debian' ]]; then
   alias reload='source ~/.bash_profile'
@@ -35,9 +37,3 @@ unset file_type
 if [[ $PROMPT ]]; then
     export PS1=$PROMPT
 fi
-
-# if which toilet >/dev/null 2>&1; then
-#   echo ""
-#   tput setaf 1 && toilet -f future `uname -n`
-#   echo ""
-# fi
