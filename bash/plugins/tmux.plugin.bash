@@ -9,7 +9,7 @@ tmuxa() {
   fi
 }
 
-takeover() {
+takeover2() {
     # create a temporary session that displays the "how to go back" message
     tmp='takeover temp session'
     if ! tmux has-session -t "$tmp"; then

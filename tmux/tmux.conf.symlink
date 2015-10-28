@@ -1,6 +1,7 @@
 # use UTF8
 set -g utf8
 set-window-option -g utf8 on
+set -g mouse-utf8 off
 
 # make tmux display things in 256 colors
 set -g default-terminal "screen-256color"
