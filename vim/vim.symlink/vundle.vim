@@ -119,6 +119,7 @@ Plugin 'othree/html5.vim'
 " Other Languages
 Plugin 'mutewinter/nginx.vim'
 Plugin 'acustodioo/vim-tmux'
+Plugin 'hashivim/vim-terraform'
 " =================================================
 call vundle#end()
 if bundles_installed == 0
