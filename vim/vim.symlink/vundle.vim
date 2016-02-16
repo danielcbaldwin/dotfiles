@@ -60,7 +60,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 " ===================== UI ========================
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme             = 'powerlineish'
+let g:airline_theme             = 'tomorrow'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
