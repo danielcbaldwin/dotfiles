@@ -13,7 +13,7 @@ set -g default-terminal "screen-256color"
 set -g history-limit 100000
 
 # This makes pbcopy/pbpaste work in tmux
-set-option -g default-command "which reattach-to-user-namespace >/dev/null && reattach-to-user-namespace -l bash || bash"
+set-option -g default-command "which reattach-to-user-namespace &> /dev/null && reattach-to-user-namespace -l bash || bash"
 
 # set Ctrl-a as the default prefix key combination
 # and unbind C-b to free it up
