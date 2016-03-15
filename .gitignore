@@ -1,0 +1,5 @@
+.DS_Store
+vim/vim.symlink/undo/*
+vim/vim.symlink/bundle/*
+.netrwhist
+git/gitconfig.symlink
