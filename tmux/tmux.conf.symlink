@@ -1,0 +1,113 @@
+# use UTF8
+set -g utf8
+set-window-option -g utf8 on
+# set -g mouse-utf8 off
+
+# pass through xterm keys
+set -g xterm-keys on
+
+# make tmux display things in 256 colors
+set -g default-terminal "screen-256color"
+
+# set scrollback history to 100000 (100k)
+set -g history-limit 100000
+
+# This makes pbcopy/pbpaste work in tmux
+set-option -g default-command "which reattach-to-user-namespace &> /dev/null && reattach-to-user-namespace -l bash || bash"
+
+# set Ctrl-a as the default prefix key combination
+# and unbind C-b to free it up
+# set -g prefix C-a
+set -g prefix C-f
+unbind C-b
+
+# use send-prefix to pass C-a through to application
+bind C-a send-prefix
+
+# shorten command delay
+set -sg escape-time 1
+
+# set window and pane index to 1 (0 by default)
+set-option -g base-index 1
+setw -g pane-base-index 1
+
+# use PREFIX | to split window horizontally and PREFIX - to split vertically
+bind | split-window -h
+bind - split-window -v
+bind % split-window -v
+
+# Make the current window the first window
+bind T swap-window -t 1
+
+# map Vi movement keys as pane movement keys
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+bind Left select-pane -L
+bind Down select-pane -D
+bind Up select-pane -U
+bind Right select-pane -R
+
+# resize panes using PREFIX H, J, K, L
+bind H resize-pane -L 5
+bind J resize-pane -D 5
+bind K resize-pane -U 5
+bind L resize-pane -R 5
+
+# swapp panes
+# bind C-h swapp -L
+# bind C-j swapp -D
+# bind C-k swapp -U
+# bind C-l swapp -R
+
+# explicitly disable mouse control
+# setw -g mode-mouse off
+# set -g mouse-select-pane off
+# set -g mouse-resize-pane off
+# set -g mouse-select-window off
+
+# shift arrow to switch windows
+bind -n S-Left previous-window
+bind -n S-Right next-window
+
+
+# use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
+
+# setw -g monitor-activity on
+
+# ----------------------
+# Status Bar
+# -----------------------
+
+# turn the status bar on
+set-option -g status on
+
+# set utf-8 for the status bar
+set-option -g status-utf8 on
+
+# set update frequencey (default 15 seconds)
+set -g status-interval 5
+
+set -g status-left-length 32
+set -g status-right-length 150
+
+set -g status-fg white
+set -g status-bg colour234
+set -g window-status-activity-attr bold
+set -g pane-border-fg colour245
+set -g pane-active-border-fg colour39
+set -g message-fg colour16
+set -g message-bg colour221
+set -g message-attr bold
+
+set -g status-left "#[fg=colour235,bg=colour252,bold] ❐ #S #[fg=colour245,bg=colour238,bold] #(whoami) "
+#set -g window-status-format "#[fg=white,bg=colour234] #I #W "
+set -g window-status-format " #[fg=colour234,bg=colour242] #I | #W "
+set -g window-status-current-format " #[fg=colour234,bg=colour251,noreverse,bold] #I | #W "
+set -g status-right "#[fg=color39] #H "
