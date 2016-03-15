@@ -1,5 +1,4 @@
 .DS_Store
-vim/vim.symlink/undo/*
-vim/vim.symlink/bundle/*
+vim/.vim/undo/*
+vim/.vim/bundle/*
 .netrwhist
-git/gitconfig.symlink
