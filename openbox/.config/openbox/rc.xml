@@ -438,7 +438,7 @@
         <command>~/.config/openbox/volume.sh toggle</command>
       </action>
     </keybind>
-    <keybind key="XF86AudioPlay">
+    <!-- <keybind key="XF86AudioPlay">
       <action name="Execute">
         <command>playerctl play-pause</command>
       </action>
@@ -457,7 +457,7 @@
       <action name="Execute">
         <command>playerctl previous</command>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="W-l">
       <action name="Execute">
         <command>xscreensaver-command -lock</command>

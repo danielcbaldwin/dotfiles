@@ -1,6 +1,9 @@
 xset -b
 xset r rate 200 30
 
+# Keybindings
+xbindkeys &
+
 # Background
 nitrogen --restore &
 
