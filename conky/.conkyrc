@@ -1,0 +1,61 @@
+#alignment bottom_middle
+alignment bottom_left
+background yes
+border_width 1
+cpu_avg_samples 2
+#default_color 222222
+#default_outline_color 222222
+#default_color 808080
+default_color ffffff
+default_outline_color ffffff
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont Roboto Mono:size=10
+gap_x 0
+gap_y 5
+minimum_size 3840 6
+#maximum_width 1860
+maximum_width 3840
+net_avg_samples 2
+no_buffers yes
+double_buffer yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window no
+own_window_class Conky
+own_window_type normal
+own_window_transparent yes
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer left
+show_graph_scale no
+show_graph_range no
+format_human_readable yes
+
+color1 ffffff
+color2 b2b2b2
+color3 b2b2b2
+
+color6 F4BE36
+color7 D64937
+
+# color1 666666
+# color2 888888
+# color3 444444
+
+mpd_host 127.0.0.1
+
+# ${color1}eth0 [${color3}${addr enp0s20f0u2u3}${color1}]: ${color1}Up:${color} ${upspeed enp0s20f0u2u3} ${color1} - Down:${color} ${downspeed enp0s20f0u2u3}     \
+
+TEXT
+${alignc} \
+${alignc}${color1}wlan0 [${color3}${addr wlp2s0}${color1}]: ${color1}Up:${color} ${upspeed wlp58s0} ${color1} - Down:${color} ${downspeed wlp58s0}     \
+${if_match "${acpiacadapter}" != "on-line"}${alignc}${color1}Battery: ${if_match ${battery_percent BAT0} <= 30}${color6}${else}${if_match ${battery_percent BAT0} <= 15}${color7}${else}${color}${endif}${endif}${battery_percent BAT0}% ${battery_bar 5,50 BAT0} ${color}|${endif} \
+${color1}Volume: ${color} ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ${color}| \
+${color1}CPU: ${color} ${cpu}% ${cpubar cpu0 5,50} ${color}| \
+${color1}RAM:${color} ${memperc}% ${membar 5,50}

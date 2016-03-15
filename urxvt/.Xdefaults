@@ -1,0 +1,155 @@
+Xcursor.size: 24
+
+! Xscreensaver
+xscreensaver.Dialog.*Font: xft:roboto mono:size=16
+
+! URXVT {{
+
+! Default window size
+URxvt.geometry: 200x60
+
+URxvt*title: urxvt
+URxvt*termName: rxvt-unicode
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+
+! Font
+URxvt.font: xft:Roboto Mono:size=12, xft:Roboto Mono for Powerline
+URxvt.letterSpace: -1
+URxvt.lineSpace: -1
+
+! Set urxvt as login shell
+URxvt*loginShell: true
+
+! Scrollbar
+URxvt*saveLines: 50000
+URxvt*scrollstyle:plain
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+
+! Plugins
+URxvt.perl-ext-common: default,clipboard,tabbedex,resize-font,vtwheel
+
+! Tabs
+URxvt.tabbed.autohide:  yes
+URxvt.tabbed.new-button:  no
+URxvt.tabbed.title: yes
+
+! Tabbedex keybindings
+URxvt.keysym.Shift-Control-T: perl:tabbedex:new_tab
+URxvt.keysym.Control-Left: perl:tabbedex:prev_tab
+URxvt.keysym.Control-Right: perl:tabbedex:next_tab
+URxvt.keysym.Shift-Control-Left: perl:tabbedex:move_tab_left
+URxvt.keysym.Shift-Control-Right: perl:tabbedex:move_tab_right
+URxvt.keysym.Shift-Control-R: perl:tabbedex:rename_tab
+URxvt.tabbed.no-tabbedex-keys: true
+
+! Enables copy/paste with Ctrl-Shift-C/V
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+!
+! effects
+!
+! use font glyphs
+URxvt*skipBuiltinGlyphs:    true
+! cursor underline
+URxvt*cursorUnderline:      false
+! cursor blinking
+URxvt*cursorBlink:          false
+! blank the pointer on keypress or timeout
+URxvt*pointerBlank:         false
+
+
+!
+! misc
+!
+! triple click select only logical line
+URxvt*tripleclickwords:   true
+! delimiters for double-click selection
+URxvt*cutchars:           BACKSLASH '"'&()*,;<=>?@[]^{|}
+URxvt.intensityStyles: false
+
+! Set terminal padding
+URxvt.internalBorder: 10
+
+! Custom {{
+URxvt*foreground: #DEDEDE
+URxvt*background: #2B2B2B
+URxvt*colorUL: #86a2b0
+! black
+URxvt*color0  : #2E3436
+URxvt*color8  : #555753
+! red
+URxvt*color1  : #CC0000
+URxvt*color9  : #EF2929
+! green
+URxvt*color2  : #4E9A06
+URxvt*color10 : #8AE234
+! yellow
+URxvt*color3  : #C4A000
+URxvt*color11 : #FCE94F
+! blue
+URxvt*color4  : #3465A4
+URxvt*color12 : #729FCF
+! magenta
+URxvt*color5  : #75507B
+URxvt*color13 : #AD7FA8
+! cyan
+URxvt*color6  : #06989A
+URxvt*color14 : #34E2E2
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
+! }}
+
+! Tomorrow Night Theme {{
+! URxvt*foreground:   #c5c8c6
+! URxvt*background:   #1d1f21
+! URxvt*cursorColor:  #aeafad
+! URxvt*color0:       #000000
+! URxvt*color1:       #912226
+! URxvt*color2:       #778900
+! URxvt*color3:       #ae7b00
+! URxvt*color4:       #1d2594
+! URxvt*color5:       #682a9b
+! URxvt*color6:       #2b6651
+! URxvt*color7:       #929593
+! URxvt*color8:       #666666
+! URxvt*color9:       #cc6666
+! URxvt*color10:      #b5bd68
+! URxvt*color11:      #f0c674
+! URxvt*color12:      #81a2be
+! URxvt*color13:      #b294bb
+! URxvt*color14:      #8abeb7
+! URxvt*color15:      #ecebec
+! }}
+
+! Tomorrow Night Bright Theme {{
+! URxvt*foreground:   #eaeaea
+! URxvt*background:   #000000
+! URxvt*cursorColor:  #aeafad
+! URxvt*color0:       #000000
+! URxvt*color1:       #912226
+! URxvt*color2:       #778900
+! URxvt*color3:       #ae7b00
+! URxvt*color4:       #1d2594
+! URxvt*color5:       #682a9b
+! URxvt*color6:       #2b6651
+! URxvt*color7:       #929593
+! URxvt*color8:       #666666
+! URxvt*color9:       #cc6666
+! URxvt*color10:      #b5bd68
+! URxvt*color11:      #f0c674
+! URxvt*color12:      #81a2be
+! URxvt*color13:      #b294bb
+! URxvt*color14:      #8abeb7
+! URxvt*color15:      #ecebec
+! }}
+
+! }}
+

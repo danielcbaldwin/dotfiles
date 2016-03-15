@@ -1,0 +1,31 @@
+xset -b
+xset r rate 200 30
+
+# Background
+nitrogen --restore &
+
+# Transparent windows
+# (sleep 3s && xcompmgr) &
+# (sleep 1s && compton ~/.config/compton.config) &
+
+# Panel
+(sleep 1s && tint2 -c ~/.config/tint2/themes/Numix/red_taskbar/tint2rc) &
+(sleep 1s && conky) &
+
+# Notifications
+(sleep 1s && dunst) &
+
+# Dock
+# (sleep 3s && plank) &
+
+# System Tray
+# (sleep 3s && cbatticon -u 20 -i notification -c "poweroff" -l 15 -r 3) &
+(sleep 3s && volumeicon) &
+(sleep 3s && nm-applet) &
+(sleep 3s && blueman-applet) &
+
+# Application launcher
+(sleep 1s && synapse -s) &
+
+# Screensaver
+(sleep 3s && xscreensaver -no-splash) &

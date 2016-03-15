@@ -1,0 +1,19 @@
+[user]
+	name = Daniel Baldwin
+	email = danielcbaldwin@gmail.com
+[alias]
+	st = status
+	clone = clone --recursive
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+[push]
+	default = current
+[color]
+	diff = auto
+  status = auto
+  branch = auto
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+  editor = vim
+[github]
+  user = danielcbaldwin

@@ -1,0 +1,6 @@
+
+edit /home/daniel/.dotfiles/
+cd /home/daniel/.dotfiles/
+cd /home/daniel/.dotfiles/setup/
+delete
+Q

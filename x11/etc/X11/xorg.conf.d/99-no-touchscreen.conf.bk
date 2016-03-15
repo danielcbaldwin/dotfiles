@@ -1,0 +1,6 @@
+Section "InputClass"
+    Identifier         "Touchscreen catchall"
+    MatchIsTouchscreen "on"
+
+    Option "Ignore" "on"
+EndSection
