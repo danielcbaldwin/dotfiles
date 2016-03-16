@@ -80,15 +80,15 @@
 #########################
 
 # Volume Up
-"~/.config/openbox/volume.sh up"
+"volume.sh up"
   XF86AudioRaiseVolume
 
 # Volume Down
-"~/.config/openbox/volume.sh down"
+"volume.sh down"
   XF86AudioLowerVolume
 
 # Mute
-"~/.config/openbox/volume.sh toggle"
+"volume.sh toggle"
   XF86AudioMute
 
 

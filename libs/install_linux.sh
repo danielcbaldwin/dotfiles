@@ -18,6 +18,7 @@ stow volumeicon && echo "✓ volumeicon"
 stow xscreensaver && echo "✓ xscreensaver"
 stow xbindkeys && echo "✓ xbindkeys"
 sudo stow -t / x11 && echo "✓ x11"
+sudo stow -t / bin && echo "✓ bin"
 
 # Dev
 stow ruby && echo "✓ ruby"
