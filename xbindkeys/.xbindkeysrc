@@ -37,7 +37,26 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-# Examples of commands:
+#########################
+# Actions               #
+#########################
+
+# Check for different display configuration
+"autorandr --change --default laptop"
+  F8
+
+# Screenshot
+"scrot -s -e 'mv $f ~/Pictures/Screenshots/'"
+  Mod4 + Shift + 4
+
+# Lock
+"xscreensaver-command -lock"
+  Mod4 + l
+
+
+#########################
+# Media Keys            #
+#########################
 
 # Play/Pause
 "playerctl play-pause"
@@ -56,6 +75,58 @@
   XF86AudioStop
 
 
+#########################
+# Volume Keys           #
+#########################
+
+# Volume Up
+"~/.config/openbox/volume.sh up"
+  XF86AudioRaiseVolume
+
+# Volume Down
+"~/.config/openbox/volume.sh down"
+  XF86AudioLowerVolume
+
+# Mute
+"~/.config/openbox/volume.sh toggle"
+  XF86AudioMute
+
+
+#########################
+# Backlight  Keys       #
+#########################
+
+# Brightness Up
+"light -A 5"
+  XF86MonBrightnessUp
+
+# Brightness Down
+"light -U 5"
+  XF86MonBrightnessDown
+
+
+#########################
+# Launch Apps           #
+#########################
+
+# Terminal
+"urxvt"
+  Mod4 + Return
+
+# rofi - Window
+"rofi -show run"
+  Mod4 + r
+
+# rofi - Window
+"rofi -show window"
+  Mod4 + w
+
+# Synapse
+"synapse"
+  Control + space
+
+
+# Examples of commands:
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
