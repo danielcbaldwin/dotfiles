@@ -50,7 +50,7 @@
   Mod4 + Shift + 4
 
 # Lock
-"xscreensaver-command -lock"
+"lock"
   Mod4 + l
 
 

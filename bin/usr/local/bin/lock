@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -n "$(command -v xscreensaver-command)" ]; then
+  xscreensaver-command --lock
+fi
