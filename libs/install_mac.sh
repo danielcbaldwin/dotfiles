@@ -1,12 +1,14 @@
 #!/bin/bash
 
 . ./libs/install_checks.sh
+. ./libs/install_functions.sh
 
 cat <<EOF
 Installing configs for Mac ...
 EOF
 
 # Desktop
+install_bash && echo "✓ bash"
 stow ranger && echo "✓ ranger"
 stow urxvt && echo "✓ urxvt"
 

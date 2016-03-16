@@ -1,12 +1,14 @@
 #!/bin/bash
 
 . ./libs/install_checks.sh
+. ./libs/install_functions.sh
 
 cat <<EOF
 Installing configs for Linux ...
 EOF
 
 # Desktop
+install_bash && echo "✓ bash"
 stow autorandr && echo "✓ autorandr"
 stow conky && echo "✓ conky"
 stow dunst && echo "✓ dunst"
