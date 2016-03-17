@@ -8,7 +8,8 @@ Installing configs for Mac ...
 EOF
 
 # Desktop
-install_bash && echo "✓ bash"
+#install_bash && echo "✓ bash"
+stow bash && echo "✓ bash"
 stow ranger && echo "✓ ranger"
 stow urxvt && echo "✓ urxvt"
 

@@ -2,5 +2,5 @@
 	path = tmux/plugins/powerline
 	url = git://github.com/erikw/tmux-powerline.git
 [submodule "bash/bin/z"]
-	path = bash/bin/z
+	path = bash/.bash/bin/z
 	url = git@github.com:rupa/z.git

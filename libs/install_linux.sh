@@ -8,7 +8,8 @@ Installing configs for Linux ...
 EOF
 
 # Desktop
-install_bash && echo "✓ bash"
+#install_bash && echo "✓ bash"
+stow bash && echo "✓ bash"
 stow autorandr && echo "✓ autorandr"
 stow conky && echo "✓ conky"
 stow dunst && echo "✓ dunst"
