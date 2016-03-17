@@ -1,6 +1,6 @@
 [submodule "tmux/plugins/powerline"]
 	path = tmux/plugins/powerline
 	url = git://github.com/erikw/tmux-powerline.git
-[submodule "bash/bin/z"]
+[submodule "bash/.bash/bin/z"]
 	path = bash/.bash/bin/z
 	url = git@github.com:rupa/z.git
