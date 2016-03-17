@@ -53,6 +53,10 @@
 "lock"
   Mod4 + l
 
+# Toggle Invert Window (Requires compton with dbus flag)
+"invert focused"
+  Mod1 + i
+
 
 #########################
 # Media Keys            #

@@ -9,7 +9,7 @@ nitrogen --restore &
 
 # Transparent windows
 # (sleep 3s && xcompmgr) &
-# (sleep 1s && compton ~/.config/compton.config) &
+compton --dbus &
 
 # Panel
 (sleep 1s && tint2 -c ~/.config/tint2/themes/Numix/red_taskbar/tint2rc) &

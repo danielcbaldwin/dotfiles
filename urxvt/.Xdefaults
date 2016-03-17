@@ -1,5 +1,12 @@
 Xcursor.size: 24
 
+Xft.autohint:   0
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+Xft.hinting:    1
+Xft.antialias:  1
+Xft.rgba:       rgb
+
 ! Xscreensaver
 xscreensaver.Dialog.*Font: xft:roboto mono:size=16
 
@@ -15,7 +22,7 @@ URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
 
 ! Font
-URxvt.font: xft:Roboto Mono:size=12, xft:Roboto Mono for Powerline
+URxvt.font: xft:Roboto Mono:pixelsize=16, xft:Roboto Mono for Powerline:pixelsize=16
 URxvt.letterSpace: -1
 URxvt.lineSpace: -1
 
@@ -30,7 +37,13 @@ URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
 
 ! Plugins
-URxvt.perl-ext-common: default,clipboard,tabbedex,resize-font,vtwheel
+URxvt.perl-ext-common: default,clipboard,tabbedex,resize-font,vtwheel,url-select,key
+
+! URLS
+URxvt.url-select.launcher:  /usr/bin/google-chrome-stable
+URxvt.urlLauncher:          /usr/bin/google-chrome-stable
+URxvt.matcher.button:       1
+URxvt.url-select.underline: true
 
 ! Tabs
 URxvt.tabbed.autohide:  yes
