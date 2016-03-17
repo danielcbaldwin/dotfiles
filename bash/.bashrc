@@ -1,5 +1,6 @@
 #
 # ~/.bashrc
 #
-export DOTFILES="/home/daniel/.dotfiles"
-[[ -s "$HOME/.bash/setup.sh" ]] && source "$HOME/.bash/setup.sh"
+export DOTFILES="${HOME}/.bash"
+export BASHFILES="${HOME}/.bash"
+[[ -s "${DOTFILES}/setup.sh" ]] && source "${DOTFILES}/setup.sh"

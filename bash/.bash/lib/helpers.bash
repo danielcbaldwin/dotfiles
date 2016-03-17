@@ -1,11 +1,11 @@
 # Helper function loading various enable-able files
 function _load_bash_additions() {
   subdirectory="$1"
-  if [ ! -d "${DOTFILES}/bash/${subdirectory}" ]
+  if [ ! -d "${BASHFILES}/${subdirectory}" ]
   then
     continue
   fi
-  FILES="${DOTFILES}/bash/${subdirectory}/*.bash"
+  FILES="${BASHFILES}/${subdirectory}/*.bash"
   for config_file in $FILES
   do
     if [ -e "${config_file}" ]; then

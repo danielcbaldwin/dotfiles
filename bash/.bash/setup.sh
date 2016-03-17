@@ -13,14 +13,14 @@ fi
 export TERM=xterm-256color
 
 # add dotfiles bin
-export PATH="$PATH:$DOTFILES/bin"
+export PATH="$PATH:$BASHFILES/bin"
 
 # Load colors first so they can be use in base theme
-source "${DOTFILES}/bash/themes/colors.theme.bash"
-source "${DOTFILES}/bash/themes/base.theme.bash"
+source "${BASHFILES}/themes/colors.theme.bash"
+source "${BASHFILES}/themes/base.theme.bash"
 
 # library
-LIB="${DOTFILES}/bash/lib/*.bash"
+LIB="${BASHFILES}/lib/*.bash"
 for config_file in $LIB
 do
   source $config_file
