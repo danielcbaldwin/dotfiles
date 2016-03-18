@@ -31,5 +31,6 @@ nitrogen --restore &
 # Application launcher
 (sleep 1s && synapse -s) &
 
-# Screensaver
-(sleep 3s && xscreensaver -no-splash) &
+# Screensaver / Lockscreen
+# (sleep 3s && xscreensaver -no-splash) &
+xautolock -locker myi3lock -time 10 -corners 0-00 -notify 30 -notifier 'notify-send "System will lock in 30s"' &
