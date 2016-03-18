@@ -25,9 +25,9 @@ double_buffer yes
 out_to_console no
 out_to_stderr no
 extra_newline no
-own_window no
+own_window yes
 own_window_class Conky
-own_window_type normal
+own_window_type desktop
 own_window_transparent yes
 stippled_borders 0
 update_interval 1.0
@@ -56,6 +56,6 @@ TEXT
 ${alignc} \
 ${alignc}${color1}wlan0 [${color3}${addr wlp2s0}${color1}]: ${color1}Up:${color} ${upspeed wlp58s0} ${color1} - Down:${color} ${downspeed wlp58s0}     \
 ${if_match "${acpiacadapter}" != "on-line"}${alignc}${color1}Battery: ${if_match ${battery_percent BAT0} <= 30}${color6}${else}${if_match ${battery_percent BAT0} <= 15}${color7}${else}${color}${endif}${endif}${battery_percent BAT0}% ${battery_bar 5,50 BAT0} ${color}|${endif} \
-${color1}Volume: ${color} ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ${color}| \
+${color1}Volume: ${color} ${exec amixer get Master -M | grep -oE "[[:digit:]]*%"} ${color}| \
 ${color1}CPU: ${color} ${cpu}% ${cpubar cpu0 5,50} ${color}| \
 ${color1}RAM:${color} ${memperc}% ${membar 5,50}

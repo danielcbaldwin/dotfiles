@@ -30,7 +30,8 @@ if [ -z "$dpy" ]; then
   exit 1;
 fi
 
-service="com.github.chjj.compton.${dpy}"
+#service="com.github.chjj.compton.${dpy}"
+service="$(dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep compton | awk -F'"' '{$0=$2}1')"
 interface="com.github.chjj.compton"
 compton_dbus="dbus-send --print-reply --dest="${service}" / "${interface}"."
 type_win='uint32'
