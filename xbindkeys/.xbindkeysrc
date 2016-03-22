@@ -117,16 +117,16 @@
 "urxvt"
   Mod4 + Return
 
-# rofi - Window
-"rofi -show run"
+# rofi - Run
+"myrofi -show run"
   Mod4 + r
 
 # rofi - Window
-"rofi -show window"
+"myrofi -show window"
   Mod4 + w
 
 # Synapse
-"synapse"
+"myrofi -show drun"
   Control + space
 
 

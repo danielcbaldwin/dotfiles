@@ -7,7 +7,7 @@ xbindkeys &
 echo $DISPLAY > ~/display-openbox.txt
 
 # Transparent windows, tearing fixes, and invert colors
-(sleep 3s && compton --dbus) &
+# (sleep 3s && compton --dbus) &
 
 # Background
 nitrogen --restore &
@@ -29,8 +29,9 @@ nitrogen --restore &
 (sleep 3s && blueman-applet) &
 
 # Application launcher
-(sleep 1s && synapse -s) &
+#(sleep 1s && synapse -s) &
 
 # Screensaver / Lockscreen
-# (sleep 3s && xscreensaver -no-splash) &
-xautolock -locker myi3lock -time 10 -corners 0-00 -notify 30 -notifier 'notify-send "System will lock in 30s"' &
+(sleep 3s && xscreensaver -no-splash) &
+# xautolock -locker myi3lock -time 10 -corners 0-00 -notify 30 -notifier 'notify-send "System will lock in 30s"' &
+# xss-lock -- /usr/local/bin/lock &

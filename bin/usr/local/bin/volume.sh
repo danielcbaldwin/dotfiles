@@ -15,8 +15,8 @@ if [[ $# -eq 1 ]]; then
     esac
 fi
 
-muted=`amixer get Master|tail -n1|sed -E 's/.*\[([a-z]+)\]/\1/'`
-volume=`amixer get Master|tail -n1|sed -E 's/.*\[([0-9]+)\%\].*/\1/'`
+muted=`amixer get Master -M | grep -oE "[[:digit:]]*%" | tr -d "%"`
+volume=`amixer get Master -M | grep -oE "[[:digit:]]*%" | tr -d "%"`
 
 if [[ $muted == "off" ]]; then
     notify-send "Muted" -t 1000 -a volume-notify -i audio-volume-muted -h int:value:$volume

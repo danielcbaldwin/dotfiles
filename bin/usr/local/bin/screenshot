@@ -1,0 +1,22 @@
+
+#!/bin/bash
+SCROT="/usr/bin/scrot -e 'mv $f ~/Pictures/Screenshots/'"
+
+case "$1" in
+        select)
+           exec $SCROT -s
+            ;;
+
+        focused)
+           $SCROT -u
+            ;;
+
+        all)
+           exec $SCROT
+            ;;
+
+        *)
+            echo $"Usage: $0 {select|focused|all}"
+            exit 1
+
+esac

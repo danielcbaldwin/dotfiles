@@ -98,8 +98,10 @@ URxvt*colorUL: #86a2b0
 URxvt*color0  : #2E3436
 URxvt*color8  : #555753
 ! red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
+!URxvt*color1  : #CC0000
+!URxvt*color9  : #EF2929
+URxvt*color1  : #D64937
+URxvt*color9  : #CC0000
 ! green
 URxvt*color2  : #4E9A06
 URxvt*color10 : #8AE234
