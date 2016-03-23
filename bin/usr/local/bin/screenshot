@@ -1,18 +1,33 @@
 
 #!/bin/bash
-SCROT="/usr/bin/scrot -e 'mv $f ~/Pictures/Screenshots/'"
+
+CMD=""
+if [ -n "$(command -v gpicview)" ]; then
+  CMD="-e 'gpicview \$f'"
+fi
+
+function get_filename {
+  local num=001
+  local path="~/Pictures/Screenshots"
+  local existing_number=$(eval "ls ${path}/${1} 2> /dev/null" | sort | tail -1 | grep -o '[0-9]\+')
+  if [ -z "$existing_number" ]; then
+    echo "$path/${1/\*/$num}"
+  else
+    echo "$path/${1/\*/$(printf "%03d" $(( $num + $existing_number )))}"
+  fi
+}
 
 case "$1" in
         select)
-           exec $SCROT -s
+           eval "/usr/bin/scrot $CMD -s $(get_filename "Selection_*.png")"
             ;;
 
         focused)
-           $SCROT -u
+           eval "/usr/bin/scrot $CMD -u -b $(get_filename "Window_*.png")"
             ;;
 
         all)
-           exec $SCROT
+           eval "/usr/bin/scrot $CMD $(get_filename "Screen_*.png")"
             ;;
 
         *)
