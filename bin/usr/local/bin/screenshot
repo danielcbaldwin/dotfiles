@@ -2,7 +2,9 @@
 #!/bin/bash
 
 CMD=""
-if [ -n "$(command -v gpicview)" ]; then
+if [ -n "$(command -v viewnior)" ]; then
+  CMD="-e 'viewnior \$f'"
+elif [ -n "$(command -v gpicview)" ]; then
   CMD="-e 'gpicview \$f'"
 fi
 
