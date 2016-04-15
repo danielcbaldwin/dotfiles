@@ -1,0 +1,81 @@
+#!/bin/bash
+
+set -a
+
+. $(dirname $0)/panel.cfg
+
+if [ -e "$PANEL_PID" ]; then
+  printf "%s\n" "The panel is already running."
+  kill -9 $(cat $PANEL_PID) > /dev/null 2>&1
+  killall trayer
+  killall lemonbar
+fi
+
+trap 'rm $PANEL_PID; killall trayer; trap - SIGTERM && kill -- -$$' INT TERM QUIT
+
+traphup() {
+    $0 "$$" &
+    exit 0
+}
+
+trap traphup HUP
+
+# Store pid to kill this process later(toggle gaps/panel)
+echo $$ > $PANEL_PID
+
+trayer --edge top --align right --distance 270 --distancefrom right --iconspacing 10 --widthtype requested --heighttype pixel --height $PANEL_HEIGHT --tint "0x${BG_COLOR}" --transparent true --alpha 0 &
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+bspc config top_padding $PANEL_HEIGHT
+bspc subscribe report > "$PANEL_FIFO" &
+
+# Active Window Title
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+
+# Clock
+while :; do
+  echo C$(date "+%I:%M %p")
+  sleep 1
+done > "$PANEL_FIFO" &
+
+# Volume
+while :; do
+  echo V$(amixer get Master -M | grep -oE "[[:digit:]]*%" | tr -d "%") $(amixer get Master -M | grep -oE "\[(on|off)\]*" | tr -d "[]")
+  sleep 0.2
+done > "$PANEL_FIFO" &
+
+# Battery
+while :; do
+  #echo B$(acpi --battery | tail -1 | cut -d, -f2 | sed 's/.$//')
+  echo B$(acpi --battery | tail -1 | cut -d' ' -f3-6 | tr ',' ' ')
+  sleep 1
+done > "$PANEL_FIFO" &
+
+$(dirname $0)/panel_bar.sh < "$PANEL_FIFO" | \
+  lemonbar -d -n "$PANEL_WM_NAME" -g x${PANEL_HEIGHT} -B "$PANEL_BACKGROUND" -f "$PANEL_FONT_MAIN" -f "$PANEL_FONT_ICON" -f "$PANEL_FONT_CLOCK" -a 40 | sh &
+
+# Make sure Trayer is just above root
+wid=$(xdo id -N "trayer")
+tries_left=20
+while [ -z "$wid" -a "$tries_left" -gt 0 ] ; do
+  sleep 0.05
+  wid=$(xdo id -N "trayer")
+  tries_left=$((tries_left - 1))
+done
+[ -n "$wid" ] && echo "$wid" | xargs -I {} xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "{}"
+unset wid
+unset tries_left
+
+# Make sure that lemonbar is just above root and below trayer
+wid=$(xdo id -a "$PANEL_WM_NAME")
+tries_left=20
+while [ -z "$wid" -a "$tries_left" -gt 0 ] ; do
+  sleep 0.05
+  wid=$(xdo id -a "$PANEL_WM_NAME")
+  tries_left=$((tries_left - 1))
+done
+[ -n "$wid" ] && echo "$wid" | xargs -I {} xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "{}"
+
+wait

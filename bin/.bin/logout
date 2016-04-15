@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -n "$(ps aux | grep -i openbo[x])" ]; then
+  openbox --exit
+fi

@@ -1,0 +1,84 @@
+#########################
+# Actions               #
+#########################
+
+# Check for different display configuration
+super + shift + Q
+  logout
+
+# Check for different display configuration
+F8
+  autorandr --change --default laptop
+
+# Screenshot
+super + shift + 4
+  scrot -s -e 'mv $f ~/Pictures/Screenshots/'
+
+# Lock
+super + l
+  lock
+
+# Toggle Invert Window (Requires compton with dbus flag)
+alt + i
+  invert focused
+
+
+#########################
+# Media Keys            #
+#########################
+
+XF86Audio{Play,Stop,Pause,Prev,Next}
+  playerctl {play-pause,stop,pause,previous,next}
+
+
+#########################
+# Volume Keys           #
+#########################
+
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+  volume.sh {toggle,up,down}
+
+
+#########################
+# Backlight  Keys       #
+#########################
+
+XF86MonBrightness{Up,Down}
+  light -{A,U} 5
+
+
+#########################
+# Launch Apps           #
+#########################
+
+# Terminal
+super + Return
+  urxvt
+
+# rofi - Run
+super + r
+  myrofi -show run
+
+# rofi - Window
+super + w
+  myrofi -show window
+
+# rofi - Drun
+control + space
+  myrofi -show drun
+
+#########################
+# Window Manager        #
+#########################
+
+# close window
+super + q
+  killw $(pfw)
+
+# move windows
+super + {Left,Down,Up,Right}
+  xdo move {-x -20,-y +20,-y -20,-x +20}
+
+# resize windows
+super + alt + {Left,Down,Up,Right}
+  xdo resize {-w -20,-h +20,-h -20,-w +20}

@@ -1,0 +1,26 @@
+#!/bin/bash
+xset -b
+xset r rate 200 30
+
+# Keybindings
+sxhkd -c ~/.config/bspwm/sxhkdrc &
+
+# Background
+nitrogen --restore &
+
+# Panel
+#(sleep 1s && tint2 -c ~/.config/tint2/themes/Numix/red_taskbar/tint2rc) &
+~/.config/bspwm/panel &
+#(sleep 1s && conky) &
+
+# Notifications
+(sleep 1s && dunst) &
+
+# System Tray
+# (sleep 3s && cbatticon -u 20 -i notification -c "poweroff" -l 15 -r 3) &
+# (sleep 3s && volumeicon) &
+(sleep 3s && nm-applet) &
+(sleep 3s && blueman-applet) &
+
+# Screensaver / Lockscreen
+(sleep 3s && xscreensaver -no-splash) &

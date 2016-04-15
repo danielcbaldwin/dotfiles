@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export WM="${1:-openbox}"
+
+exec /usr/bin/startx  -- -ardelay 200 -arinterval 30

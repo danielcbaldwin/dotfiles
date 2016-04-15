@@ -1,13 +1,10 @@
 xset -b
 xset r rate 200 30
 
-# Keybindings
-xbindkeys &
-
-echo $DISPLAY > ~/display-openbox.txt
-
 # Transparent windows, tearing fixes, and invert colors
 # (sleep 3s && compton --dbus) &
+
+sxhkd &
 
 # Background
 nitrogen --restore &
@@ -19,17 +16,11 @@ nitrogen --restore &
 # Notifications
 (sleep 1s && dunst) &
 
-# Dock
-# (sleep 3s && plank) &
-
 # System Tray
 # (sleep 3s && cbatticon -u 20 -i notification -c "poweroff" -l 15 -r 3) &
 (sleep 3s && volumeicon) &
 (sleep 3s && nm-applet) &
 (sleep 3s && blueman-applet) &
-
-# Application launcher
-#(sleep 1s && synapse -s) &
 
 # Screensaver / Lockscreen
 (sleep 3s && xscreensaver -no-splash) &

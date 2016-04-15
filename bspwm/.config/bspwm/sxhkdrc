@@ -1,0 +1,216 @@
+#########################
+# Actions               #
+#########################
+
+# make sxhkd reload its configuration files:
+alt + shift + Escape
+  pkill -USR1 -x sxhkd
+
+# Check for different display configuration
+super + shift + Q
+  logout
+
+# Check for different display configuration
+F8
+  autorandr --change --default laptop
+
+# Screenshot
+super + shift + 4
+  screenshot selected
+
+# Lock
+super + l
+  lock
+
+# Toggle Invert Window (Requires compton with dbus flag)
+alt + i
+  invert focused
+
+
+#########################
+# Media Keys            #
+#########################
+
+XF86Audio{Play,Stop,Pause,Prev,Next}
+  playerctl {play-pause,stop,pause,previous,next}
+
+alt + XF86Audio{Mute,LowerVolume,RaiseVolume}
+  playerctl {play-pause,prev,next}
+
+
+#########################
+# Volume Keys           #
+#########################
+
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+  volume.sh {toggle,up,down}
+
+
+#########################
+# Backlight  Keys       #
+#########################
+
+XF86MonBrightness{Up,Down}
+  light -{A,U} 5
+
+
+#########################
+# Launch Apps           #
+#########################
+
+# Terminal
+super + Return
+  urxvt
+
+# rofi - Run
+super + r
+  myrofi -show run
+
+# rofi - Window
+super + w
+  myrofi -show window
+
+# rofi - Drun
+control + space
+  myrofi -show drun
+
+#########################
+# Window Manager        #
+#########################
+
+# close window
+super + shift + r
+  source ~/.config/bspwm/bspwmrc
+
+# close window
+super + q
+  bspc node -c
+
+# expand the tiled space in the given direction
+super + alt + {h,j,k,l}
+  bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# contract the tiled space in the given direction
+super + alt + shift + {h,j,k,l}
+  bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# set the window state
+super + {t,shift + t,s,f}
+  bspc node -t ~{tiled,pseudo_tiled,floating,fullscreen}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+  xdo move {-x -20,-y +20,-y -20,-x +20}
+
+# resize a floating window
+#super + alt + {Left,Down,Up,Right}
+#  [ -n "$(bspc query -N -n "focused.floating")" ] && xdo resize {-w -20,-h +20,-h -20,-w +20} || bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+super + alt + {Left,Down,Up,Right}
+  bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# Move and Resize with the mouse
+super + button{1-3}
+  bspc pointer -g {move,resize_side,resize_corner}
+
+# Move and Resize with the mouse
+super + @button{1-3}
+  bspc pointer -u
+
+# quit bspwm normally
+super + alt + Escape
+  bspc quit
+
+# Move current window to largest space
+alt + Return
+  bspc node -s biggest
+
+# Mirror and flip leaves of tree
+alt + {comma,period}
+  bspc desktop -F {horizontal,vertical}
+
+# Swap window
+alt + shift + {Left,Down,Up,Right}
+  bspc node -s {west,south,north,east}
+
+# Presel window for splitting
+alt + ctrl + {Left,Down,Up,Right}
+  bspc node -p {west,south,north,east}
+
+# Cancel presel
+#bspc node @{_,/} -p cancel
+alt + ctrl + space
+  bspc query -N | xargs -I id -n 1 bspc node id -p cancel
+
+alt + shift + {Left,Down,Up,Right}
+  bspc config pointer_follows_monitor true; \
+  bspc config pointer_follows_focus true; \
+  cur_win=$(bspc query -N -n); \
+  cur_mon=$(bspc query -M -m); \
+  dir={west,south,north,east}; \
+  if ! bspc node -f $dir; then \
+      bspc node -m $dir; \
+      bspc monitor -f $dir; \
+  else \
+      new_mon=$(bspc query -M -m); \
+      [ "$new_mon" = "$cur_mon" ] && \
+          bspc node -s $cur_win || \
+          bspc node $cur_win -m $new_mon; \
+      bspc node -f $cur_win; \
+  fi; \
+  bspc config pointer_follows_monitor false; \
+  bspc config pointer_follows_focus false
+
+alt + {Left,Down,Up,Right}
+  bspc config pointer_follows_monitor true; \
+  bspc config pointer_follows_focus true; \
+  dir={west,south,north,east}; \
+  bspc node -f $dir || bspc monitor -f $dir; \
+  bspc config pointer_follows_monitor false; \
+  bspc config pointer_follows_focus false
+
+# Balance
+super + {_,shift} b
+  bspc node @/ -{B,E}
+
+# Focusing
+alt + {_,shift} + Tab
+  bspc config pointer_follows_monitor true; \
+  bspc config pointer_follows_focus true; \
+  bspc node -f {next,prev}; \
+  bspc config pointer_follows_monitor false; \
+  bspc config pointer_follows_focus false
+
+# Presel Split Ratio
+alt + ctrl + {1-9}
+  bspc node -o 0.{1-9}
+
+# rotate desktops.
+super + {_,shift} + semicolon
+  bspc node @/ -R {90,270}
+
+# flip desktops.
+alt + {h,v}
+  bspc node @/ -F {horizontal,vertical}
+
+ctrl + alt + {n,p}
+  bspc desktop -f {next,prev}
+
+super + shift + g : {plus,minus}
+  bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) {+,-} 5 ))
+
+alt + 0
+  bspc node @ -d ^0
+
+# note a desktop
+super + c
+  echo "$(bspc query -D -d)" > /tmp/bspwmdtop_swap
+
+# move the windows of the noted desktop to the current desktop
+super + v
+  for win in $(bspc query -N -d $(cat /tmp/bspwmdtop_swap)); do \
+    bspc node $win -d $(bspc query -D -d); \
+  done
+
+# Toggle monocle
+alt + space
+  bspc desktop -l next

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tty-clock -cbtD -C 3
