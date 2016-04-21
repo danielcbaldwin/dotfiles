@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Ranger
+Comment=A simple, vim-like file manager
+Exec=ranger %f
+Terminal=true
+Type=Application
+Categories=System;FileTools;FileManager;ConsoleOnly;
+MimeType=inode/directory;

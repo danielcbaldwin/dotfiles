@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Clock
+Comment=Clock
+Exec=clock
+Terminal=true
+Type=Application

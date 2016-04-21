@@ -83,8 +83,16 @@ super + shift + r
   source ~/.config/bspwm/bspwmrc
 
 # close window
-super + q
+{super,alt} + q
   bspc node -c
+
+# Switch to desktop
+alt + {0-9}
+  bspc desktop -f 0{0-9}
+
+# Move to desktop
+alt + shift + {0-9}
+  bspc node -d 0{0-9}
 
 # expand the tiled space in the given direction
 super + alt + {h,j,k,l}

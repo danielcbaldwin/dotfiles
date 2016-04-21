@@ -15,7 +15,7 @@ if [[ $# -eq 1 ]]; then
     esac
 fi
 
-muted=`amixer get Master -M | grep -oE "[[:digit:]]*%" | tr -d "%"`
+muted=`amixer get Master -M | grep -oE "\[(on|off)+\]" | tr -d "[]"`
 volume=`amixer get Master -M | grep -oE "[[:digit:]]*%" | tr -d "%"`
 
 if [[ $muted == "off" ]]; then
