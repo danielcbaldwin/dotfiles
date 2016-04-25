@@ -78,7 +78,7 @@ control + space
 # Window Manager        #
 #########################
 
-# close window
+# reload config
 super + shift + r
   source ~/.config/bspwm/bspwmrc
 
@@ -103,7 +103,7 @@ super + alt + shift + {h,j,k,l}
   bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
 
 # set the window state
-super + {t,shift + t,s,f}
+alt + {t,shift + t,s,f}
   bspc node -t ~{tiled,pseudo_tiled,floating,fullscreen}
 
 # move a floating window
@@ -152,29 +152,48 @@ alt + ctrl + space
 alt + shift + {Left,Down,Up,Right}
   bspc config pointer_follows_monitor true; \
   bspc config pointer_follows_focus true; \
-  cur_win=$(bspc query -N -n); \
-  cur_mon=$(bspc query -M -m); \
-  dir={west,south,north,east}; \
-  if ! bspc node -f $dir; then \
-      bspc node -m $dir; \
-      bspc monitor -f $dir; \
-  else \
-      new_mon=$(bspc query -M -m); \
-      [ "$new_mon" = "$cur_mon" ] && \
-          bspc node -s $cur_win || \
-          bspc node $cur_win -m $new_mon; \
-      bspc node -f $cur_win; \
-  fi; \
+  bspc node -s {west,south,north,east}; \
   bspc config pointer_follows_monitor false; \
   bspc config pointer_follows_focus false
+
+# bspc config pointer_follows_monitor true; \
+# bspc config pointer_follows_focus true; \
+# dir={west,south,north,east}; \
+# bspc node -s $dir -a; \
+# bspc config pointer_follows_monitor false; \
+# bspc config pointer_follows_focus false
+#
+# bspc config pointer_follows_monitor true; \
+# bspc config pointer_follows_focus true; \
+# cur_win=$(bspc query -N -n); \
+# cur_mon=$(bspc query -M -m); \
+# dir={west,south,north,east}; \
+# if ! bspc node -f $dir; then \
+#     bspc node -m $dir; \
+#     bspc monitor -f $dir; \
+# else \
+#     new_mon=$(bspc query -M -m); \
+#     [ "$new_mon" = "$cur_mon" ] && \
+#         bspc node -s $cur_win || \
+#         bspc node $cur_win -m $new_mon; \
+#     bspc node -f $cur_win; \
+# fi; \
+# bspc config pointer_follows_monitor false; \
+# bspc config pointer_follows_focus false
 
 alt + {Left,Down,Up,Right}
   bspc config pointer_follows_monitor true; \
   bspc config pointer_follows_focus true; \
-  dir={west,south,north,east}; \
-  bspc node -f $dir || bspc monitor -f $dir; \
+  bspc node -f {west,south,north,east} || bspc monitor -f {west,south,north,east}; \
   bspc config pointer_follows_monitor false; \
   bspc config pointer_follows_focus false
+
+# bspc config pointer_follows_monitor true; \
+# bspc config pointer_follows_focus true; \
+# dir={west,south,north,east}; \
+# bspc node -f $dir || bspc monitor -f $dir; \
+# bspc config pointer_follows_monitor false; \
+# bspc config pointer_follows_focus false
 
 # Balance
 super + {_,shift} b
@@ -193,32 +212,29 @@ alt + ctrl + {1-9}
   bspc node -o 0.{1-9}
 
 # rotate desktops.
-super + {_,shift} + semicolon
+alt + {_,shift} + semicolon
   bspc node @/ -R {90,270}
 
 # flip desktops.
 alt + {h,v}
   bspc node @/ -F {horizontal,vertical}
 
-ctrl + alt + {n,p}
+alt + bracket{right,left
   bspc desktop -f {next,prev}
 
-super + shift + g : {plus,minus}
+alt + shift + g : {plus,minus}
   bspc config -d focused window_gap $(( $(bspc config -d focused window_gap) {+,-} 5 ))
 
-alt + 0
-  bspc node @ -d ^0
-
 # note a desktop
-super + c
+alt + c
   echo "$(bspc query -D -d)" > /tmp/bspwmdtop_swap
 
 # move the windows of the noted desktop to the current desktop
-super + v
+alt + v
   for win in $(bspc query -N -d $(cat /tmp/bspwmdtop_swap)); do \
     bspc node $win -d $(bspc query -D -d); \
   done
 
 # Toggle monocle
-alt + space
+alt + m
   bspc desktop -l next

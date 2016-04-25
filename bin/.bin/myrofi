@@ -7,24 +7,41 @@ rofi \
   -width 40 \
   -padding 80 \
   -bw 1 \
-  -bc "#393939" \
-  -bg "#2d2d2d" \
-  -bg-active "#2d2d2d" \
-  -bg-urgent "#2d2d2d" \
-  -fg "#FFFFFF" \
-  -fg-active "#F4BE36" \
-  -fg-urgent "#FFFFFF" \
-  -hlfg "#D64937" \
-  -hlfg-active "#D64937" \
-  -hlfg-urgent "#D64937" \
-  -hlbg "#2d2d2d" \
-  -hlbg-active "#2d2d2d" \
-  -hlbg-urgent "#2d2d2d" \
+  -color-window "#2d2d2d, #393939, #000000" \
+  -color-normal "#2d2d2d, #ffffff, #2d2d2d, #2d2d2d, #d64937" \
+  -color-active "#2d2d2d, #f4be36, #2d2d2d, #2d2d2d, #d64937" \
+  -color-urgent "#2d2d2d, #ffffff, #2d2d2d, #2d2d2d, #d64937" \
   -font "Roboto 18" \
   -separator-style none \
   -hide-scrollbar \
   -terminal urxvt \
   $@
+
+# rofi \
+#   -modi run,drun,window \
+#   -lines 8 \
+#   -eh 2 \
+#   -width 40 \
+#   -padding 80 \
+#   -bw 1 \
+#   -bc "#393939" \
+#   -bg "#2d2d2d" \
+#   -bg-active "#2d2d2d" \
+#   -bg-urgent "#2d2d2d" \
+#   -fg "#FFFFFF" \
+#   -fg-active "#F4BE36" \
+#   -fg-urgent "#FFFFFF" \
+#   -hlfg "#D64937" \
+#   -hlfg-active "#D64937" \
+#   -hlfg-urgent "#D64937" \
+#   -hlbg "#2d2d2d" \
+#   -hlbg-active "#2d2d2d" \
+#   -hlbg-urgent "#2d2d2d" \
+#   -font "Roboto 18" \
+#   -separator-style none \
+#   -hide-scrollbar \
+#   -terminal urxvt \
+#   $@
 
 # rofi \
 #   -lines 8 \
