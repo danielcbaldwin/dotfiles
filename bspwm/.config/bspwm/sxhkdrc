@@ -111,8 +111,9 @@ super + {Left,Down,Up,Right}
   xdo move {-x -20,-y +20,-y -20,-x +20}
 
 # resize a floating window
-#super + alt + {Left,Down,Up,Right}
-#  [ -n "$(bspc query -N -n "focused.floating")" ] && xdo resize {-w -20,-h +20,-h -20,-w +20} || bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+super + shift + {Left,Down,Up,Right}
+  xdo resize {-w -20,-h +20,-h -20,-w +20}
+
 super + alt + {Left,Down,Up,Right}
   bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
 

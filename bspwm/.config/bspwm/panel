@@ -81,7 +81,6 @@ done
 bspc subscribe monitor | while read -r line; do
   case $line in
       monitor_add*|monitor_geometry*)
-        echo "$line" >> /home/daniel/monitor.log
         if [ "$(bspc query -M | wc -l)" -eq "3" ]; then
           bspc monitor $(bspc query -M | sed -n 1p) -d 00 03 06 09
           bspc monitor $(bspc query -M | sed -n 2p) -d 01 04 07

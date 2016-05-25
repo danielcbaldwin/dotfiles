@@ -34,7 +34,7 @@ Plugin 'scrooloose/nerdtree'
   let NERDTreeDirArrows = 1
   let g:NERDTreeMouseMode = 2
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_extensions = ['funky', 'cmdpalette']
 
 Plugin 'tacahiroy/ctrlp-funky'
@@ -124,6 +124,7 @@ Plugin 'othree/html5.vim'
 Plugin 'mutewinter/nginx.vim'
 Plugin 'acustodioo/vim-tmux'
 Plugin 'hashivim/vim-terraform'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 " =================================================
 call vundle#end()
 if bundles_installed == 0
