@@ -89,6 +89,7 @@ Plugin 'scrooloose/syntastic'
   let g:syntastic_check_on_open = 0
   let g:syntastic_check_on_wq = 0
   let g:syntastic_go_go_build_args = "-o /dev/null"
+  let g:syntastic_go_checkers=['go']
 
 " Go
 Plugin 'fatih/vim-go'
