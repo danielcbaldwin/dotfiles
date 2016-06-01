@@ -123,7 +123,6 @@ Plugin 'othree/html5.vim'
 
 " Other Languages
 Plugin 'mutewinter/nginx.vim'
-Plugin 'acustodioo/vim-tmux'
 Plugin 'hashivim/vim-terraform'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 " =================================================

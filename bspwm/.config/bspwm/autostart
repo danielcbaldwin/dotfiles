@@ -2,6 +2,8 @@
 xset -b
 xset r rate 200 30
 
+export BSPWM_STATE=/tmp/bspwm-state.json
+
 # Keybindings
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 
@@ -10,7 +12,7 @@ nitrogen --restore &
 
 # Panel
 #(sleep 1s && tint2 -c ~/.config/tint2/themes/Numix/red_taskbar/tint2rc) &
-~/.config/bspwm/panel &
+(sleep 1s && ~/.config/bspwm/panel) &
 #(sleep 1s && conky) &
 
 # Notifications

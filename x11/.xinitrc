@@ -21,7 +21,7 @@ case "$WM" in
     ;;
   bspwm)
     . ~/.config/bspwm/autostart
-    exec bspwm
+    exec ~/.config/bspwm/wm
     ;;
   openbox)
     exec openbox-session

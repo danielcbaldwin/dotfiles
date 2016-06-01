@@ -1,12 +1,17 @@
 #!/bin/bash
 
+if [ -e "$BSPWM_STATE" ] ; then
+  bspc wm -l "$BSPWM_STATE"
+  rm "$BSPWM_STATE"
+fi
+
 # Panels
 # bspc config top_padding               35
 #bspc config bottom_padding              25
 
-bspc config border_width                2
-bspc config window_gap                  10
-bspc config split_ratio                 0.52
+bspc config border_width                4
+bspc config window_gap                  4
+bspc config split_ratio                 0.5
 bspc config borderless_monocle          false
 bspc config gapless_monocle             false
 

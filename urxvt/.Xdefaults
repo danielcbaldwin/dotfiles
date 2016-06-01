@@ -37,7 +37,7 @@ URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
 
 ! Plugins
-URxvt.perl-ext-common: default,clipboard,tabbedex,resize-font,vtwheel,url-select,key
+URxvt.perl-ext-common: default,clipboard,tabbedex,resize-font,vtwheel,url-select
 
 ! URLS
 URxvt.url-select.launcher:  /usr/bin/google-chrome-stable
