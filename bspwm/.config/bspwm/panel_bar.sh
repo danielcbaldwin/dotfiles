@@ -96,6 +96,6 @@ while read -r line ; do
             title="${line#?}%{F-}%{B-}"
             ;;
     esac
-    printf "%s\n" "%{l}${PADDING2}${wm_infos[1]}%{c}${title}%{r}${volume}${batt}${clock}%{S+}%{l}${PADDING2}${wm_infos[2]}%{c}${title}%{r}${volume}${batt}${clock}"
+    printf "%s\n" "%{l}${PADDING2}${wm_infos[1]}%{r}${volume}${batt}${clock}%{S+}%{l}${PADDING2}${wm_infos[2]}%{r}${volume}${batt}${clock}"
     #printf "%s\n" "%{r} ${clock}"
 done

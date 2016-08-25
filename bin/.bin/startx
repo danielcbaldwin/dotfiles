@@ -2,4 +2,4 @@
 
 export WM="${1:-bspwm}"
 
-exec /usr/bin/startx  -- -ardelay 200 -arinterval 30
+exec /usr/bin/startx  -- -ardelay 250 -arinterval 35

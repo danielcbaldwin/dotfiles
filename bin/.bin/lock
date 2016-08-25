@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # Pause Music
-if [ -n "$(command -v playerctl)" ]; then
-  playerctl pause
-fi
+player pause
 
 if [ -n "$(pgrep -u $(whoami) xscreensaver)" ]; then
   xscreensaver-command --lock

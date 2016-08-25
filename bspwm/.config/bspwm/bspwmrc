@@ -10,10 +10,11 @@ fi
 #bspc config bottom_padding              25
 
 bspc config border_width                4
-bspc config window_gap                  4
+bspc config window_gap                  1
 bspc config split_ratio                 0.5
 bspc config borderless_monocle          false
 bspc config gapless_monocle             false
+bspc config honor_size_hints            true
 
 bspc config active_border_color         "#545350"
 bspc config focused_border_color        "#F4BE36"
@@ -29,12 +30,14 @@ bspc config remove_unplugged_monitors   true
 # Focusing behavior
 #bspc config pointer_follows_focus       true
 #bspc config pointer_follows_monitor     true
+bspc config click_to_focus              true
 bspc config focus_follows_pointer       true
 bspc config history_aware_focus         true
 bspc config ignore_ewmh_focus           true
 
 # Misc
 bspc config split_ratio                 0.50
+bspc config center_pseudo_tiled         false
 #bspc config auto_alternate              true
 #bspc config auto_cancel                 true
 #bspc config adaptative_raise            true
@@ -48,14 +51,14 @@ bspc config split_ratio                 0.50
 
 # Setup monitors
 if [ "$(bspc query -M | wc -l)" -eq "3" ]; then
-  bspc monitor $(bspc query -M | sed -n 1p) -d 00 03 06 09
-  bspc monitor $(bspc query -M | sed -n 2p) -d 01 04 07
-  bspc monitor $(bspc query -M | sed -n 3p) -d 02 05 08
+  bspc monitor $(bspc query -M | sed -n 1p) -d 00 03
+  bspc monitor $(bspc query -M | sed -n 2p) -d 01 04
+  bspc monitor $(bspc query -M | sed -n 3p) -d 02 05
 elif [ "$(bspc query -M | wc -l)" -eq "2" ]; then
-  bspc monitor $(bspc query -M | sed -n 1p) -d 00 02 04 06 08
-  bspc monitor $(bspc query -M | sed -n 2p) -d 01 03 05 07 09
+  bspc monitor $(bspc query -M | sed -n 1p) -d 00 02 04
+  bspc monitor $(bspc query -M | sed -n 2p) -d 01 03 05
 else
-  bspc monitor -d 00 01 02 03 04 05 06 07 08 09
+  bspc monitor -d 00 01 02 03 04 05
 fi
 
 # Setup Monitors
@@ -77,3 +80,4 @@ bspc rule -a google-chrome:crx_gaedmjdfmmahhbjefcbgaolhhanlaolb state=floating c
 bspc rule -a Telegram state=pseudo_tiled
 bspc rule -a Viewnior state=floating center=on
 bspc rule -a Xarchiver state=floating center=on
+bspc rule -a XCalc state=floating center=on

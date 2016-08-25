@@ -3,7 +3,7 @@
 #########################
 
 # make sxhkd reload its configuration files:
-alt + shift + Escape
+super + alt + ctrl + Escape
   pkill -USR1 -x sxhkd
 
 # Check for different display configuration
@@ -32,11 +32,13 @@ alt + i
 #########################
 
 XF86Audio{Play,Stop,Pause,Prev,Next}
-  playerctl {play-pause,stop,pause,previous,next}
+  player {play-pause,stop,pause,previous,next}
+
+alt + ctrl + {Mute,LowerVolume,RaiseVolume}
+  player {tired,ban,love}
 
 alt + XF86Audio{Mute,LowerVolume,RaiseVolume}
-  playerctl {play-pause,prev,next}
-
+  player {play-pause,prev,next}
 
 #########################
 # Volume Keys           #
@@ -71,7 +73,7 @@ super + w
   myrofi -show window
 
 # rofi - Drun
-control + space
+super + space
   myrofi -show drun
 
 #########################
@@ -151,6 +153,14 @@ alt + ctrl + {Left,Down,Up,Right}
 alt + ctrl + space
   bspc query -N | xargs -I id -n 1 bspc node id -p cancel
 
+# move into presel
+alt + ctrl + shift + {Left,Down,Up,Right}
+  bspc config pointer_follows_monitor true; \
+  bspc config pointer_follows_focus true; \
+  bspc node -n {west,south,north,east}; \
+  bspc config pointer_follows_monitor false; \
+  bspc config pointer_follows_focus false
+
 alt + shift + {Left,Down,Up,Right}
   bspc config pointer_follows_monitor true; \
   bspc config pointer_follows_focus true; \
@@ -214,12 +224,20 @@ alt + ctrl + {1-9}
   bspc node -o 0.{1-9}
 
 # rotate desktops.
-alt + {_,shift} + semicolon
-  bspc node @/ -R {90,270}
+alt + semicolon
+  bspc node @/ -R 90
+
+# rotate node tree.
+alt + shift + semicolon
+  bspc node @parent -R 90
 
 # flip desktops.
 alt + {h,v}
   bspc node @/ -F {horizontal,vertical}
+
+# flip selected desktops.
+alt + shift + {h,v}
+  bspc node @parent -F {horizontal,vertical}
 
 alt + bracket{right,left
   bspc desktop -f {next,prev}
