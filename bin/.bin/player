@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ -n "$(pgrep pianobar)" ]; then
+  ctl=~/.config/pianobar/ctl
+  case "$1" in
+    play-pause)
+      echo -n "p" > $ctl
+      ;;
+    play)
+      echo -n "P" > $ctl
+      ;;
+    pause)
+      echo -n "S" > $ctl
+      ;;
+    next)
+      echo -n "n" > $ctl
+      ;;
+    love)
+      echo -n "+" > $ctl
+      ;;
+    ban)
+      echo -n "-" > $ctl
+      ;;
+    tired)
+      echo -n "t" > $ctl
+      ;;
+    bookmark-song)
+      echo -n "b" > $ctl
+      sleep 0.5
+      echo -n "s" > $ctl
+      ;;
+  esac
+else
+  playerctl $1
+fi

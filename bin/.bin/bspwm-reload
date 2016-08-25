@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bspc wm -d > "$BSPWM_STATE" && bspc quit
+
+sleep 2
+
+kill -s HUP $(cat /tmp/panel-pid)
