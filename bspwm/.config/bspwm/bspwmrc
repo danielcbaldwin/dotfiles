@@ -5,19 +5,23 @@ if [ -e "$BSPWM_STATE" ] ; then
   rm "$BSPWM_STATE"
 fi
 
+. $(dirname $0)/theme.cfg
+. $(dirname $0)/panel.cfg
+
 # Panels
 # bspc config top_padding               35
 #bspc config bottom_padding              25
 
 bspc config border_width                4
-bspc config window_gap                  1
+bspc config window_gap                  7
 bspc config split_ratio                 0.5
 bspc config borderless_monocle          false
 bspc config gapless_monocle             false
-bspc config honor_size_hints            true
+bspc config honor_size_hints            false
 
-bspc config active_border_color         "#545350"
-bspc config focused_border_color        "#F4BE36"
+bspc config active_border_color         "#${BORDER_COLOR}"
+bspc config focused_border_color        "#${ACTIVE_BORDER_COLOR}"
+bspc config presel_feedback_color        "#${ACTIVE_BORDER_COLOR}"
 #bspc config active_border_color         "#545350"
 #bspc config focused_border_color        "#7E7F89"
 
@@ -76,8 +80,11 @@ bspc wm --adopt-orphans
 # Rules
 bspc rule -a Nitrogen state=floating
 bspc rule -a chrome_app_list state=floating
-bspc rule -a google-chrome:crx_gaedmjdfmmahhbjefcbgaolhhanlaolb state=floating center=on # Authy
+bspc rule -a Google-chrome:crx_gaedmjdfmmahhbjefcbgaolhhanlaolb state=floating center=on # Authy
 bspc rule -a Telegram state=pseudo_tiled
+bspc rule -a CrashPlan state=floating center=on
 bspc rule -a Viewnior state=floating center=on
 bspc rule -a Xarchiver state=floating center=on
 bspc rule -a XCalc state=floating center=on
+
+# bspc rule -a bar border=off hidden=off

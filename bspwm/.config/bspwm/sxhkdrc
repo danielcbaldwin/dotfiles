@@ -62,7 +62,8 @@ XF86MonBrightness{Up,Down}
 
 # Terminal
 super + Return
-  urxvt
+  termite
+#urxvt
 
 # rofi - Run
 super + r
