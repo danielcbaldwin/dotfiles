@@ -1,0 +1,67 @@
+#########################
+# Actions               #
+#########################
+
+# make sxhkd reload its configuration files:
+super + alt + ctrl + Escape
+  pkill -USR1 -x sxhkd
+
+# Screenshot
+super + shift + 4
+  screenshot selected
+
+# Lock
+super + l
+  lock
+
+#########################
+# Media Keys            #
+#########################
+
+XF86Audio{Play,Stop,Pause,Prev,Next}
+  player {play-pause,stop,pause,previous,next}
+
+alt + ctrl + {Mute,LowerVolume,RaiseVolume}
+  player {tired,ban,love}
+
+alt + XF86Audio{Mute,LowerVolume,RaiseVolume}
+  player {play-pause,prev,next}
+
+#########################
+# Volume Keys           #
+#########################
+
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+  volume.sh {toggle,up,down}
+
+#########################
+# Backlight  Keys       #
+#########################
+
+XF86MonBrightness{Up,Down}
+  light -{A,U} 5
+
+#########################
+# Launch Apps           #
+#########################
+
+# Terminal
+super + Return
+  terminte
+
+# rofi - Run
+super + r
+  myrofi -show run
+
+# rofi - Window
+super + w
+  myrofi -show window
+
+# rofi - Drun
+super + space
+  myrofi -show drun
+
+#########################
+# Window Manager        #
+#########################
+
