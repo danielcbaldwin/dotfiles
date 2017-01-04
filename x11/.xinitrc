@@ -19,6 +19,9 @@ case "$WM" in
   swm)
     exec swm
     ;;
+  i3)
+    exec i3
+    ;;
   bspwm)
     . ~/.config/bspwm/autostart
     exec ~/.config/bspwm/wm

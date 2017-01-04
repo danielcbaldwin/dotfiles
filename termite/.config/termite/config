@@ -11,7 +11,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-scrollback_lines = 1000
+scrollback_lines = 50000
 search_wrap = true
 #icon_name = terminal
 #geometry = 640x480
@@ -36,47 +36,88 @@ cursor_shape = block
 #modify_other_keys = false
 
 [colors]
-foreground = #DEDEDE
-foreground_bold = #ffffff
-#foreground_dim = #888888
-background = #2B2B2B
-#cursor = #aeafad
 
-# if unset, will reverse foreground and background
-highlight = #d6d6d6
+# special
+foreground      = #c5c8c6
+foreground_bold = #c5c8c6
+cursor          = #c5c8c6
+background      = #1d1f21
 
-# colors from color0 to color254 can be set
-# Black + Grey
-color0 = #2E3436
-color8 = #555753
+# black
+color0  = #1d1f21
+color8  = #969896
 
-# Red + Bright Red
-color1 = #D64937
-color9 = #CC0000
+# red
+color1  = #cc342b
+color9  = #cc342b
 
-# Green + Bright Green
-color2 = #4E9A06
-color10 = #8AE234
+# green
+color2  = #198844
+color10 = #198844
 
-# Yellow (Orange) + Bright Yellow (Yellow)
-color3 = #C4A000
-color11 = #FCE94F
+# yellow
+color3  = #fba922
+color11 = #fba922
 
-# Blue + Bright Blue
-color4 = #3465A4
-color12 = #729FCF
+# blue
+color4  = #3971ed
+color12 = #3971ed
 
-# Magenta (Purple) + Bright Magenta
-color5 = #75507B
-color13 = #AD7FA8
+# magenta
+color5  = #a36ac7
+color13 = #a36ac7
 
-# Cyan (Aqua) + Bright Cyan
-color6 = #06989A
-color14 = #34E2E2
+# cyan
+color6  = #3971ed
+color14 = #3971ed
 
-# Light Grey (Selection) + White (Current Line)
-color7 = #D3D7CF
-color15 = #EEEEEC
+# white
+color7  = #c5c8c6
+color15 = #ffffffVV
+
+#   [colors]
+#   foreground = #DEDEDE
+#   foreground_bold = #ffffff
+#   #foreground_dim = #888888
+#   background = #2B2B2B
+#   #background = rgba(43, 43, 43, 0.95)
+#   #cursor = #aeafad
+#
+#   # if unset, will reverse foreground and background
+#   highlight = #d6d6d6
+#
+#   # colors from color0 to color254 can be set
+#   # Black + Grey
+#   color0 = #2E3436
+#   color8 = #555753
+#
+#   # Red + Bright Red
+#   color1 = #D64937
+#   color9 = #CC0000
+#
+#   # Green + Bright Green
+#   color2 = #4E9A06
+#   color10 = #8AE234
+#
+#   # Yellow (Orange) + Bright Yellow (Yellow)
+#   color3 = #C4A000
+#   color11 = #FCE94F
+#
+#   # Blue + Bright Blue
+#   color4 = #3465A4
+#   color12 = #729FCF
+#
+#   # Magenta (Purple) + Bright Magenta
+#   color5 = #75507B
+#   color13 = #AD7FA8
+#
+#   # Cyan (Aqua) + Bright Cyan
+#   color6 = #06989A
+#   color14 = #34E2E2
+#
+#   # Light Grey (Selection) + White (Current Line)
+#   color7 = #D3D7CF
+#   color15 = #EEEEEC
 
 [hints]
 #font = Monospace 12
