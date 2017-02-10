@@ -1,4 +1,5 @@
-Xcursor.size: 24
+Xcursor.theme: Paper
+Xcursor.size: 16
 
 Xft.autohint:   0
 Xft.hintstyle:  hintfull

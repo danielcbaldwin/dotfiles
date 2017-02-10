@@ -2,25 +2,13 @@
 
 . ~/.config/bspwm/theme.cfg
 
-TMPFILE="/tmp/dzen2_cal-pid.$(bspc query -T -m | jq -r '.id')"
-
-if [ -e "$TMPFILE" ]; then
-  kill $(cat "$TMPFILE") 2> /dev/null
-  rm "$TMPFILE" 2> /dev/null
-  exit
-fi
-
 WIDTH=300
 LINES=20
 FONT="Roboto Mono"
 FONT_SIZE="16"
 
-monitor_x=$(bspc query -T -m | jq -r '.rectangle.x')
-monitor_width=$(bspc query -T -m | jq -r '.rectangle.width')
-monitor_padding_top=$(bspc query -T -m | jq -r '.padding.top')
-
-X=$(expr $(expr $monitor_x + $monitor_width) - $WIDTH)
-Y=$(expr $monitor_padding_top + 2)
+X=0
+Y=0
 #Y=0
 
 TODAY=$(expr `date +'%d'` + 0)
@@ -44,5 +32,5 @@ fi
 #cal `expr \( $MONTH + 1 \) % 12` $YEAR | sed -e "s/^\(.*[A-Za-z][A-Za-z]*.*\)$/^fg(#$HL_COLOR)\1^fg()/"
 cal $MONTH $YEAR | sed -e "s/^\(.*[A-Za-z][A-Za-z]*.*\)$/^fg(#$HL_COLOR)\1^fg()/"
 
-) | dzen2 -fg "#${FG_MUTED_COLOR}" -bg "#${BG_COLOR}" -fn "${FONT}:pixelsize=${FONT_SIZE}" -x $X -y $Y -w $WIDTH -l $LINES -sa c -p -e "onstart=raise,uncollapse;button3=exit;onquit=exec:rm ${TMPFILE};" & echo $! > $TMPFILE
+) | dzen2 -fg "#${FG_MUTED_COLOR}" -bg "#${BG_COLOR}" -fn "${FONT}:pixelsize=${FONT_SIZE}" -x $X -y $Y -w $WIDTH -l $LINES -sa c -p -e "onstart=raise,uncollapse;button3=exit;onquit=exec:rm ${TMPFILE};"
 

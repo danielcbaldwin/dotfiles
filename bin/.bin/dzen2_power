@@ -25,5 +25,5 @@ Y=$(expr $monitor_padding_top + 2)
 #Y="-1"
 #Y=${Y#-}
 
-echo -e "\nLock\nSleep\nShutdown\nRestart"| dzen2 -m -fg "#${FG_MUTED_COLOR}" -bg "#${BG_COLOR}" -fn "${FONT}:pixelsize=${FONT_SIZE}" -x $X -y $Y -w $WIDTH -h $LINEHEIGHT -l $LINES -sa c -p -e "onstart=raise,uncollapse;button3=exit;onquit=exec:rm ${TMPFILE};" & echo $! > $TMPFILE
+echo -e "Power\nLock\nSleep\nShutdown\nRestart"| dzen2 -m -fg "#${FG_MUTED_COLOR}" -bg "#${BG_COLOR}" -fn "${FONT}:pixelsize=${FONT_SIZE}" -x $X -y $Y -w $WIDTH -h $LINEHEIGHT -l $LINES -sa c -p -e "onstart=raise,uncollapse;button3=exit;onquit=exec:rm ${TMPFILE};" & echo $! > $TMPFILE
 

@@ -12,7 +12,7 @@ if [ -e "$PANEL_PID" ]; then
   killall lemonbar
 fi
 
-trap 'rm $PANEL_PID; killall trayer; trap - SIGTERM && kill -- -$$' INT TERM QUIT
+trap 'bspc config top_padding 0; rm $PANEL_PID; killall trayer; trap - SIGTERM && kill -- -$$' INT TERM QUIT
 
 traphup() {
     $0 "$$" &
