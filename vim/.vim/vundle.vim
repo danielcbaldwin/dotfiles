@@ -91,6 +91,8 @@ Plugin 'scrooloose/syntastic'
   let g:syntastic_go_go_build_args = "-o /dev/null"
   let g:syntastic_go_checkers=['go']
   let g:syntastic_javascript_checkers = ['jshint']
+  "let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+  "nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 " Go
 Plugin 'fatih/vim-go'

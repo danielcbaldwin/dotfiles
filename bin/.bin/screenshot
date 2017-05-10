@@ -9,11 +9,12 @@ elif [ -n "$(command -v gpicview)" ]; then
 fi
 
 function get_filename {
-  local num=001
+  local num=1
   local path="~/Pictures/Screenshots"
-  local existing_number=$(eval "ls ${path}/${1} 2> /dev/null" | sort | tail -1 | grep -o '[0-9]\+')
+  local existing_number=$(eval "ls ${path}/${1} 2> /dev/null" | sort | grep -o '[0-9]\+' | tail -1 | sed 's/^0*//')
+
   if [ -z "$existing_number" ]; then
-    echo "$path/${1/\*/$num}"
+    echo "$path/${1/\*/$(printf "%03d" $num)}"
   else
     echo "$path/${1/\*/$(printf "%03d" $(( $num + $existing_number )))}"
   fi

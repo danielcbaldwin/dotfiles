@@ -1,0 +1,12 @@
+#!/bin/bash
+
+layout="${1}"
+path="$HOME/.screenlayout/${layout}.sh"
+
+if [ -e "${path}" ]; then
+  . "${path}"
+
+  if [ -n "$(pgrep i3)" ]; then
+    i3-msg restart
+  fi
+fi
