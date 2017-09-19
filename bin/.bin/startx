@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export WM="${1:-i3}"
-
-exec /usr/bin/startx  -- -ardelay 250 -arinterval 35

@@ -11,9 +11,19 @@
 
 set $mod Mod4
 
+set $window_border 3
+set $window_title_format "<span size='smaller' font_family='awesome'> &#xf0c9;</span><span size='smaller' weight='400'>   %title</span>"
+
+show_marks no
+
+gaps inner 10
+gaps outer 0
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font roboto 8
+font xft:Roboto, FontAwesome 14
+
+mouse_warping none
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -30,26 +40,26 @@ font roboto 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# screensaver
-bindsym $mod+l exec xscreensaver-command -lock
-
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec myrofi -show combi
+bindsym $mod+shift+d exec myrofi -show run
+#bindsym $mod+space exec myrofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
 #bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -70,10 +80,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split h;exec notify-send 'Split Horizontally'
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split v;exec notify-send 'Split Vertically'
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -84,7 +94,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space "mark --add _; [con_mark=f] floating disable, border pixel $window_border, mark --add --toggle _; [con_mark=_] floating enable, border normal $window_border; mark --add --toggle f;"
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -94,6 +105,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+# lock
+bindsym $mod+l exec lock
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -126,6 +140,35 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym $mod+x scratchpad show
+bindsym $mod+Shift+x move scratchpad
+
+#########################
+# Media Keys            #
+#########################
+bindsym XF86AudioPlay exec player play-pause
+bindsym XF86AudioStop exec player stop
+bindsym XF86AudioPause exec player pause
+bindsym XF86AudioPrev exec player previous
+bindsym XF86AudioNext exec player next
+
+bindsym Mod1+XF86AudioMute exec player play-pause
+bindsym Mod1+XF86AudioLowerVolume exec player previous
+bindsym Mod1+XF86AudioRaiseVolume exec player next
+
+#########################
+# Volume Keys           #
+#########################
+bindsym XF86AudioMute exec volume.sh toggle
+bindsym XF86AudioLowerVolume exec volume.sh down
+bindsym XF86AudioRaiseVolume exec volume.sh up
+
+#########################
+# Backlight  Keys       #
+#########################
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -152,11 +195,64 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $bg_color #2D2D2D
+set $fg_color #FFFFFF
+
+set $hl_color #336799
+set $ll_color #6B6767
+
+set $border_color #636262
+set $active_border_color #6B8DC4
+
+set $dark_base #1D2021
+
+# class                 border                backgr.               text         indicator   child_border
+client.focused          $active_border_color  $active_border_color  $fg_color    #2e9ef4     $active_border_color
+client.focused_inactive $border_color         $border_color         $fg_color    #484e50     $border_color
+client.unfocused        $border_color         $border_color         $fg_color    #292d2e     $border_color
+client.urgent           $border_color         $border_color         $fg_color    #900000     $border_color
+client.placeholder      $border_color         $border_color         $fg_color    #000000     $border_color
+
+client.background $bg_color
+
+# Limits for float container
+floating_minimum_size 100 x 100
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
 
-exec --no-startup-id xscreensaver -nosplash
-#exec --no-startup-id sxhkd -c ~/.config/i3/sxhkdrc
+for_window [class="^.*"] border pixel $window_border, title_format $window_title_format
+for_window [class="Google-chrome" title="Authy"] floating enable
+for_window [class="Viewnior"] floating enable
+for_window [class="Cheese"] floating enable
+for_window [class="zoom"] floating enable
+for_window [class="VirtualBox"] floating disable
+
+# Correct handling of floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="Detached"] floating enable
+
+for_window [floating] border normal $window_border, title_format $window_title_format
+
+#exec_always --no-startup-id $HOME/.config/i3/bar.sh
+#exec --no-startup-id $HOME/.config/i3/wallpaper.sh
+
+exec --no-startup-id xset -b
+exec --no-startup-id xset r rate 250 35
+
+# Notifications
+#exec --no-startup-id dunst
+
+#exec --no-startup-id xscreensaver -no-splash
+#exec --no-startup-id nm-applet
+#exec --no-startup-id blueman-applet
+#exec --no-startup-id nitrogen --restore
+
+#exec --no-startup-id insync start
+#exec --no-startup-id caffeine
+#exec --no-startup-id clipit
