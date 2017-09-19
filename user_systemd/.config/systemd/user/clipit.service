@@ -1,0 +1,13 @@
+[Unit]
+Description=Clipit
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/clipit
+ExecStop=/usr/bin/pkill clipit
+Restart=on-abort
+RemainAfterExit=true
+
+[Install]
+WantedBy=xorg.target
