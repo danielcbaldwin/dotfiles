@@ -5,7 +5,7 @@ Requires=xorg.target
 
 [Service]
 Type=forking
-ExecStart=/home/daniel/.config/i3/bar.sh
+ExecStart=/home/daniel/.config/polybar/launch.sh
 
 [Install]
 WantedBy=xorg.target
