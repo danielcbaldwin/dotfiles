@@ -6,7 +6,10 @@ path="$HOME/.screenlayout/${layout}.sh"
 if [ -e "${path}" ]; then
   . "${path}"
 
-  if [ -n "$(pgrep i3)" ]; then
-    i3-msg restart
-  fi
+  systemctl --user reload i3.service
+  systemctl --user restart polybar.service
+
+  #if [ -n "$(pgrep i3)" ]; then
+  #  i3-msg restart
+  #fi
 fi

@@ -1,6 +1,6 @@
 [options]
-font = Roboto Mono 11
-font = Roboto Mono for Powerline 11
+font = Hack 11
+#font = Roboto Mono for Powerline 11
 resize_grip = false
 scroll_on_output = false
 scroll_on_keystroke = true

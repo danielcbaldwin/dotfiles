@@ -14,7 +14,7 @@ rofi \
   -font "Roboto 18" \
   -separator-style none \
   -hide-scrollbar \
-  -terminal urxvt \
+  -terminal termite \
   $@
 
 #  -modi run,drun,window \

@@ -20,6 +20,15 @@ xsetroot -cursor_name left_ptr
 # Disable Touch Screen
 xinput disable 12
 
+
+systemctl --user import-environment
+systemctl --user start xorg.target
+
+# Just kill the sleep to exit X11
+sleep 365d
+
+exit
+
 case "$WM" in
   swm)
     exec swm
