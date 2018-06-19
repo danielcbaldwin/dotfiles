@@ -4,9 +4,11 @@ After=xorg.target
 Requires=xorg.target
 
 [Service]
-ExecStartPre=/usr/bin/feh --bg-scale --randomize /home/daniel/Pictures/wallpaper/random
-ExecStart=/home/daniel/.bin/i3-blur-wall.sh
-Restart=always
+Type=oneshot
+ExecStart=/home/daniel/.fehbg
+#ExecStart=/usr/bin/feh --bg-scale --randomize /home/daniel/Pictures/wallpaper/random
+#ExecStart=/home/daniel/.bin/i3-blur-wall.sh
+#Restart=always
 #ExecStart=/home/daniel/.config/i3/wallpaper.sh
 
 [Install]

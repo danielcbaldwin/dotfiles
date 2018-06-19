@@ -1,0 +1,8 @@
+[Unit]
+Description=Backups
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/daniel
+ExecStart=/usr/bin/duplicacy backup -limit-rate 4096 -threads 4 -stats

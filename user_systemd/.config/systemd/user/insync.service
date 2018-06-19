@@ -1,0 +1,13 @@
+[Unit]
+Description=Insync
+After=local-fs.target network.target xorg.target
+Requires=xorg.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/insync start
+ExecStop=/usr/bin/insync quit
+
+[Install]
+WantedBy=xorg.target

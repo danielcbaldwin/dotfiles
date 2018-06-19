@@ -1,0 +1,14 @@
+CM_LAUNCHER=rofi clipmenu \
+  -p "clipmenu" \
+  -lines 8 \
+  -eh 2 \
+  -width 40 \
+  -padding 80 \
+  -bw 1 \
+  -color-window "#2d2d2d, #393939, #000000" \
+  -color-normal "#2d2d2d, #ffffff, #2d2d2d, #2d2d2d, #d64937" \
+  -color-active "#2d2d2d, #f4be36, #2d2d2d, #2d2d2d, #d64937" \
+  -color-urgent "#2d2d2d, #ffffff, #2d2d2d, #2d2d2d, #d64937" \
+  -font "Roboto 18" \
+  -separator-style none \
+  -hide-scrollbar

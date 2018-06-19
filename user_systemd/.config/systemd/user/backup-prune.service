@@ -1,0 +1,8 @@
+[Unit]
+Description=Prune Backups
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/daniel
+ExecStart=/usr/bin/duplicacy prune -keep 0:360 -keep 30:180 -keep 7:30 -keep 1:3

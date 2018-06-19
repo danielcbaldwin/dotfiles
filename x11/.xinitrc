@@ -14,12 +14,20 @@ fi
 # Set dpi
 xrandr --dpi 120
 
+# Dont let monitor sleep
+xset s off
+xset -dpms
+xset s noblank
+
 # Fix cursor
 xsetroot -cursor_name left_ptr
 
 # Disable Touch Screen
 xinput disable 12
 
+# Keyboard Repeat Rate
+xset -b
+xset r rate 250 35
 
 systemctl --user import-environment
 systemctl --user start xorg.target

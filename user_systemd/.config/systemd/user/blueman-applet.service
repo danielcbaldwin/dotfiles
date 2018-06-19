@@ -1,11 +1,12 @@
 [Unit]
 Description=Bluetooth Applet
-After=xorg.target
-Requires=xorg.target
+After=bluetooth.service
+StartLimitIntervalSec=0
 
 [Service]
 ExecStart=/usr/bin/blueman-applet
-Restart=on-abort
+Restart=always
+RestartSec=3
 
 [Install]
-WantedBy=xorg.target
+WantedBy=graphical.target

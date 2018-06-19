@@ -223,10 +223,13 @@ floating_minimum_size 100 x 100
 
 for_window [class="^.*"] border pixel $window_border, title_format $window_title_format
 for_window [class="Google-chrome" title="Authy"] floating enable
+for_window [class="Chromium" title="Authy"] floating enable
 for_window [class="Viewnior"] floating enable
 for_window [class="Cheese"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="VirtualBox"] floating disable
+for_window [class="Simplenote"] floating enable
+for_window [title="tracker - .*"] floating enable # Keybase https://github.com/keybase/client/issues/8232
 
 # Correct handling of floating windows
 for_window [window_role="pop-up"] floating enable
@@ -242,8 +245,8 @@ for_window [floating] border normal $window_border, title_format $window_title_f
 #exec_always --no-startup-id $HOME/.config/i3/bar.sh
 #exec --no-startup-id $HOME/.config/i3/wallpaper.sh
 
-exec --no-startup-id xset -b
-exec --no-startup-id xset r rate 250 35
+#exec --no-startup-id xset -b
+#exec --no-startup-id xset r rate 250 35
 
 # Notifications
 #exec --no-startup-id dunst

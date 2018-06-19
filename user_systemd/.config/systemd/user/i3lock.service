@@ -1,8 +1,13 @@
 [Unit]
 Description=i3lock
-After=xorg.target
-Before=i3.service
+StartLimitIntervalSec=0
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/i3lock -c 000000
+Type=simple
+ExecStart=/usr/bin/xautolock -time 10 -locker "pkill -USR1 dunst; i3lock -c 000000; pkill -USR2 dunst"
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=xorg.target
+

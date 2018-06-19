@@ -9,14 +9,14 @@ vnoremap < <gv
 vnoremap > >gv
 
 " select all
-nnoremap <Leader>a ggVG
+"nnoremap <Leader>a ggVG
 
 " open a split window and change selection to it
-nnoremap <leader>w <C-w>v<C-w>l
+"nnoremap <leader>w <C-w>v<C-w>l
 
 " Toggle search highlights
 " http://www.vimbits.com/bits/21
-nnoremap <silent><Leader><space> :nohls<CR>
+"nnoremap <silent><Leader><space> :nohls<CR>
 
 nnoremap <Leader>pp :set invpaste paste?<CR>
 set pastetoggle=<Leader>pp
@@ -69,7 +69,7 @@ nmap <leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Set list Chars - for showing characters that are not
 " normally displayed i.e. whitespace, tabs, EOL
-nmap <silent><leader>ll :set list!<CR>
+"nmap <silent><leader>ll :set list!<CR>
 
 " Tagbar key binding
 nnoremap <leader>l :TagbarToggle<CR>
@@ -89,14 +89,14 @@ map <C-c> :CtrlPCmdPalette<CR>
 
 " Move Lines
 " Normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
+"nnoremap <C-j> :m .+1<CR>==
+"nnoremap <C-k> :m .-2<CR>==
 " Insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
+"inoremap <C-j> <ESC>:m .+1<CR>==gi
+"inoremap <C-k> <ESC>:m .-2<CR>==gi
 " Visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+"vnoremap <C-j> :m '>+1<CR>gv=gv
+"vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Easymotion
 nmap s <Plug>(easymotion-s)
@@ -130,8 +130,8 @@ function! WrapForTmux(s)
   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+"let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+"let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
@@ -139,4 +139,4 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+"inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
