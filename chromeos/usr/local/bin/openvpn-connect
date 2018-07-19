@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ ! -e "${1}" ]; then
+  echo "You need to provide an opvn file"
+  exit 1
+fi
+
+cleanup() {
+  sudo stop shill
+  sudo start shill
+}
+
+trap cleanup EXIT INT QUIT
+
+sudo stop shill
+sudo start shill BLACKLISTED_DEVICES=tun0
+
+sudo openvpn ${1}
