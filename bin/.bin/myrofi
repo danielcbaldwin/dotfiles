@@ -2,6 +2,7 @@
 
 rofi \
   -combi-modi drun,run -modi combi \
+  -show-icons \
   -lines 8 \
   -eh 2 \
   -width 40 \
