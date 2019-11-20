@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo mount -o remount,rw -o exec /home/chronos/user

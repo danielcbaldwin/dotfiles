@@ -21,8 +21,12 @@ function rvm_version_prompt {
 
 function ssh_show_host {
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    NAME=$(cat /etc/hostname)
+    if [ -z "$NAME" ]; then
+      NAME="ssh"
+    fi
     # echo -e "${red}[ \u@\h ]${reset_color} "
-    echo -e "${red}[ ssh ]${reset_color} "
+    echo -e "${red}[ ${NAME} ]${reset_color} "
   fi
 }
 

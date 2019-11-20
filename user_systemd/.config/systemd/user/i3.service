@@ -1,0 +1,13 @@
+[Unit]
+Description=A tiling window manager
+After=xorg.target
+Requires=xorg.target
+RefuseManualStop=true
+
+[Service]
+ExecStart=/usr/bin/i3
+ExecReload=/usr/bin/i3-msg restart
+
+[Install]
+WantedBy=xorg.target
+

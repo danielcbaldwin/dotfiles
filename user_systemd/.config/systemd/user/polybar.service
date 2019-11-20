@@ -1,0 +1,11 @@
+[Unit]
+Description=A tiling window manager
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+Type=forking
+ExecStart=/home/daniel/.config/polybar/launch.sh
+
+[Install]
+WantedBy=xorg.target

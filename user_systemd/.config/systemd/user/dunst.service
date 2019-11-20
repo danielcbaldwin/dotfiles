@@ -1,0 +1,10 @@
+[Unit]
+Description=Dunst
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=/usr/bin/dunst
+
+[Install]
+WantedBy=xorg.target

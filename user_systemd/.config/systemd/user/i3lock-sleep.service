@@ -1,0 +1,12 @@
+[Unit]
+Description=i3lock sleep
+Before=sleep.target
+After=i3lock.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xautolock -locknow
+
+[Install]
+WantedBy=sleep.target
+

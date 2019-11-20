@@ -1,0 +1,12 @@
+[Unit]
+Description=Bluetooth Applet
+After=bluetooth.service
+StartLimitIntervalSec=0
+
+[Service]
+ExecStart=/usr/bin/blueman-applet
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=graphical.target
