@@ -1,7 +1,7 @@
 #
 # ~/.bashrc
 #
-export GOPATH="${HOME}/.go"
+export GOPATH="${HOME}/Projects/.go"
 
 export DOTFILES="${HOME}/.bash"
 export BASHFILES="${HOME}/.bash"
