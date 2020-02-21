@@ -30,9 +30,15 @@ function ssh_show_host {
   fi
 }
 
+function vaulted_prompt {
+  if [ -n "$VAULTED_ENV" ]; then
+    echo -e "${blue}[ vaulted: $VAULTED_ENV ]${reset_color} "
+  fi
+}
+
 function prompt_command() {
   # PS1="$(ssh_show_host)${green}[\T]${reset_color} [ ${cyan}\w${reset_color}$(scm_prompt_info)${reset_color}${yellow}$(ruby_version_prompt)${reset_color} ] ${cyan}\$ ${reset_color}"
-  PS1="$(ssh_show_host)${green}[\T]${reset_color} [ ${cyan}\w${reset_color}$(scm_prompt_info)${reset_color} ] ${cyan}\$ ${reset_color}"
+  PS1="$(ssh_show_host)$(vaulted_prompt)${green}[\T]${reset_color} [ ${cyan}\w${reset_color}$(scm_prompt_info)${reset_color} ] ${cyan}\$ ${reset_color}"
 }
 
 PROMPT_COMMAND=prompt_command;
