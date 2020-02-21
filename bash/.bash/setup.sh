@@ -1,13 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export BASH_THEME=${BASH_THEME:-"daniel"}
 
 # Reload Library
-if [[ $OSTYPE =~ 'debian' ]]; then
-  alias reload='source ~/.bash_profile'
-else
-  alias reload='source ~/.bashrc'
-fi
+alias reload='source ~/.bashrc'
 
 # set 256 colors
 export TERM=xterm-256color
@@ -26,18 +22,19 @@ source "${BASHFILES}/themes/base.theme.bash"
 
 # library
 LIB="${BASHFILES}/lib/*.bash"
-for config_file in $LIB
-do
+for config_file in $LIB; do
   source $config_file
 done
 unset config_file
 
 # Load enabled aliases, completion, plugins
-for file_type in "aliases" "completion" "plugins"
-do
+for file_type in "aliases" "completion" "plugins"; do
   _load_bash_additions $file_type
 done
 unset file_type
+
+# get rid of duplicates in path
+PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
 if [[ $PROMPT ]]; then
     export PS1=$PROMPT
