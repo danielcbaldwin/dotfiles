@@ -32,7 +32,7 @@ function ssh_show_host {
 
 function vaulted_prompt {
   if [ -n "$VAULTED_ENV" ]; then
-    echo -e "${blue}[ vaulted: $VAULTED_ENV ]${reset_color} "
+    echo -e "${light_blue}[ vaulted: $VAULTED_ENV ]${reset_color} "
   fi
 }
 
