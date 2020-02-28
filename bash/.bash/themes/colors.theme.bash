@@ -151,6 +151,10 @@ function __blue  {
   echo "$(__color blue $@)"
 }
 
+function __light_blue  {
+  echo "$(__color blue bright $@)"
+}
+
 function __magenta {
   echo "$(__color magenta $@)"
 }
@@ -192,7 +196,7 @@ function echo_color {
 #   cyan="$(tput setaf 6)"
 #   white="$(tput setaf 256)"
 #   orange="$(tput setaf 172)"
-  
+
 #   bold="$(tput bold)"
 
 #   bold_black="$bold$black"
@@ -214,6 +218,8 @@ function echo_color {
   cyan="$(color reset cyan)"
   white="$(color reset white bold)"
   orange="$(color reset red fg bright)"
+
+  light_blue="$(color reset light_blue)"
 
   bold_black="$(color black bold)"
   bold_red="$(color red bold)"
@@ -260,6 +266,8 @@ echo_purple="$(echo_color reset magenta)"
 echo_cyan="$(echo_color reset cyan)"
 echo_white="$(echo_color reset white bold)"
 echo_orange="$(echo_color reset red fg bright)"
+
+echo_light_blue="$(echo_color reset light_blue)"
 
 echo_bold_black="$(echo_color black bold)"
 echo_bold_red="$(echo_color red bold)"
