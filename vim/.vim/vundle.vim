@@ -14,7 +14,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " ================= Naviagtion ====================
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
   let NERDTreeShowBookmarks=1
   let NERDTreeSortOrder=[]
 
@@ -54,10 +54,10 @@ Plugin 'majutsushi/tagbar'
 " =================================================
 
 " ==================== Color ======================
+Plugin 'chriskempson/base16-vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'trevorrjohn/vim-obsidian'
-Plugin 'mkarmona/colorsbox'
-Plugin 'nicklasos/numix-molokai'
+Plugin 'gryf/wombat256grf'
+Plugin 'sainnhe/sonokai'
 " =================================================
 
 " ===================== UI ========================
@@ -80,6 +80,7 @@ Plugin 'tpope/vim-commentary'
 " =================================================
 
 " ============= Language Additions ================
+Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/syntastic'
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
@@ -105,29 +106,14 @@ Plugin 'fatih/vim-go'
   let g:go_fmt_fail_silently = 1
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
   let ruby_operators=1
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-scripts/ruby-matchit'
 
-" CSS
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'groenewege/vim-less'
-
-" Javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'leshill/vim-json'
-Plugin 'itspriddle/vim-jquery'
-
-" HTML
-Plugin 'othree/html5.vim'
-
 " Other Languages
 Plugin 'mutewinter/nginx.vim'
 Plugin 'hashivim/vim-terraform'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+
 " =================================================
 call vundle#end()
 if bundles_installed == 0

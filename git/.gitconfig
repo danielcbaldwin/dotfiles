@@ -17,3 +17,5 @@
   editor = vim
 [github]
   user = danielcbaldwin
+[url "git@bitbucket.org:"]
+  insteadOf = https://bitbucket.org/

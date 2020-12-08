@@ -4,7 +4,11 @@ if has('mouse')
 endif
 
 set t_Co=256
+let base16colorspace=256
 colorscheme Tomorrow-Night
+"colorscheme wombat256grf
+"colorscheme sonokai
+"let g:sonokai_style = 'shusia'
 
 " Enable clipboard integration
 "set clipboard=unnamed
