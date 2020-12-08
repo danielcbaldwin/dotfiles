@@ -428,6 +428,10 @@
             }
           }
         }
+      },
+      "ruby-build": {
+        "version": "20201208",
+        "bottle": false
       }
     },
     "cask": {
