@@ -16,6 +16,12 @@ brew 'tmux'
 brew 'git'
 
 ###############################################################################
+# fonts
+###############################################################################
+tap 'homebrew/cask-fonts'
+cask 'font-menlo-for-powerline'
+
+###############################################################################
 # dotfiles support
 ###############################################################################
 brew 'stow'
@@ -80,6 +86,17 @@ brew 'jq'
 # tap tools
 ###############################################################################
 cask 'tunnelblick'
+
+# Raynor config
+brew 'libmaxminddb'
+brew 'geoipupdate'
+brew 'postgresql'
+brew 'v8@3.15'
+#brew 'mysql'
+brew 'mysql-client'
+brew 'mcrypt'
+brew 'pbzip2'
+brew 'wget'
 #brewset = ENV['BREWSET'] || 'minimal'
 #cask 'virtualbox' unless brewset.to_sym.eql?(:minimal)
 #cask 'virtualbox-extension-pack' unless brewset.to_sym.eql?(:minimal)
