@@ -81,6 +81,23 @@ brew 'nmap'
 brew 'ripgrep'
 brew 'inetutils'
 brew 'jq'
+brew 'mas'
+
+###############################################################################
+# apps
+###############################################################################
+cask '1password'
+cask 'caffeine'
+cask 'discord'
+cask 'google-backup-and-sync'
+cask 'google-chrome'
+cask 'slack'
+cask 'tableplus'
+cask 'the-unarchiver'
+cask 'transmit'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'whatsapp'
 
 ###############################################################################
 # tap tools
