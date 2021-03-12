@@ -4,6 +4,7 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/core'
+tap 'homebrew/services'
 tap 'homebrew/command-not-found'
 tap 'warrensbox/tap'
 tap 'hashicorp/tap'
@@ -86,18 +87,20 @@ brew 'mas'
 ###############################################################################
 # apps
 ###############################################################################
-cask '1password'
 cask 'caffeine'
 cask 'discord'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'slack'
 cask 'tableplus'
-cask 'the-unarchiver'
+#cask 'the-unarchiver'
 cask 'transmit'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
+
+mas 'Slack', id: 803453959
+mas '1Password 7', id: 1333542190
+mas 'The Unarchiver', id: 425424353
 
 ###############################################################################
 # tap tools
@@ -109,8 +112,7 @@ brew 'libmaxminddb'
 brew 'geoipupdate'
 brew 'postgresql'
 brew 'v8@3.15'
-#brew 'mysql'
-brew 'mysql-client'
+brew 'mysql@5.6'
 brew 'mcrypt'
 brew 'pbzip2'
 brew 'wget'

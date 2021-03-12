@@ -19,3 +19,9 @@
   user = danielcbaldwin
 [url "git@bitbucket.org:"]
   insteadOf = https://bitbucket.org/
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
