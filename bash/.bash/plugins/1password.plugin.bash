@@ -23,7 +23,7 @@ if command -v op &> /dev/null; then
 
   oplistaccounts() {
     if [[ -e ~/.config/op/config ]]; then
-      cat .config/op/config | jq -r '.accounts |.[] | .shorthand'
+      cat .config/op/config | jq -r '.accounts | .[] | .shorthand'
     fi
   }
 
