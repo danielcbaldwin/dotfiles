@@ -3,7 +3,14 @@ if command -v op &> /dev/null; then
     shorthand=${1:-$(oplastaccount)}
     session_var="OP_SESSION_${shorthand}"
     if [[ -z ${!session_var} ]]; then
-      eval $(op signin $shorthand)
+      if [[ -e "${HOME}/.config/op/creds" ]]; then
+        # in format:
+        # shorthand: <secret key>
+        #
+        eval $(cat ~/.config/op/creds | grep "^${shorthand}:" | cut -d":" -f2 | xargs | op signin $shorthand)
+      else
+        eval $(op signin $shorthand)
+      fi
     fi
   }
 
@@ -34,10 +41,18 @@ if command -v op &> /dev/null; then
   }
 
   sshkeys() {
+    start_sshagent # from: ../lib/helpers.bash
     for account in $(oplistaccounts); do
       opsignin ${account}
       session="OP_SESSION_${account}"
-      op list items --categories Secure\ Note --tags ssh-key --session "${!session}" | jq -r '.[] .uuid' | xargs -I% bash -c "op get item % --fields notesPlain --session ${!session} | ssh-add -"
+      #op list items --categories Secure\ Note --tags ssh-key --session "${!session}" | jq -r '.[] .uuid' | xargs -I% bash -c "op get item % --fields notesPlain --session ${!session} | ssh-add -"
+      for id in $(op list items --categories Secure\ Note --tags ssh-key --session "${!session}" | jq -r '.[] .uuid'); do
+        item=$(op get item ${id} --fields title,notesPlain --session ${!session})
+        name=$(echo $item | jq -r '.title')
+        key=$(echo $item | jq -r '.notesPlain')
+        echo "Adding: ${name}"
+        echo "$key" | ssh-add -
+      done
     done
   }
 fi

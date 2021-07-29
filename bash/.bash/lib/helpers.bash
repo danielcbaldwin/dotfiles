@@ -31,3 +31,13 @@ _is_function ()
 {
     [ -n "$(type -a $1 2>/dev/null | grep 'is a function')" ]
 }
+
+function start_sshagent() {
+  XDG_RUNTIME_DIR_WITH_DEFAULT=${XDG_RUNTIME_DIR:-"/tmp"}
+  if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR_WITH_DEFAULT/ssh-agent.env"
+  fi
+  if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR_WITH_DEFAULT/ssh-agent.env" >/dev/null
+  fi
+}
