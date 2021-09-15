@@ -7,7 +7,7 @@ if command -v op &> /dev/null; then
         # in format:
         # shorthand: <secret key>
         #
-        eval $(cat ~/.config/op/creds | grep "^${shorthand}:" | cut -d":" -f2 | xargs | op signin $shorthand)
+        eval $(cat "${HOME}/.config/op/creds" | grep "^${shorthand}:" | cut -d":" -f2 | xargs | op signin $shorthand)
       else
         eval $(op signin $shorthand)
       fi
@@ -29,14 +29,14 @@ if command -v op &> /dev/null; then
   }
 
   oplistaccounts() {
-    if [[ -e ~/.config/op/config ]]; then
-      cat .config/op/config | jq -r '.accounts | .[] | .shorthand'
+    if [[ -e "${HOME}/.config/op/config" ]]; then
+      cat "${HOME}/.config/op/config" | jq -r '.accounts | .[] | .shorthand'
     fi
   }
 
   oplastaccount() {
-    if [[ -e ~/.config/op/config ]]; then
-      cat .config/op/config | jq -r '.latest_signin'
+    if [[ -e "${HOME}/.config/op/config" ]]; then
+      cat "${HOME}/.config/op/config" | jq -r '.latest_signin'
     fi
   }
 
