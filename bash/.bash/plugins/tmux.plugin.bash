@@ -31,30 +31,31 @@ takeover2() {
 
 work() {
   loc=`pwd`
-  name=${loc##*/}
+  #name=${loc##*/}
+  name=${loc}
 
   if ! tmux has-session -t "$name"; then
 
     tmux new-session -d -s "$name"
     tmux send-keys -t "$name" "vim" C-m
 
-    tmux split-window -h -c "$loc" -p 40
+    #tmux split-window -h -c "$loc" -p 40
 
-    tmux send-keys -t "$name" "ls -la" C-m
+    #tmux send-keys -t "$name" "ls -la" C-m
 
-    if [ -d ".git" ]; then
-      tmux send-keys -t "$name" "git status" C-m
-    fi
+    #if [ -d ".git" ]; then
+    #  tmux send-keys -t "$name" "git status" C-m
+    #fi
 
-    if [ -e "log/development.log" ]; then
-      tmux new-window -c "$loc"
-      tmux send-keys -t "$name" "tail -f log/development.log" C-m
-    fi
+    #if [ -e "log/development.log" ]; then
+    #  tmux new-window -c "$loc"
+    #  tmux send-keys -t "$name" "tail -f log/development.log" C-m
+    #fi
 
     tmux new-window -c "$loc"
 
     tmux select-window -t 1
-    tmux select-pane -t 0
+    #tmux select-pane -t 0
   fi
 
   tmux attach -t "$name"
