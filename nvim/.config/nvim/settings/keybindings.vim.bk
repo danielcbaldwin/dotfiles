@@ -1,7 +1,7 @@
 let mapleader = ","
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+"cmap w!! w !sudo tee > /dev/null %
 
 " Reselect visual block after indent/outdent
 " http://www.vimbits.com/bits/20
@@ -18,12 +18,12 @@ vnoremap > >gv
 " http://www.vimbits.com/bits/21
 "nnoremap <silent><Leader><space> :nohls<CR>
 
-nnoremap <Leader>pp :set invpaste paste?<CR>
-set pastetoggle=<Leader>pp
+"nnoremap <Leader>pp :set invpaste paste?<CR>
+"set pastetoggle=<Leader>pp
 
 " Disable paste mode when leaving Insert Mode
 " http://www.vimbits.com/bits/170
-au InsertLeave * set nopaste
+"au InsertLeave * set nopaste
 
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
 " autocmd InsertEnter * :set number
@@ -38,7 +38,7 @@ au InsertLeave * set nopaste
 nmap Y y$
 
 " Run GoImports
-nmap <C-i> :GoImports<CR>
+"nmap <C-i> :GoImports<CR>
 
 " Fix for TMUX
 " if &term =~ '^screen'
@@ -71,15 +71,12 @@ nmap <leader>s :setlocal spell! spelllang=en_us<CR>
 " normally displayed i.e. whitespace, tabs, EOL
 "nmap <silent><leader>ll :set list!<CR>
 
-" Tagbar key binding
-nnoremap <leader>l :TagbarToggle<CR>
-
 " NerdTree key binding
-nnoremap <leader>n :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>
 
 " ctrl+p Key Bindings
-nmap <C-b> :CtrlPBuffer<CR>
-nnoremap <C-l> :CtrlPFunky<CR>
+"nmap <C-b> :CtrlPBuffer<CR>
+"nnoremap <C-l> :CtrlPFunky<CR>
 " narrow the list down with a word under cursor
 " nnoremap <Leader>k :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 " map <C-m> :CtrlPModified<CR>
@@ -98,45 +95,30 @@ map <C-c> :CtrlPCmdPalette<CR>
 "vnoremap <C-j> :m '>+1<CR>gv=gv
 "vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" Easymotion
-nmap s <Plug>(easymotion-s)
-nmap S <Plug>(easymotion-s2)
-map f <Plug>(easymotion-f)
-map F <Plug>(easymotion-F)
-nmap <Leader>J <Plug>(easymotion-eol-j)
-nmap <Leader>K <Plug>(easymotion-eol-k)
-" map  / <Plug>(easymotion-sn)
-" omap / <Plug>(easymotion-tn)
-" map  n <Plug>(easymotion-next)
-" map  N <Plug>(easymotion-prev)
-nmap t <Plug>(easymotion-t)
-nmap T <Plug>(easymotion-t2)
-omap t <Plug>(easymotion-bd-tl)
-
 " Other save options incase, because i always mess up
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+":command WQ wq
+":command Wq wq
+":command W w
+":command Q q
 
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
-
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
+"function! WrapForTmux(s)
+"  if !exists('$TMUX')
+"    return a:s
+"  endif
+"
+"  let tmux_start = "\<Esc>Ptmux;"
+"  let tmux_end = "\<Esc>\\"
+"
+"  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+"endfunction
 
 "let &t_SI .= WrapForTmux("\<Esc>[?2004h")
 "let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
+"function! XTermPasteBegin()
+"  set pastetoggle=<Esc>[201~
+"  set paste
+"  return ""
+"endfunction
 
 "inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()

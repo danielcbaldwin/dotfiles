@@ -1,0 +1,64 @@
+return {}
+local result = vim.api.nvim_exec(
+  [[
+    let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+    if empty(glob(data_dir . '/autoload/plug.vim'))
+      silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+  ]], true
+)
+print(result)
+
+local Plug = vim.fn['plug#']
+
+-- Begin installation of all plugins
+vim.call('plug#begin', '~/.local/share/nvim/site/plugged')
+
+vim.g.plug_url_format = 'git@github.com:%s.git'
+vim.g.plug_threads = 4
+
+-- ================= Naviagtion ====================
+--Plug('nvim-tree/nvim-web-devicons')
+--Plug('nvim-tree/nvim-tree.lua')
+-- Plug('preservim/nerdtree')
+
+--Plug('nvim-lua/plenary.nvim')
+--Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.1' })
+--Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn['TSUpdate']})
+-- =================================================
+
+--  ==================== Color ======================
+--Plug('chriskempson/vim-tomorrow-theme')
+Plug('crusoexia/vim-monokai')
+Plug('nanotech/jellybeans.vim')
+Plug('morhetz/gruvbox')
+Plug('fatih/molokai')
+Plug('antlypls/vim-colors-codeschool')
+--  =================================================
+
+--  ===================== UI ========================
+--Plug('vim-airline/vim-airline')
+--Plug('vim-airline/vim-airline-themes')
+--  =================================================
+
+--  ================== Commands =====================
+Plug('tpope/vim-fugitive')
+--Plug('numToStr/Comment.nvim')
+--Plug('b0o/mapx.nvim')
+--  =================================================
+
+--  ============= Language Additions ================
+Plug('dense-analysis/ale')
+--Plug('mfussenegger/nvim-lint')
+
+--  Go
+--Plug('fatih/vim-go')
+--  =================================================
+vim.call('plug#end')
+
+-- Manual plugin config loads
+--require('plugins/_mapx')
+
+-- Load all the plugin configs
+--require('utils').glob_require('plugins')

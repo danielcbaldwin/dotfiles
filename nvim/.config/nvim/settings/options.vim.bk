@@ -5,7 +5,7 @@ endif
 
 set t_Co=256
 let base16colorspace=256
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
 "colorscheme wombat256grf
 "colorscheme sonokai
 "let g:sonokai_style = 'shusia'

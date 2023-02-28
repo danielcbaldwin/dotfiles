@@ -2,3 +2,4 @@
 vim/.vim/undo/*
 vim/.vim/bundle/*
 .netrwhist
+nvim/.config/nvim/lazy-lock.json
