@@ -28,7 +28,7 @@ done
 unset config_file
 
 # Load enabled aliases, completion, plugins
-for file_type in "aliases" "completion" "plugins"; do
+for file_type in "aliases" "plugins" "completion"; do
   _load_bash_additions $file_type
 done
 unset file_type
