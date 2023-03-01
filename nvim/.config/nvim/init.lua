@@ -17,10 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup('plugins', {
   concurrency = 4,
+  checker = {
+    enabled = true,
+    consurrency = 1,
+  },
+  change_detection = {
+    enabled = false,
+  },
 })
 
 -- Settings
 require('settings')
-
--- All vim (aka nvim, aka neovim) settings
-vim.cmd('runtime! settings/**.vim')

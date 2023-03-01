@@ -32,9 +32,5 @@ return  {
       vim.cmd([[colorscheme sonokai]])
     end,
   },
-  {
-    "tpope/vim-fugitive",
-    cmd = {"Git", "GitBlame", },
-  }
 }
 --)
