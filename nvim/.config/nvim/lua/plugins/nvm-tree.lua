@@ -18,7 +18,11 @@ return {
   end,
   config = function()
     require("nvim-tree").setup({
-      sort_by = "name",
+      sort_by = function(nodes)
+        table.sort(nodes, function(a, b)
+          return string.lower(a.name) < string.lower(b.name)
+        end)
+      end,
       view = {
         width = 30,
         mappings = {
@@ -34,7 +38,7 @@ return {
         },
       },
       filters = {
-        dotfiles = false,
+        dotfiles = true,
       },
     })
   end,
