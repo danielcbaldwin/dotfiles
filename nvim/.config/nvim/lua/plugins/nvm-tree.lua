@@ -31,15 +31,30 @@ return {
           },
         },
       },
-      renderer = {
-        group_empty = true,
-        indent_markers = {
-          enable = true,
-        },
-      },
       filters = {
         dotfiles = true,
       },
+       renderer = {
+         indent_markers = {
+           enable = true,
+         },
+         icons = {
+           modified_placement = "before",
+           show = {
+             modified = true
+           },
+           glyphs = {
+             default = '',
+             symlink = '',
+             modified = '󰃉',        │                           ,
+           },
+         },
+         group_empty = true,
+       },
+       modified = {
+        enable = true,
+        show_on_dirs = false,
+       },
     })
   end,
 }
