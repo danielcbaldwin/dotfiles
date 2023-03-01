@@ -20,6 +20,7 @@ require("lazy").setup('plugins', {
   checker = {
     enabled = true,
     consurrency = 1,
+    notify = false,
   },
   change_detection = {
     enabled = false,
