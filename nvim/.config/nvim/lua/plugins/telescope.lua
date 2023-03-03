@@ -6,7 +6,10 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { 'plenary.nvim' },
+    dependencies = {
+      'nvim-treesitter',
+      'plenary.nvim'
+    },
     event = "VeryLazy",
     cmd = "Telescope",
     keys = {
@@ -34,4 +37,3 @@ return {
   },
 }
 -- ==========================================
-
