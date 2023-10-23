@@ -5,22 +5,21 @@ return {
   },
   {
     "hashivim/vim-terraform",
-    event = "VeryLazy",
     ft = {"terraform", "hcl"},
   },
   {
     "tpope/vim-endwise",
-    event = "VeryLazy",
+    ft = {"terraform", "hcl", "ruby"},
     config = function()
       vim.g.ruby_operators = 1
     end,
   },
   {
     "vim-scripts/ruby-matchit",
-    event = "VeryLazy",
+    ft = {"terraform", "hcl", "ruby"},
   },
   {
     "mutewinter/nginx.vim",
-    event = "VeryLazy",
+    --event = "VeryLazy",
   },
 }
