@@ -1,16 +1,12 @@
 -- ============== telescope =================
 return {
   {
-    "nvim-lua/plenary.nvim",
-    event = "VeryLazy",
-  },
-  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       'nvim-treesitter',
-      'plenary.nvim'
+      'nvim-lua/plenary.nvim'
     },
-    event = "VeryLazy",
+    --event = "VeryLazy",
     cmd = "Telescope",
     keys = {
       {"<Leader>ff", "<cmd>Telescope find_files<cr>"},
@@ -20,6 +16,8 @@ return {
       {"<C-b>", "<cmd>Telescope buffers<cr>"},
       --{"<C-b>", "<cmd>Telescope oldfiles cwd_only=true alternate=git_files<cr>"},
       {"<Leader>fh", "<cmd>Telescope help_tags<cr>"},
+      {"<Leader>l", "<cmd>Telescope treesitter<cr>"},
+      {"<C-l>", "<cmd>Telescope treesitter<cr>"},
     },
     config = function()
       require('telescope').setup{

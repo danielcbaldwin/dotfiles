@@ -1,4 +1,19 @@
 return {
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    event = "VeryLazy",
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.diagnostics.rubocop,
+        },
+      })
+    end,
+  },
   --{
   --  "VonHeikemen/lsp-zero.nvim",
   --  branch = 'v1.x',
@@ -35,10 +50,10 @@ return {
   --        ensure_installed = {
   --          "lua_ls", -- Lua
   --          "terraformls", "tflint", -- Terraform
-  --          "ruby_ls", -- Ruby
-  --          "html", -- HTML
+  --          --"rubocop", -- Ruby
+  --          --"html", -- HTML
   --          "golangci_lint_ls", -- Go
-  --          "bashls", -- Bash
+  --          --"bashls", -- Bash
   --        },
   --    }
   --  end,

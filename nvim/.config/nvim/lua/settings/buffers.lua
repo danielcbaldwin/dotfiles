@@ -1,14 +1,13 @@
 -- Buffer mappings
-nmap('<silent><C-l>',':bn<CR>')
-nmap('<silent><C-Right>', ':bn<CR>')
-nmap('<silent><ESC>[5C', ':bn<CR>') -- Because OS X Terminal tries to be EMACS
+vim.api.nvim_set_keymap('n', '<C-l>',':bn<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', ':bn<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<ESC>[5C', ':bn<CR>', { silent = true }) -- Because OS X Terminal tries to be EMACS
 
-nmap('<silent><C-h>', ':bp<CR>')
-nmap('<silent><C-Left>', ':bp<CR>')
-nmap('<silent><ESC>[5D', ':bp<CR>') -- Because OS X Terminal tries to be EMACS
+vim.api.nvim_set_keymap('n', '<C-h>', ':bp<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<C-Left>', ':bp<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<ESC>[5D', ':bp<CR>', { silent = true }) -- Because OS X Terminal tries to be EMACS
 
-nmap('<silent><leader>d', '<leader>bd<CR>')
+vim.api.nvim_set_keymap('n', '<leader>d', '<leader>bd<CR>', { silent = true })
 
-map('<C-k>', ':cp<CR>')
-map('<C-j>', ':cn<CR>')
-
+vim.api.nvim_set_keymap('', '<C-k>', ':cp<CR>', {})
+vim.api.nvim_set_keymap('', '<C-j>', ':cn<CR>', {})
