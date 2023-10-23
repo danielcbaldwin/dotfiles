@@ -14,7 +14,7 @@
 	ui = true
 [core]
 	excludesfile = ~/.gitignore_global
-  editor = vim
+  editor = nvim
 [github]
   user = danielcbaldwin
 [url "git@bitbucket.org:"]
