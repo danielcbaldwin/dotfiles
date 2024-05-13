@@ -1,31 +1,45 @@
--- Base
-require('base')
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+vim.g.mapleader = ","
 
--- Plugins
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
+
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup('plugins', {
-  concurrency = 4,
-  checker = {
-    enabled = true,
-    consurrency = 1,
-    notify = false,
-  },
-  change_detection = {
-    enabled = false,
-  },
-})
+local lazy_config = require "configs.lazy"
 
--- Settings
-require('settings')
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+    config = function()
+      require "options"
+    end,
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+--require "nvchad.autocmds"
+require "autocmds"
+
+vim.schedule(function()
+  require "mappings"
+  require "commands"
+end)
