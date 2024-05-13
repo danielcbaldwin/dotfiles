@@ -10,20 +10,19 @@ return {
 
   {
     "tpope/vim-fugitive",
-    cmd = {"Git", "GitBlame", },
+    cmd = { "Git", "GitBlame" },
   },
 
   {
     "numToStr/Comment.nvim",
     config = function()
-      require('Comment').setup({
+      require("Comment").setup {
         padding = false,
-
-      })
-      local ft = require('Comment.ft')
-      ft.ruby = '# %s'
+      }
+      local ft = require "Comment.ft"
+      ft.ruby = "# %s"
       ft.vim = '" %s'
-      ft.javascript = {'// %s', '/* %s */'}
+      ft.javascript = { "// %s", "/* %s */" }
     end,
   },
 
@@ -31,7 +30,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle" },
     keys = {
-      {'<Leader>n', ":NvimTreeToggle<cr>"},
+      { "<Leader>n", ":NvimTreeToggle<cr>" },
     },
     opts = function()
       return require "configs.nvimtree"
@@ -41,14 +40,14 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
-      {"<Leader>ff", "<cmd>Telescope find_files<cr>"},
-      {"<C-p>", "<cmd>Telescope find_files<cr>"},
-      {"<Leader>fg", "<cmd>Telescope live_grep<cr>"},
-      {"<Leader>fb", "<cmd>Telescope buffers<cr>"},
-      {"<C-b>", "<cmd>Telescope buffers<cr>"},
-      {"<Leader>fh", "<cmd>Telescope help_tags<cr>"},
-      {"<Leader>l", "<cmd>Telescope treesitter<cr>"},
-      {"<C-l>", "<cmd>Telescope treesitter<cr>"},
+      { "<Leader>ff", "<cmd>Telescope find_files<cr>" },
+      { "<C-p>", "<cmd>Telescope find_files<cr>" },
+      { "<Leader>fg", "<cmd>Telescope live_grep<cr>" },
+      { "<Leader>fb", "<cmd>Telescope buffers<cr>" },
+      { "<C-b>", "<cmd>Telescope buffers<cr>" },
+      { "<Leader>fh", "<cmd>Telescope help_tags<cr>" },
+      { "<Leader>l", "<cmd>Telescope treesitter<cr>" },
+      { "<C-l>", "<cmd>Telescope treesitter<cr>" },
     },
     opts = function()
       return require "configs.telescope"
@@ -73,16 +72,22 @@ return {
       require "configs.lspconfig"
     end,
   },
-  --
-  -- {
-  -- 	"williamboman/mason.nvim",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"lua-language-server", "stylua",
-  -- 			"html-lsp", "css-lsp" , "prettier"
-  -- 		},
-  -- 	},
-  -- },
+
+  {
+    "williamboman/mason.nvim",
+    opts = function()
+      return require "configs.mason"
+    end,
+    --opts = {
+    --  ensure_installed = {
+    --    "lua-language-server",
+    --    "stylua",
+    --    "html-lsp",
+    --    "css-lsp",
+    --    "prettier",
+    --  },
+    --},
+  },
   --
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
