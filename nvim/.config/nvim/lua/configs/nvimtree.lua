@@ -1,6 +1,6 @@
 local options = {
   view = {
-    width = 35
+    width = 35,
   },
   filters = {
     dotfiles = false,
@@ -9,16 +9,20 @@ local options = {
   renderer = {
     highlight_git = true,
     icons = {
-     modified_placement = "before",
-     show = {
-       modified = true,
-       git = true,
-     },
+      modified_placement = "before",
+      show = {
+        modified = true,
+        git = true,
+      },
     },
   },
   modified = {
-   enable = true,
-   show_on_dirs = true,
+    enable = true,
+    show_on_dirs = true,
+  },
+  sort = {
+    sorter = "name",
+    folders_first = false,
   },
 }
 
