@@ -9,11 +9,6 @@ return {
   },
 
   {
-    "tpope/vim-fugitive",
-    cmd = { "Git", "GitBlame" },
-  },
-
-  {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup {
@@ -78,24 +73,28 @@ return {
     opts = function()
       return require "configs.mason"
     end,
-    --opts = {
-    --  ensure_installed = {
-    --    "lua-language-server",
-    --    "stylua",
-    --    "html-lsp",
-    --    "css-lsp",
-    --    "prettier",
-    --  },
-    --},
   },
-  --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      return require "configs.treesitter"
+    end,
+  },
+
+  --{
+  --  "hashivim/vim-terraform",
+  --  ft = { "terraform" },
+  --},
+  --{
+  --  "tpope/vim-endwise",
+  --  ft = { "terraform", "ruby" },
+  --  config = function()
+  --    vim.g.ruby_operators = 1
+  --  end,
+  --},
+  --{
+  --  "vim-scripts/ruby-matchit",
+  --  ft = { "terraform", "ruby" },
+  --},
 }

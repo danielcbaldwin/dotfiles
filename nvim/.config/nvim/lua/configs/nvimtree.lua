@@ -4,7 +4,10 @@ local options = {
   },
   filters = {
     dotfiles = false,
-    custom = { "^\\.git$" },
+    custom = { "^\\.git$", "^\\.terraform$", "^\\.terraspace-cache$" },
+  },
+  git = {
+    ignore = false,
   },
   renderer = {
     highlight_git = true,

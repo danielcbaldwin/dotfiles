@@ -1,12 +1,13 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { { "prettierd", "prettier"}, },
-    html = { {"prettierd", "prettier"}, },
-    json = { {"prettierd", "prettier"}, },
-    yaml = { {"prettierd", "prettier"}, },
-    ruby = { {"prettierd", "prettier"}, },
+    css = { { "prettierd", "prettier" } },
+    html = { { "prettierd", "prettier" } },
+    json = { { "prettierd", "prettier" } },
+    yaml = { { "prettierd", "prettier" } },
+    ruby = { { "prettierd", "prettier" } },
     go = { "gofmt", "goimports" },
+    terraform = { "tflint" },
   },
   -- Set up format-on-save
   format_on_save = { timeout_ms = 500, lsp_fallback = true },
@@ -15,7 +16,7 @@ local options = {
     shfmt = {
       prepend_args = { "-i", "2" },
     },
-  }
+  },
 }
 
 require("conform").setup(options)

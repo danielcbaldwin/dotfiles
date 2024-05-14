@@ -1,11 +1,11 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", "terraformls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -48,6 +48,6 @@ lspconfig.gopls.setup {
       functionTypeParameters = true,
       parameterNames = true,
       rangeVariableTypes = true,
-    }
+    },
   },
 }

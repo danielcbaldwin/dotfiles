@@ -7,7 +7,7 @@ local options = {
     "json",
     "toml",
     "vim",
-    -- 
+    --
     -- Web
     "html",
     "css",
@@ -27,8 +27,8 @@ local options = {
     "gowork",
     --
     -- DevOps
-    "hcl",
     "bash",
+    "terraform",
   },
 }
 
