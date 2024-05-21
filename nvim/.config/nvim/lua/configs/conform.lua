@@ -6,11 +6,11 @@ local options = {
     json = { { "prettierd", "prettier" } },
     yaml = { { "prettierd", "prettier" } },
     ruby = { { "prettierd", "prettier" } },
-    go = { "gofmt", "goimports" },
+    go = { "goimports", "gofmt" },
     terraform = { "tflint" },
   },
   -- Set up format-on-save
-  format_on_save = { timeout_ms = 500, lsp_fallback = true },
+  format_on_save = { async = false, timeout_ms = 500, lsp_fallback = true },
   -- Customize formatters
   formatters = {
     shfmt = {
