@@ -5,7 +5,3 @@ require "nvchad.options"
 local o = vim.o
 
 o.termguicolors = true
-
--- ================ Undo ==========================
-o.undofile = true
--- ===================================================
