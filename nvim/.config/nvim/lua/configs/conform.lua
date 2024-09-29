@@ -1,13 +1,14 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { { "prettierd", "prettier" } },
-    html = { { "prettierd", "prettier" } },
-    json = { { "prettierd", "prettier" } },
-    yaml = { { "prettierd", "prettier" } },
-    ruby = { { "prettierd", "prettier" } },
-    go = { "goimports", "gofmt" },
-    terraform = { "tflint" },
+    css = { { "prettierd" } },
+    html = { { "prettierd" } },
+    yaml = { { "prettierd" } },
+    ruby = { { "prettierd" } },
+    go = { "goimports", "gofumpt" },
+    terraform = { "terraform_fmt" },
+    tf = { "terraform_fmt" },
+    ["terraform-vars"] = { "terraform_fmt" },
   },
   -- Set up format-on-save
   format_on_save = { async = false, timeout_ms = 500, lsp_fallback = true },

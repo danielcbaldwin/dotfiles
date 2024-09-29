@@ -1,0 +1,14 @@
+-- Autocmds are automatically loaded on the VeryLazy event
+-- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+-- Add any additional autocmds here
+--
+
+-- create_autocmd({ "BufRead", "BufNewFile" }, {
+--   pattern = "*.tf,*.tfvars",
+--   command = "setfiletype tf",
+-- })
+--
+-- create_autocmd({ "BufRead", "BufNewFile" }, {
+--   pattern = "*.as,*.json,*.js",
+--   command = "setfiletype javascript",
+-- })

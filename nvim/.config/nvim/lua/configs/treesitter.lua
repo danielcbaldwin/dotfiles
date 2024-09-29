@@ -4,7 +4,7 @@ local options = {
     -- General
     "lua",
     "markdown",
-    "json",
+    "json5",
     "toml",
     "vim",
     --
@@ -29,6 +29,7 @@ local options = {
     -- DevOps
     "bash",
     "terraform",
+    "hcl",
   },
 }
 
