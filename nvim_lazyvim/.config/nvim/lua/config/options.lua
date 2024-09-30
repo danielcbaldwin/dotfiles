@@ -39,3 +39,9 @@ cmd(":command Q q")
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 8
 vim.opt.clipboard = ""
+
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 0
+vim.o.expandtab = true
+vim.o.autoindent = true
