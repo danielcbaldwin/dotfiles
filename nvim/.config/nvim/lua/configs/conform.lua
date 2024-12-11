@@ -1,9 +1,6 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { { "prettierd" } },
-    html = { { "prettierd" } },
-    yaml = { { "prettierd" } },
     ruby = { { "prettierd" } },
     go = { "goimports", "gofumpt" },
     terraform = { "terraform_fmt" },
@@ -11,7 +8,8 @@ local options = {
     ["terraform-vars"] = { "terraform_fmt" },
   },
   -- Set up format-on-save
-  format_on_save = { async = false, timeout_ms = 500, lsp_fallback = true },
+  format_on_save = { async = false, timeout_ms = 3000, lsp_fallback = true },
+  default_format_opts = { async = false, quiet = false, timeout_ms = 3000, lsp_format = "fallback" },
   -- Customize formatters
   formatters = {
     shfmt = {
