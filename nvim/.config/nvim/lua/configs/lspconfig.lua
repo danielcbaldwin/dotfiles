@@ -39,6 +39,8 @@ lspconfig.jsonls.setup {
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  root_markers = { ".git", "go.mod", "go.work", vim.uv.cwd() },
+  filetypes = { "go", "gotempl", "gowork", "gomod" },
   settings = {
     gopls = {
       gofumpt = true,
@@ -62,7 +64,6 @@ lspconfig.gopls.setup {
         rangeVariableTypes = true,
       },
       analyses = {
-        fieldalignment = true,
         nilness = true,
         unusedparams = true,
         unusedwrite = true,

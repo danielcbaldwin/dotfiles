@@ -16,6 +16,8 @@ return {
       }
       local ft = require "Comment.ft"
       ft.ruby = "# %s"
+      ft.terraform = "# %s"
+      ft.tf = "# %s"
       ft.vim = '" %s'
       ft.javascript = { "// %s", "/* %s */" }
     end,
@@ -61,6 +63,15 @@ return {
   },
 
   {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = true,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
@@ -81,6 +92,23 @@ return {
       return require "configs.treesitter"
     end,
   },
+
+  {
+    "nvchad/ui",
+    config = function()
+      require "nvchad"
+    end,
+  },
+
+  {
+    "nvchad/base46",
+    lazy = true,
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
+
+  "nvzone/volt", -- optional, needed for theme switcher
 
   --{
   --  "hashivim/vim-terraform",
