@@ -39,7 +39,8 @@ lspconfig.jsonls.setup {
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  root_markers = { ".git", "go.mod", "go.work", vim.uv.cwd() },
+  root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+  -- root_markers = { "go.work", "go.mod", ".git" },
   filetypes = { "go", "gotempl", "gowork", "gomod" },
   settings = {
     gopls = {
@@ -74,6 +75,7 @@ lspconfig.gopls.setup {
       staticcheck = true,
       directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
       semanticTokens = true,
+      verboseOutput = true,
     },
   },
 }
