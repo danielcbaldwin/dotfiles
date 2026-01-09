@@ -9,7 +9,7 @@ alias reload='source ~/.bashrc'
 export TERM=xterm-256color
 
 # add dotfiles bin
-export PATH="$PATH:$BASHFILES/bin"
+export PATH="$HOME/.local/bin:$PATH:$BASHFILES/bin"
 
 # add user bin if exists
 if [ -d "$HOME/.bin" ]; then
