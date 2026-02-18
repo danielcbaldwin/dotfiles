@@ -5,3 +5,6 @@ if [ -e /opt/homebrew ]; then
   export HOMEBREW_NO_INSTALL_FROM_API=1
   export PATH="/opt/homebrew/bin:$PATH"
 fi
+if [ -e "$HOME/.local/bin" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
