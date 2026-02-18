@@ -1,0 +1,242 @@
+{
+  // VSCodeVim settings based on your Neovim configuration
+  // Generated from your NvChad setup with custom mappings and options
+
+  // === CORE VIM SETTINGS ===
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.autoindent": true,
+  "vim.shiftwidth": 2,
+  "vim.tabstop": 2,
+  "vim.expandtab": true,
+  "vim.wrap": false,
+  "vim.number": true,
+  "vim.relativeNumber": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block",
+
+  // === LEADER KEY ===
+  "vim.leader": ",",
+
+  // === CUSTOM KEYBINDINGS ===
+  "vim.normalModeKeyBindings": [
+    // Command mode shortcut
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    // Make Y behave like other capitals
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    // Arrow key mappings for line wrapping
+    {
+      "before": ["<up>"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["<down>"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["<left>"],
+      "after": ["h"]
+    },
+    {
+      "before": ["<right>"],
+      "after": ["l"]
+    },
+    // Buffer navigation
+    {
+      "before": ["<C-l>"],
+      "after": [":", "b", "n", "<CR>"]
+    },
+    {
+      "before": ["<C-Right>"],
+      "after": [":", "b", "n", "<CR>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": [":", "b", "p", "<CR>"]
+    },
+    {
+      "before": ["<C-Left>"],
+      "after": [":", "b", "p", "<CR>"]
+    },
+    // Quickfix navigation
+    {
+      "before": ["<C-k>"],
+      "after": [":", "c", "p", "<CR>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": [":", "c", "n", "<CR>"]
+    },
+    // File explorer (VSCode equivalent of NvimTree)
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // Spelling toggle
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["editor.action.toggleSpellcheck"]
+    },
+    // Save with capital W (like your Neovim custom command)
+    {
+      "before": ["W"],
+      "after": [":", "w", "<CR>"]
+    }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    // Escape with jk
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    // Disable arrow keys in insert mode
+    {
+      "before": ["<up>"],
+      "after": ["<nop>"]
+    },
+    {
+      "before": ["<down>"],
+      "after": ["<nop>"]
+    },
+    {
+      "before": ["<left>"],
+      "after": ["<nop>"]
+    },
+    {
+      "before": ["<right>"],
+      "after": ["<nop>"]
+    }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    // Reselect visual block after indent/outdent
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    // Arrow key mappings for line wrapping
+    {
+      "before": ["<up>"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["<down>"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["<left>"],
+      "after": ["h"]
+    },
+    {
+      "before": ["<right>"],
+      "after": ["l"]
+    }
+  ],
+
+  // === SEARCH AND FIND ===
+  "vim.overrideCopy": false,
+  "vim.searchHighlightColor": "rgba(150, 150, 150, 0.3)",
+
+  // === FILE TYPES ===
+  "vim.filetypeAssociations": {
+    "*.tf": "terraform",
+    "*.tfvars": "terraform",
+    "*.as": "javascript",
+    "*.json": "json",
+    "*.js": "javascript"
+  },
+
+  // === DISABLE VSCode FEATURES THAT CONFLICT ===
+  "vim.disableExtension": false,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-h>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-l>": false,
+    "<C-p>": false,
+    "<C-r>": false,
+    "<C-s>": false,
+    "<C-v>": false,
+    "<C-w>": false,
+    "<C-x>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+    "<C-/>": false,
+    "<C-]>": false,
+    "<C-[>": false,
+    "<C-\\>": false,
+    "<C-`>": false,
+    "<C-1>": false,
+    "<C-2>": false,
+    "<C-3>": false,
+    "<C-4>": false,
+    "<C-5>": false,
+    "<C-6>": false,
+    "<C-7>": false,
+    "<C-8>": false,
+    "<C-9>": false,
+    "<C-0>": false
+  },
+
+  // === VSCode INTEGRATION ===
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf;",
+  "vim.surround": true,
+  "vim.substituteGlobalFlag": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeysForInsertMode": false,
+  "vim.useCtrlKeysForNormalMode": false,
+  "vim.useCtrlKeysForVisualMode": false,
+  "vim.useCtrlKeysForCommandMode": false,
+
+  // === ADDITIONAL VSCode SETTINGS FOR BETTER VIM EXPERIENCE ===
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.wordWrap": "off",
+  "editor.rulers": [80, 120],
+  "editor.renderWhitespace": "boundary",
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  // === WORKBENCH SETTINGS ===
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabCloseButton": "right",
+  "workbench.editor.tabSizing": "shrink",
+
+  // === TERMINAL SETTINGS ===
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.fontSize": 14,
+
+  // === COMMENTS ===
+  "editor.tokenColorCustomizations": {
+    "comments": "#6A9955"
+  },
+
+  // === SPELL CHECK ===
+  "cSpell.enabled": true,
+  "cSpell.language": "en-US"
+}
