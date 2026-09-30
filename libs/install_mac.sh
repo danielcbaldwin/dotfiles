@@ -12,6 +12,7 @@ EOF
 stow bash && echo "✓ bash"
 stow ranger && echo "✓ ranger"
 stow urxvt && echo "✓ urxvt"
+stow hammerspoon && echo "✓ hammerspoon"
 
 # Dev
 stow ruby && echo "✓ ruby"
