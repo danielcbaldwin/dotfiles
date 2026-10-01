@@ -18,7 +18,7 @@ local function ctrlArrow(key)
   hs.eventtap.event.newKeyEvent({"ctrl", "fn"}, key, false):post()
 end
 
-spacesGestureTap = hs.eventtap.new({ T.flagsChanged, T.keyDown, T.keyUp, T.mouseMoved }, function(ev)
+spacesGestureTap = require("tap_guard")(hs.eventtap.new({ T.flagsChanged, T.keyDown, T.keyUp, T.mouseMoved }, function(ev)
   local t = ev:getType()
 
   if t == T.flagsChanged then
@@ -60,4 +60,4 @@ spacesGestureTap = hs.eventtap.new({ T.flagsChanged, T.keyDown, T.keyUp, T.mouse
   end
   hs.mouse.absolutePosition(anchor)   -- keep the cursor still, like Logi
   return true
-end):start()
+end):start())

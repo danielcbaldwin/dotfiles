@@ -71,7 +71,7 @@ local function mailIsFront()
   return app and app:bundleID() == MAIL
 end
 
-gmailTap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(ev)
+gmailTap = require("tap_guard")(hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(ev)
   if not mailIsFront() then return false end
   local flags = ev:getFlags()
 
@@ -97,7 +97,7 @@ gmailTap = hs.eventtap.new({ hs.eventtap.event.types.keyDown }, function(ev)
     hs.eventtap.keyStroke(action[1], action[2], 0)
   end
   return true
-end):start()
+end):start())
 
 -- Debug helper: Ctrl+Option+Cmd+R shows what element has focus
 hs.hotkey.bind({"ctrl", "alt", "cmd"}, "R", function()
