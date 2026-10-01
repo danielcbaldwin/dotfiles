@@ -2,4 +2,4 @@
 -- comment out a line to stop loading it.
 
 require("mail_shortcuts")     -- Gmail-style single-key shortcuts in Apple Mail
-require("logitech_gestures")  -- MX Master gesture button controls Spaces (Logi Options not needed)
+-- require("logitech_gestures")  -- MX Master gesture button controls Spaces (off: Logi Options does this; the keystroke fallback breaks under secure input)
